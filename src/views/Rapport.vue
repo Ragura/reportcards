@@ -27,7 +27,15 @@
       </div>
 
       <!-- Leefhouding -->
-      <div class="leefhouding border border-black"></div>
+      <!-- Leefhouding -->
+      <ScoreBlock class="leefhouding border border-black">
+        <ZillHeader
+          slot="header"
+          :zills="[1, 3, 6]"
+          headerTitle="Leefhouding"
+        ></ZillHeader>
+      </ScoreBlock>
+      <!-- <div class="leefhouding border border-black"></div> -->
     </div>
 
     <div class="page mx-auto border">
@@ -57,7 +65,14 @@
       </div>
 
       <!-- Leefhouding -->
-      <div class="leefhouding border border-black"></div>
+      <ScoreBlock class="leefhouding border border-black">
+        <ZillHeader
+          slot="header"
+          :zills="[1, 3, 6]"
+          headerTitle="Leefhouding"
+        ></ZillHeader>
+      </ScoreBlock>
+      <!-- <div class="leefhouding border border-black"></div> -->
     </div>
 
     <button class="mt-4" @click="printen">Maak PDF</button>
@@ -67,6 +82,8 @@
 <script>
 import Header from "@/layouts/Header.vue";
 import Batteries from "@/components/Batteries.vue";
+import ScoreBlock from "@/components/ScoreBlock.vue";
+import ZillHeader from "@/components/ZillHeader.vue";
 
 const ipc = require("electron").ipcRenderer;
 
@@ -79,7 +96,9 @@ export default {
   name: "rapport",
   components: {
     Header,
-    Batteries
+    Batteries,
+    ScoreBlock,
+    ZillHeader
   },
   methods: {
     printen() {
