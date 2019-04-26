@@ -71,6 +71,9 @@
           :zills="[1, 3, 6]"
           headerTitle="Leefhouding"
         ></ZillHeader>
+        <template slot="content">
+          <ScoreTitle text="Jaarpunten" />
+        </template>
       </ScoreBlock>
       <!-- <div class="leefhouding border border-black"></div> -->
     </div>
@@ -84,6 +87,7 @@ import Header from "@/layouts/Header.vue";
 import Batteries from "@/components/Batteries.vue";
 import ScoreBlock from "@/components/ScoreBlock.vue";
 import ZillHeader from "@/components/ZillHeader.vue";
+import ScoreTitle from "@/components/ScoreTitle.vue";
 
 const ipc = require("electron").ipcRenderer;
 
@@ -98,6 +102,7 @@ export default {
     Header,
     Batteries,
     ScoreBlock,
+    ScoreTitle,
     ZillHeader
   },
   methods: {

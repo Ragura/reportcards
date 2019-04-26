@@ -1,6 +1,7 @@
 <template>
   <div class="scoreblock">
     <slot name="header"></slot>
+    <slot name="content"></slot>
   </div>
 </template>
 

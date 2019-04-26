@@ -1,8 +1,8 @@
 <template>
-  <header class="flex justify-between items-center border border-black">
-    <div class="header-block">SJCA</div>
+  <header class="flex justify-between items-center">
+    <div class="header-block uppercase">Zomerraport</div>
     <div class="header-block">Steven Schoovaerts</div>
-    <div class="header-block">L6</div>
+    <div class="header-block text-gray-400">Klas 6A</div>
   </header>
 </template>
 
