@@ -3,12 +3,17 @@
     <main>
       <router-view />
     </main>
+    <app-modal />
   </div>
 </template>
 
 <script>
+import AppModal from "@/components/AppModal.vue";
+
 export default {
-  components: {}
+  components: {
+    AppModal
+  }
 };
 </script>
 

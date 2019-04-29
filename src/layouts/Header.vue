@@ -1,8 +1,8 @@
 <template>
-  <header class="flex justify-between items-center">
+  <header class="flex justify-between items-center text-gray-700">
     <div class="header-block uppercase">Zomerraport</div>
     <div class="header-block">Steven Schoovaerts</div>
-    <div class="header-block text-gray-400">Klas 6A</div>
+    <div class="header-block">Klas 6A</div>
   </header>
 </template>
 
@@ -12,10 +12,7 @@ export default {};
 
 <style lang="scss">
 header {
-  height: 2.8cm;
-  padding: 0 1cm;
-}
-
-.header-block {
+  height: 1.5cm;
+  padding: 0;
 }
 </style>

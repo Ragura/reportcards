@@ -1,0 +1,37 @@
+{
+  "id": 1,
+  "klas": "1A",
+  "periode": 1,
+  "inhoud": {
+    "leefhouding": {
+      "jaarpunten": [
+        {
+          "text": "Ik aanvaard de mening van anderen en werk samen om tot een oplossing te komen",
+          "value": ""
+        },
+        {
+          "text": "Ik houd mij aan regels en afspraken omdat die nodig zijn voor een goeie klas- en schoolwerking",
+          "value": ""
+        },
+        {
+          "text": "",
+          "value": ""
+        }          
+      ],
+      "periodepunten": [
+        {
+          "text": "Ik kan en durf \"neen\" zeggen",
+          "value": ""
+        },
+        {
+          "text": "Ik kan zelfbewust en zelfzeker mijn werk presenteren voor de klas",
+          "value": ""
+        }
+      ],
+      "commentaar": ""
+    },
+    "leukste": "",
+    "inzetJufMeester": 2,
+    "inzetMezelf": 3
+  }
+}

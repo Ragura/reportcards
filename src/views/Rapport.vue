@@ -18,7 +18,7 @@
       <!-- Leukste dat je geleerd hebt? -->
       <div class="leukste flex border border-black">
         <div class="w-2/5 flex flex-col border-r border-black padding-klein">
-          <img src="@/assets/images/leren.jpg" alt="" />
+          <img src="@/assets/images/leren.png" alt="" />
           <p class="flex-grow flex items-center">
             Het leukste wat ik heb geleerd de voorbije maanden:
           </p>
@@ -27,7 +27,6 @@
       </div>
 
       <!-- Leefhouding -->
-      <!-- Leefhouding -->
       <ScoreBlock class="leefhouding border border-black">
         <ZillHeader
           slot="header"
@@ -35,7 +34,6 @@
           headerTitle="Leefhouding"
         ></ZillHeader>
       </ScoreBlock>
-      <!-- <div class="leefhouding border border-black"></div> -->
     </div>
 
     <div class="page mx-auto border">
@@ -56,7 +54,7 @@
       <!-- Leukste dat je geleerd hebt? -->
       <div class="leukste flex border border-black">
         <div class="w-2/5 flex flex-col border-r border-black padding-klein">
-          <img src="@/assets/images/leren.jpg" alt="" />
+          <img src="@/assets/images/leren.png" alt="" />
           <p class="flex-grow flex items-center">
             Het leukste wat ik heb geleerd de voorbije maanden:
           </p>
@@ -75,14 +73,17 @@
           <ScoreTitle text="Jaarpunten" />
         </template>
       </ScoreBlock>
-      <!-- <div class="leefhouding border border-black"></div> -->
     </div>
 
     <button class="mt-4" @click="printen">Maak PDF</button>
+    <button @click="showModal('ModalSettings')">
+      Login
+    </button>
   </div>
 </template>
 
 <script>
+import { mapMutations } from "vuex";
 import Header from "@/layouts/Header.vue";
 import Batteries from "@/components/Batteries.vue";
 import ScoreBlock from "@/components/ScoreBlock.vue";
@@ -108,7 +109,8 @@ export default {
   methods: {
     printen() {
       ipc.send("print-to-pdf");
-    }
+    },
+    ...mapMutations([`showModal`])
   }
 };
 </script>
