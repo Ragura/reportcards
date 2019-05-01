@@ -5,7 +5,8 @@ Vue.use(Vuex);
 
 export const state = {
   modalVisible: false,
-  modalComponent: null
+  modalComponent: null,
+  activeRapport: null
 };
 
 export const mutations = {
@@ -15,6 +16,9 @@ export const mutations = {
   },
   hideModal(state) {
     state.modalVisible = false;
+  },
+  setActiveRapport(state, rapport) {
+    state.activeRapport = rapport;
   }
 };
 

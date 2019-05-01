@@ -1,7 +1,4 @@
 {
-  "id": 1,
-  "klas": "1A",
-  "periode": 1,
   "inhoud": {
     "leefhouding": {
       "jaarpunten": [
@@ -31,7 +28,7 @@
       "commentaar": ""
     },
     "leukste": "",
-    "inzetJufMeester": 2,
-    "inzetMezelf": 3
+    "inzetJufMeester": 1,
+    "inzetMezelf": 1
   }
 }

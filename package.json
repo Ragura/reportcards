@@ -14,7 +14,9 @@
   "main": "background.js",
   "dependencies": {
     "core-js": "^2.6.5",
+    "material-design-icons-iconfont": "^4.0.5",
     "tailwindcss": "^1.0.0-beta.5",
+    "uniqid": "^5.0.3",
     "vue": "^2.6.10",
     "vue-router": "^3.0.3",
     "vuex": "^3.0.1"
