@@ -101,7 +101,9 @@
 </template>
 
 <script>
-const fs = require("fs");
+// const fs = require("fs");
+const jsonfile = require("jsonfile");
+
 import uniqid from "uniqid";
 const { app } = require("electron").remote;
 import { mapMutations } from "vuex";
@@ -140,10 +142,10 @@ export default {
         ...rapportTemplate
       };
 
-      fs.writeFileSync(
+      jsonfile.writeFileSync(
         `${path}/${schooljaar}_${leerjaar}${klas}_${periode}.rap`,
-        JSON.stringify(rapport, null, 2),
-        "utf-8"
+        rapport,
+        { spaces: 2 }
       );
     },
     getSchooljaar() {

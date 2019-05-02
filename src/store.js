@@ -6,7 +6,14 @@ Vue.use(Vuex);
 export const state = {
   modalVisible: false,
   modalComponent: null,
-  activeRapport: null
+  activeRapport: null,
+  settings: {
+    standaardLocatie: "",
+    marginTop: 1.7,
+    marginBottom: 1.7,
+    marginLeft: 2,
+    marginRight: 2
+  }
 };
 
 export const mutations = {
@@ -22,7 +29,13 @@ export const mutations = {
   }
 };
 
-export const actions = {};
+export const actions = {
+  actions: {
+    // fetchSettings({ commit }) {
+    //   // commit("updateSettings", payload);
+    // }
+  }
+};
 
 export default new Vuex.Store({
   mutations,

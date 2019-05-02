@@ -49,7 +49,7 @@
             type="text"
             class="block w-full border-b outline-none"
             id="marge-links"
-            v-model="settings.marginBottom"
+            v-model="settings.marginLeft"
           />
         </div>
         <div class="w-1/2 pl-2">
@@ -60,7 +60,7 @@
             type="text"
             class="block w-full border-b outline-none"
             id="marge-rechts"
-            v-model="settings.marginBottom"
+            v-model="settings.marginRight"
           />
         </div>
       </div>
