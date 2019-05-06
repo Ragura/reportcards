@@ -72,23 +72,26 @@
       >
         Annuleren
       </button>
-      <button class="w-1/3 rounded bg-blue-400 text-white font-semibold p-2">
-        Maken
+      <button
+        @click="saveSettings"
+        class="w-1/3 rounded bg-blue-400 text-white font-semibold p-2"
+      >
+        Opslaan
       </button>
     </div>
   </div>
 </template>
 
 <script>
-const { app, dialog } = require("electron").remote;
-import { mapMutations } from "vuex";
+const { dialog } = require("electron").remote;
+import { mapState, mapMutations, mapActions } from "vuex";
 
 export default {
   name: `ModalSettings`,
   data() {
     return {
       settings: {
-        directory: "",
+        standardLocation: "",
         marginTop: 1.7,
         marginBottom: 1.7,
         marginLeft: 2,
@@ -96,21 +99,33 @@ export default {
       }
     };
   },
+  computed: {
+    ...mapState({ globalSettings: "settings" })
+  },
   methods: {
     ...mapMutations([`hideModal`]),
+    ...mapActions(["writeSettings"]),
     chooseDirectory() {
-      console.log(app, dialog);
-
       const dir = dialog.showOpenDialog({
         title: "Kies map voor rapporten",
-        defaultPath: app.getAppPath(),
+        defaultPath:
+          this.settings.standardLocation ||
+          this.globalSettings.standardLocation,
         properties: ["openDirectory"],
         message: "Kies een map waar rapporten worden opgeslagen"
       });
 
-      console.log(dir);
-      // TODO: Call Vuex mutation/action to set default path
+      if (dir) {
+        this.$set(this.settings, "standardLocation", dir[0]);
+      }
+    },
+    saveSettings() {
+      this.writeSettings(this.settings);
+      this.hideModal();
     }
+  },
+  created() {
+    this.settings = { ...this.globalSettings };
   }
 };
 </script>

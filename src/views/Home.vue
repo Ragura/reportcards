@@ -1,6 +1,6 @@
 <template>
   <div>
-    <h1 class="text-2xl uppercase pt-8 pb-4 border-b border-gray-200 mb-4">
+    <h1 class="text-2xl uppercase pb-4 border-b border-gray-200 mb-4">
       Nieuw rapport
     </h1>
     <div
@@ -28,24 +28,33 @@
 </template>
 
 <script>
-const fs = require("fs");
-const { app, dialog } = require("electron").remote;
-import { mapMutations } from "vuex";
+const jsonfile = require("jsonfile");
+
+const { dialog } = require("electron").remote;
+import { mapState, mapMutations, mapActions } from "vuex";
 
 export default {
   name: "Home",
+  computed: {
+    ...mapState(["settings"])
+  },
   methods: {
+    ...mapMutations(["showModal"]),
+    ...mapActions(["setActiveRapport"]),
     openRapport() {
       const rapportPath = dialog.showOpenDialog({
-        title: "Kies map voor rapporten",
-        defaultPath: app.getAppPath(),
+        title: "Open een rapport",
+        defaultPath: this.settings.standardLocation,
         properties: ["openFile"],
-        message: "Kies een map waar rapporten worden opgeslagen"
+        message: "Kies rapportbestand om het te openen."
       });
-      const rapport = JSON.parse(fs.readFileSync(rapportPath[0]));
-      this.setActiveRapport(rapport);
-    },
-    ...mapMutations(["showModal", "setActiveRapport"])
+
+      if (!rapportPath) return;
+
+      const rapport = jsonfile.readFileSync(rapportPath[0]);
+      this.setActiveRapport({ rapport, path: rapportPath[0] });
+      this.$router.push("/rapport");
+    }
   }
 };
 </script>

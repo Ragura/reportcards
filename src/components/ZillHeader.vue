@@ -1,8 +1,8 @@
 <template>
   <div
-    class="zill-header flex justify-between items-center border-b border-black"
+    class="zill-header flex justify-between items-center border-b tracking-wider font-bold border-black"
   >
-    <h2 class="uppercase">{{ headerTitle }}</h2>
+    <h2 class="uppercase"><slot></slot></h2>
     <div class="flex">
       <img
         v-for="id of zills"
@@ -24,10 +24,6 @@ export default {
     };
   },
   props: {
-    headerTitle: {
-      type: String,
-      default: ""
-    },
     zills: {
       type: Array,
       default: () => []

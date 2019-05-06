@@ -101,12 +101,10 @@
 </template>
 
 <script>
-// const fs = require("fs");
 const jsonfile = require("jsonfile");
 
 import uniqid from "uniqid";
-const { app } = require("electron").remote;
-import { mapMutations } from "vuex";
+import { mapState, mapMutations, mapActions } from "vuex";
 import rapportTemplate from "@/data/templates.json";
 
 export default {
@@ -122,13 +120,14 @@ export default {
       }
     };
   },
+  computed: {
+    ...mapState(["settings"])
+  },
   methods: {
-    ...mapMutations([`hideModal`]),
-    login() {
-      this.hideModal();
-    },
+    ...mapMutations(["hideModal"]),
+    ...mapActions(["setActiveRapport"]),
     makeRapport() {
-      const path = app.getAppPath();
+      const path = this.settings.standardLocation;
       const schooljaar = this.getSchooljaar();
       const leerjaar = this.rapport.leerjaar;
       const klas = this.rapport.klas;
@@ -139,6 +138,7 @@ export default {
         schooljaar,
         leerjaar,
         periode,
+        klas,
         ...rapportTemplate
       };
 
@@ -147,6 +147,10 @@ export default {
         rapport,
         { spaces: 2 }
       );
+
+      this.setActiveRapport({ rapport, path });
+      this.$router.push("/rapport");
+      this.hideModal();
     },
     getSchooljaar() {
       if (this.currentDate.getMonth() < 6) {

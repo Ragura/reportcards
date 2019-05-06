@@ -25,11 +25,15 @@
           "values": []
         }
       ],
-      "commentaar": []
+      "commentaar": {}
     },
     "leukste": [],
-    "inzetJufMeester": [],
-    "inzetMezelf": []
+    "inzetJufMeester": {
+      "fd3sdhc3": 3
+    },
+    "inzetMezelf": {
+      "fd3sdhc3": 2
+    }
   },
   "leerlingen": [
     {

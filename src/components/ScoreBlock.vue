@@ -1,7 +1,7 @@
 <template>
-  <div class="scoreblock">
+  <div class="border border-black">
     <slot name="header"></slot>
-    <slot name="content"></slot>
+    <slot></slot>
   </div>
 </template>
 

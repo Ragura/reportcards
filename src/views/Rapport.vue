@@ -3,15 +3,53 @@
     <div class="page mx-auto border">
       <Header class="header" />
 
+      <!-- Leefhouding -->
+      <score-block class="leefhouding flex flex-col">
+        <zill-header slot="header" :zills="[1, 3, 6]">Leefhouding</zill-header>
+        <score-title>Jaarpunten</score-title>
+        <score-line
+          >Ik aanvaard de mening van anderen en werk samen om tot een oplossing
+          te komen</score-line
+        >
+        <score-line
+          >Ik houd mij aan regels en afspraken omdat die nodig zijn voor een
+          goede klas- en schoolwerking</score-line
+        >
+        <score-line>---</score-line>
+        <score-title>Periodepunten</score-title>
+        <score-line
+          >Ik aanvaard de mening van anderen en werk samen om tot een oplossing
+          te komen</score-line
+        >
+        <score-line
+          >Ik houd mij aan regels en afspraken omdat die nodig zijn voor een
+          goede klas- en schoolwerking</score-line
+        >
+        <score-comments class="flex-grow">Commentaar komt hier</score-comments>
+      </score-block>
+
       <!-- Batterijen -->
       <div class="inzet flex border border-black">
         <div class="w-1/2 flex flex-col border-r border-black padding-klein">
           <div class="flex-shrink">Mijn inzet volgens de meester/juf</div>
-          <Batteries class="flex-grow" :battery="3" />
+          <Batteries
+            class="flex-grow"
+            @select="
+              updateRapportInhoud({
+                key: 'inzetJufMeester',
+                leerling: activeLeerling.id,
+                value: $event
+              })
+            "
+            :battery="activeRapport.inhoud.inzetJufMeester[activeLeerling.id]"
+          />
         </div>
         <div class="w-1/2 flex flex-col padding-klein">
           <div class="flex-shrink">Mijn inzet volgens mezelf</div>
-          <Batteries class="flex-grow" :battery="2" />
+          <Batteries
+            class="flex-grow"
+            :battery="activeRapport.inhoud.inzetMezelf[activeLeerling.id]"
+          />
         </div>
       </div>
 
@@ -25,54 +63,10 @@
         </div>
         <div class="w-3/5"></div>
       </div>
-
-      <!-- Leefhouding -->
-      <ScoreBlock class="leefhouding border border-black">
-        <ZillHeader
-          slot="header"
-          :zills="[1, 3, 6]"
-          headerTitle="Leefhouding"
-        ></ZillHeader>
-      </ScoreBlock>
     </div>
 
     <div class="page mx-auto border">
       <Header class="header" />
-
-      <!-- Batterijen -->
-      <div class="inzet flex border border-black">
-        <div class="w-1/2 flex flex-col border-r border-black padding-klein">
-          <div class="flex-shrink">Mijn inzet volgens de meester/juf</div>
-          <Batteries class="flex-grow" :battery="3" />
-        </div>
-        <div class="w-1/2 flex flex-col padding-klein">
-          <div class="flex-shrink">Mijn inzet volgens mezelf</div>
-          <Batteries class="flex-grow" :battery="2" />
-        </div>
-      </div>
-
-      <!-- Leukste dat je geleerd hebt? -->
-      <div class="leukste flex border border-black">
-        <div class="w-2/5 flex flex-col border-r border-black padding-klein">
-          <img src="@/assets/images/leren.png" alt="" />
-          <p class="flex-grow flex items-center">
-            Het leukste wat ik heb geleerd de voorbije maanden:
-          </p>
-        </div>
-        <div class="w-3/5"></div>
-      </div>
-
-      <!-- Leefhouding -->
-      <ScoreBlock class="leefhouding border border-black">
-        <ZillHeader
-          slot="header"
-          :zills="[1, 3, 6]"
-          headerTitle="Leefhouding"
-        ></ZillHeader>
-        <template slot="content">
-          <ScoreTitle text="Jaarpunten" />
-        </template>
-      </ScoreBlock>
     </div>
 
     <button class="mt-4" @click="printen">Maak PDF</button>
@@ -83,34 +77,50 @@
 </template>
 
 <script>
-import { mapMutations } from "vuex";
+import { mapState, mapMutations, mapActions } from "vuex";
 import Header from "@/layouts/Header.vue";
 import Batteries from "@/components/Batteries.vue";
 import ScoreBlock from "@/components/ScoreBlock.vue";
 import ZillHeader from "@/components/ZillHeader.vue";
 import ScoreTitle from "@/components/ScoreTitle.vue";
+import ScoreLine from "@/components/ScoreLine.vue";
+import ScoreComments from "@/components/ScoreComments.vue";
 
 const ipc = require("electron").ipcRenderer;
 
 ipc.on("wrote-pdf", (event, path) => {
+  // eslint-disable-next-line
   const message = `Wrote pdf to: ${path}`;
-  console.log(message);
 });
 
 export default {
   name: "rapport",
+  data() {
+    return {
+      activeLeerling: {}
+    };
+  },
   components: {
     Header,
     Batteries,
     ScoreBlock,
     ScoreTitle,
+    ScoreLine,
+    ScoreComments,
     ZillHeader
+  },
+  computed: {
+    ...mapState(["activeRapport"])
   },
   methods: {
     printen() {
       ipc.send("print-to-pdf");
     },
-    ...mapMutations([`showModal`])
+    ...mapMutations([`showModal`]),
+    ...mapActions(["updateRapportInhoud"])
+  },
+  created() {
+    this.activeLeerling = { ...this.activeRapport.leerlingen[0] };
   }
 };
 </script>
