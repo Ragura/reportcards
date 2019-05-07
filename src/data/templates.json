@@ -3,8 +3,8 @@
     {
       "id": "leefhouding",
       "type": "ScoreBlock",
-      "height": "13.5cm",
       "content": {
+        "layout": "row",
         "zillHeader": "Leefhouding",
         "icons": [1, 3, 6],
         "valueKey": "leefhouding-commentaar",
@@ -37,6 +37,46 @@
               {
                 "text": "Ik kan zelfbewust en zelfzeker mijn werk presenteren voor de klas",
                 "valueKey": "zelfbewust"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "muzisch",
+      "type": "ScoreBlock",
+      "content": {
+        "layout": "column",
+        "zillHeader": "Muzische ontwikkeling",
+        "icons": [2, 1, 5],
+        "valueKey": "",
+        "blocks": [
+          {
+            "title": "Open staan voor nieuwe kunstervaringen - interesse tonen in kunst en ervan genieten - aanvaarden dat kunstbeleving persoonlijk is",
+            "valueKey": "kunstervaringen",
+            "lines": [
+              {
+                "text": "DOMEIN Activiteit",
+                "valueKey": "kunstervaringD1"
+              },
+              {
+                "text": "DOMEIN Activiteit",
+                "valueKey": "kunstervaringD2"
+              }
+            ]
+          },
+          {
+            "title": "Kenmerken van een kunstwerk (bouwstenen, werkvorm, vormgevingsmiddelen) ontdekken en met eigen woorden beschrijven",
+            "valueKey": "kunstwerk",
+            "lines": [
+              {
+                "text": "DOMEIN Activiteit",
+                "valueKey": "kunstactiviteitD1"
+              },
+              {
+                "text": "DOMEIN Activiteit",
+                "valueKey": "kunstactiviteitD2"
               }
             ]
           }

@@ -2,6 +2,7 @@
   <div class="lijn border-b border-black flex items-center">
     <div
       class="tekst flex h-full flex-grow border-r border-black items-center text-sm"
+      :contenteditable="editable"
     >
       {{ line.text }}
     </div>
@@ -33,6 +34,10 @@ export default {
   props: {
     line: {
       type: Object
+    },
+    editable: {
+      type: Boolean,
+      default: false
     }
   },
   computed: {
@@ -53,6 +58,7 @@ export default {
 
 .tekst {
   padding-left: 0.2cm;
+  padding-right: 0.2cm;
 }
 
 .kleurblok {

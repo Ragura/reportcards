@@ -5,7 +5,7 @@
 
       <component
         class="rapport-block"
-        :style="{ height: block.height }"
+        :style="{ height: block.height || 'auto' }"
         v-for="block of activeRapport.rapportBlocks"
         :is="block.type"
         :content="block.content"
