@@ -1,0 +1,50 @@
+{
+  "inhoud": {
+    "leefhouding": {
+      "jaarpunten": [
+        {
+          "text": "Ik aanvaard de mening van anderen en werk samen om tot een oplossing te komen",
+          "values": []
+        },
+        {
+          "text": "Ik houd mij aan regels en afspraken omdat die nodig zijn voor een goeie klas- en schoolwerking",
+          "values": []
+        },
+        {
+          "text": "",
+          "values": []
+        }          
+      ],
+      "periodepunten": [
+        {
+          "text": "Ik kan en durf \"neen\" zeggen",
+          "values": []
+        },
+        {
+          "text": "Ik kan zelfbewust en zelfzeker mijn werk presenteren voor de klas",
+          "values": []
+        }
+      ],
+      "commentaar": {}
+    },
+    "leukste": [],
+    "inzetJufMeester": {
+      "fd3sdhc3": 3
+    },
+    "inzetMezelf": {
+      "fd3sdhc3": 2
+    }
+  },
+  "leerlingen": [
+    {
+      "id": "fd3sdhc3",
+      "voornaam": "Jantje",
+      "familienaam": "Kruimeldief"
+    },
+    {
+      "id": "g834lsdfij",
+      "voornaam": "Tina",
+      "familienaam": "Toerenteller"
+    }
+  ]
+}

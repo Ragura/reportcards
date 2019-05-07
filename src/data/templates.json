@@ -1,45 +1,53 @@
 {
-  "inhoud": {
-    "leefhouding": {
-      "jaarpunten": [
-        {
-          "text": "Ik aanvaard de mening van anderen en werk samen om tot een oplossing te komen",
-          "values": []
-        },
-        {
-          "text": "Ik houd mij aan regels en afspraken omdat die nodig zijn voor een goeie klas- en schoolwerking",
-          "values": []
-        },
-        {
-          "text": "",
-          "values": []
-        }          
-      ],
-      "periodepunten": [
-        {
-          "text": "Ik kan en durf \"neen\" zeggen",
-          "values": []
-        },
-        {
-          "text": "Ik kan zelfbewust en zelfzeker mijn werk presenteren voor de klas",
-          "values": []
-        }
-      ],
-      "commentaar": {}
-    },
-    "leukste": [],
-    "inzetJufMeester": {
-      "fd3sdhc3": 3
-    },
-    "inzetMezelf": {
-      "fd3sdhc3": 2
+  "rapportBlocks": [
+    {
+      "id": "leefhouding",
+      "type": "ScoreBlock",
+      "height": "13.5cm",
+      "content": {
+        "zillHeader": "Leefhouding",
+        "icons": [1, 3, 6],
+        "valueKey": "leefhouding-commentaar",
+        "blocks": [
+          {
+            "title": "Jaarpunten",
+            "valueKey": "leefhouding-jaarpunten",
+            "lines": [
+              {
+                "text": "Ik aanvaard de mening van anderen en werk samen om tot een oplossing te komen"
+              },
+              {
+                "text": "Ik houd mij aan regels en afspraken omdat die nodig zijn voor een goeie klas- en schoolwerking"
+              },
+              {
+                "text": "---"
+              }
+            ]
+          },
+          {
+            "title": "Periodepunten",
+            "valueKey": "leefhouding-periodepunten",
+            "lines": [
+              {
+                "text": "Ik kan en durf \"neen\" zeggen"
+              },
+              {
+                "text": "Ik kan zelfbewust en zelfzeker mijn werk presenteren voor de klas"
+              }
+            ]
+          }
+        ]
+      }
     }
-  },
+  ],
   "leerlingen": [
     {
       "id": "fd3sdhc3",
       "voornaam": "Jantje",
-      "familienaam": "Kruimeldief"
+      "familienaam": "Kruimeldief",
+      "punten": {
+        "leefhouding-commentaar": "Hier komt commentaar over Jantje"
+      }
     },
     {
       "id": "g834lsdfij",
