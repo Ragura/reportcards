@@ -5,11 +5,16 @@ import Vue from "vue";
 import Vuex from "vuex";
 
 Vue.use(Vuex);
+Vue.config.devtools = true;
 
 export const state = {
   modalVisible: false,
   modalComponent: null,
-  activeRapport: null,
+  activeRapport: {
+    rapportBlocks: [],
+    leerlingen: []
+  },
+  activeLeerlingId: "",
   activePath: "",
   rapportChanged: false,
   settings: {
@@ -18,6 +23,14 @@ export const state = {
     marginBottom: 1.7,
     marginLeft: 2,
     marginRight: 2
+  }
+};
+
+export const getters = {
+  activeLeerling(state) {
+    return state.activeRapport.leerlingen.find(l => {
+      return l.id === state.activeLeerlingId;
+    });
   }
 };
 
@@ -36,8 +49,14 @@ export const mutations = {
   updateSettings(state, settings) {
     state.settings = { ...settings };
   },
-  updateRapportInhoud(state, { key, leerling, value }) {
-    Vue.set(state.activeRapport.inhoud[key], leerling, value);
+  changeActiveLeerlingId(state, leerlingId) {
+    state.activeLeerlingId = leerlingId;
+  },
+  updatePuntenLeerling(state, { leerlingId, key, value }) {
+    const indexOfLeerling = state.activeRapport.leerlingen.findIndex(
+      l => l.id === leerlingId
+    );
+    Vue.set(state.activeRapport.leerlingen[indexOfLeerling].punten, key, value);
   }
 };
 
@@ -67,18 +86,22 @@ export const actions = {
   setActiveRapport({ commit }, payload) {
     commit("setActiveRapport", payload);
   },
-  updateRapportInhoud({ commit, dispatch }, payload) {
-    commit("updateRapportInhoud", payload);
-    dispatch("writeRapport");
-  },
   writeRapport({ state }) {
     jsonfile.writeFile(state.activePath, state.activeRapport, {
       spaces: 2
     });
+  },
+  changeActiveLeerlingId({ commit }, leerlingId) {
+    commit("changeActiveLeerlingId", leerlingId);
+  },
+  updatePuntenLeerling({ commit, dispatch }, payload) {
+    commit("updatePuntenLeerling", payload);
+    dispatch("writeRapport");
   }
 };
 
 export default new Vuex.Store({
+  getters,
   mutations,
   state,
   actions

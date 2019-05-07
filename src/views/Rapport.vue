@@ -44,9 +44,7 @@ ipc.on("wrote-pdf", (event, path) => {
 export default {
   name: "rapport",
   data() {
-    return {
-      activeLeerling: {}
-    };
+    return {};
   },
   components: {
     Header,
@@ -58,17 +56,17 @@ export default {
     ZillHeader
   },
   computed: {
-    ...mapState(["activeRapport"])
+    ...mapState(["activeRapport", "activeLeerling"])
   },
   methods: {
     printen() {
       ipc.send("print-to-pdf");
     },
     ...mapMutations([`showModal`]),
-    ...mapActions(["updateRapportInhoud"])
+    ...mapActions(["updateRapportInhoud", "changeActiveLeerlingId"])
   },
   created() {
-    this.activeLeerling = { ...this.activeRapport.leerlingen[0] };
+    this.changeActiveLeerlingId(this.activeRapport.leerlingen[0].id);
   }
 };
 </script>

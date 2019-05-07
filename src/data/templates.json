@@ -11,16 +11,18 @@
         "blocks": [
           {
             "title": "Jaarpunten",
-            "valueKey": "leefhouding-jaarpunten",
             "lines": [
               {
-                "text": "Ik aanvaard de mening van anderen en werk samen om tot een oplossing te komen"
+                "text": "Ik aanvaard de mening van anderen en werk samen om tot een oplossing te komen",
+                "valueKey": "mening"
               },
               {
-                "text": "Ik houd mij aan regels en afspraken omdat die nodig zijn voor een goeie klas- en schoolwerking"
+                "text": "Ik houd mij aan regels en afspraken omdat die nodig zijn voor een goeie klas- en schoolwerking",
+                "valueKey": "regels"
               },
               {
-                "text": "---"
+                "text": "---",
+                "valueKey": ""
               }
             ]
           },
@@ -29,10 +31,12 @@
             "valueKey": "leefhouding-periodepunten",
             "lines": [
               {
-                "text": "Ik kan en durf \"neen\" zeggen"
+                "text": "Ik kan en durf \"neen\" zeggen",
+                "valueKey": "neen"
               },
               {
-                "text": "Ik kan zelfbewust en zelfzeker mijn werk presenteren voor de klas"
+                "text": "Ik kan zelfbewust en zelfzeker mijn werk presenteren voor de klas",
+                "valueKey": "zelfbewust"
               }
             ]
           }
@@ -46,7 +50,9 @@
       "voornaam": "Jantje",
       "familienaam": "Kruimeldief",
       "punten": {
-        "leefhouding-commentaar": "Hier komt commentaar over Jantje"
+        "leefhouding-commentaar": "Hier komt commentaar over Jantje",
+        "mening": 2,
+        "regels": 1
       }
     },
     {

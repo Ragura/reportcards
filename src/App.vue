@@ -1,5 +1,5 @@
 <template>
-  <div class="flex" id="app">
+  <div class="flex" id="app" v-cloak>
     <sidebar
       class="flex-none overflow-auto h-screen hidden sm:block w-56 py-10"
     />
@@ -29,4 +29,11 @@ export default {
 };
 </script>
 
-<style lang="scss"></style>
+<style lang="scss">
+[v-cloak] > * {
+  display: none;
+}
+[v-cloak]::before {
+  content: "loading…";
+}
+</style>

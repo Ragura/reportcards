@@ -7,7 +7,7 @@
       >
         <i class="material-icons mr-2">home</i>Home
       </li>
-      <div v-show="activeRapport">
+      <div v-show="activeRapport.klas">
         <li class="px-8 pt-2 pb-5 italic flex items-center bg-blue-600">
           {{ activeRapport && activeRapport.leerjaar
           }}{{ activeRapport && activeRapport.klas }}

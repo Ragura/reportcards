@@ -3,15 +3,29 @@
     <zill-header :zills="[1, 3, 6]">{{ content.zillHeader }}</zill-header>
     <div v-for="block of content.blocks" :key="block.title">
       <score-title>{{ block.title }}</score-title>
-      <score-line v-for="line of block.lines" :key="line.text">{{
-        line.text
-      }}</score-line>
+      <score-line
+        v-for="line of block.lines"
+        :key="line.valueKey"
+        :line="line"
+      />
     </div>
-    <score-comments class="flex-grow"></score-comments>
+    <score-comments
+      class="flex-grow"
+      @blur.native="
+        updatePuntenLeerling({
+          leerlingId: activeLeerlingId,
+          key: content.valueKey,
+          value: $event.target.innerText
+        })
+      "
+      v-html="activeLeerling.punten[content.valueKey]"
+    ></score-comments>
   </div>
 </template>
 
 <script>
+import { mapState, mapGetters, mapActions } from "vuex";
+
 import ZillHeader from "@/components/ZillHeader.vue";
 import ScoreTitle from "@/components/ScoreTitle.vue";
 import ScoreLine from "@/components/ScoreLine.vue";
@@ -29,7 +43,15 @@ export default {
     content: {
       type: Object
     }
-  }
+  },
+  computed: {
+    ...mapState(["activeRapport", "activeLeerlingId"]),
+    ...mapGetters(["activeLeerling"])
+  },
+  methods: {
+    ...mapActions(["updatePuntenLeerling"])
+  },
+  created() {}
 };
 </script>
 

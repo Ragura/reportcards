@@ -3,21 +3,46 @@
     <div
       class="tekst flex h-full flex-grow border-r border-black items-center text-sm"
     >
-      <slot></slot>
+      {{ line.text }}
     </div>
-    <div class="kleurblok flex-none text-center"></div>
+    <div class="kleurblok flex-none h-full">
+      <score-color
+        v-show="line.valueKey"
+        :value="activeLeerling.punten[line.valueKey]"
+        @change="
+          updatePuntenLeerling({
+            leerlingId: activeLeerlingId,
+            key: line.valueKey,
+            value: $event
+          })
+        "
+      />
+    </div>
   </div>
 </template>
 
 <script>
+import { mapState, mapGetters, mapActions } from "vuex";
+import ScoreColor from "@/components/ScoreColor.vue";
+
 export default {
   name: "ScoreLine",
+  components: {
+    ScoreColor
+  },
   props: {
-    text: {
-      type: String,
-      default: ""
+    line: {
+      type: Object
     }
-  }
+  },
+  computed: {
+    ...mapState(["activeLeerlingId"]),
+    ...mapGetters(["activeLeerling"])
+  },
+  methods: {
+    ...mapActions(["updatePuntenLeerling"])
+  },
+  created() {}
 };
 </script>
 
