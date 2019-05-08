@@ -159,15 +159,16 @@
       "voornaam": "Jantje",
       "familienaam": "Kruimeldief",
       "punten": {
-        "leefhouding-commentaar": "Hier komt commentaar over Jantje",
-        "mening": 2,
-        "regels": 1
+
       }
     },
     {
       "id": "g834lsdfij",
       "voornaam": "Tina",
-      "familienaam": "Toerenteller"
+      "familienaam": "Toerenteller",
+      "punten": {
+
+      }
     }
   ]
 }

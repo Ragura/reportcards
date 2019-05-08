@@ -39,7 +39,6 @@
 
       <component
         class="rapport-block"
-        :style="{ height: block.height || 'auto' }"
         v-for="block of activeRapport.rapportBlocks.filter(b => b.page === n)"
         :is="block.type"
         :content="block.content"
@@ -77,12 +76,17 @@ export default {
     ScoreComments,
     ZillHeader
   },
+  watch: {
+    selectedLeerling(newValue) {
+      this.changeActiveLeerlingId(newValue);
+    }
+  },
   computed: {
     ...mapState(["activeRapport", "activeLeerling"])
   },
   methods: {
     printen() {
-      // this.printRapport(true);
+      this.printRapport(true);
       ipc.send("print-to-pdf");
     },
     ...mapMutations([`showModal`]),
@@ -110,7 +114,7 @@ export default {
 .page {
   width: 21cm;
   height: 29.7cm;
-  padding: 1.5cm 2cm;
+  padding: 1.4cm 2cm;
 
   .padding-klein {
     padding: 0.2cm;
@@ -127,10 +131,10 @@ export default {
 
 @media print {
   @page {
-    margin-top: 1.7cm;
-    margin-bottom: 1.7cm;
-    margin-left: 2cm;
-    margin-right: 2cm;
+    // margin-top: 1.7cm;
+    // margin-bottom: 1.7cm;
+    // margin-left: 2cm;
+    // margin-right: 2cm;
   }
 
   .toolbar {
@@ -138,12 +142,11 @@ export default {
   }
 
   .page {
-    padding: 0;
     width: 100%;
     height: auto;
     border: none;
-    // page-break-before: always;
-    break-before: page;
+    page-break-after: always;
+    // break-after: page;
   }
 }
 </style>

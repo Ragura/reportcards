@@ -4,8 +4,8 @@
       class="flex-none overflow-auto h-screen hidden sm:block w-56 py-10"
     />
     <main
-      :class="{ 'overflow-y-hidden': printing }"
-      class="container h-screen overflow-auto mx-auto p-8"
+      :class="{ 'overflow-visible': printing, 'p-8': !printing }"
+      class="container h-screen overflow-auto mx-auto"
     >
       <router-view />
     </main>

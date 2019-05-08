@@ -55,7 +55,7 @@ export default {
 
 <style scoped>
 .lijn {
-  height: 1.1cm;
+  height: 1cm;
 }
 
 .tekst {
