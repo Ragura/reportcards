@@ -1,45 +1,54 @@
 <template>
-  <div class="batteries flex justify-around items-center p-2">
-    <div class="battery">
-      <BatteryCircle v-show="battery === 1" class="circle" />
-      <img
-        @click="$emit('select', 1)"
-        class="mx-auto"
-        src="@/assets/images/battery1.png"
-        alt="Lege batterij"
-      />
+  <div class="batteries w-full border border-black flex">
+    <!-- Left column -->
+    <div
+      class="flex flex-wrap w-1/2 border-r border-black flex justify-around items-center"
+    >
+      <h2 class="w-full font-bold">{{ content.left.text }}</h2>
+      <div class="battery" v-for="n of 4" :key="`battery-left-${n}`">
+        <BatteryCircle
+          v-show="activeLeerling.punten[content.left.valueKey] === n"
+          class="circle"
+        />
+        <img
+          @click="
+            updatePuntenLeerling({
+              leerlingId: activeLeerlingId,
+              key: content.left.valueKey,
+              value: n
+            })
+          "
+          class="mx-auto"
+          :src="`/images/battery${n}.png`"
+        />
+      </div>
     </div>
-    <div class="battery">
-      <BatteryCircle v-show="battery === 2" class="circle" />
-      <img
-        @click="$emit('select', 2)"
-        class="mx-auto"
-        src="@/assets/images/battery2.png"
-        alt="Kwart batterij"
-      />
-    </div>
-    <div class="battery">
-      <BatteryCircle v-show="battery === 3" class="circle" />
-      <img
-        @click="$emit('select', 3)"
-        class="batterij mx-auto"
-        src="@/assets/images/battery3.png"
-        alt="Drie-kwart batterij"
-      />
-    </div>
-    <div class="battery">
-      <BatteryCircle v-show="battery === 4" class="circle" />
-      <img
-        @click="$emit('select', 4)"
-        class="mx-auto"
-        src="@/assets/images/battery4.png"
-        alt="Volle batterij"
-      />
+    <!-- Right column -->
+    <div class="flex flex-wrap w-1/2 flex justify-around items-center">
+      <h2 class="w-full font-bold">{{ content.right.text }}</h2>
+      <div class="battery" v-for="n of 4" :key="`battery-right-${n}`">
+        <BatteryCircle
+          v-show="activeLeerling.punten[content.right.valueKey] === n"
+          class="circle"
+        />
+        <img
+          @click="
+            updatePuntenLeerling({
+              leerlingId: activeLeerlingId,
+              key: content.right.valueKey,
+              value: n
+            })
+          "
+          class="mx-auto"
+          :src="`/images/battery${n}.png`"
+        />
+      </div>
     </div>
   </div>
 </template>
 
 <script>
+import { mapState, mapGetters, mapActions } from "vuex";
 import BatteryCircle from "@/components/BatteryCircle.vue";
 
 export default {
@@ -47,25 +56,41 @@ export default {
     BatteryCircle
   },
   props: {
-    battery: {
-      type: Number,
-      default: 1
+    content: {
+      type: Object
     }
+  },
+  computed: {
+    ...mapState(["activeRapport", "activeLeerlingId"]),
+    ...mapGetters(["activeLeerling"])
+  },
+  methods: {
+    ...mapActions(["updatePuntenLeerling"])
   }
 };
 </script>
 
 <style lang="scss" scoped>
-.battery {
-  position: relative;
+.batteries {
+  height: 3.5cm;
 
-  .circle {
-    position: absolute;
-    transform: translateY(-0.2cm) translateX(-25%);
+  h2 {
+    padding: 0.1cm 0.2cm;
+    margin-bottom: 0.2cm;
   }
 
-  img {
-    height: 1.5cm;
+  .battery {
+    position: relative;
+    padding-bottom: 0.2cm;
+
+    .circle {
+      position: absolute;
+      transform: translateY(-0.2cm) translateX(-25%);
+    }
+
+    img {
+      height: 1.5cm;
+    }
   }
 }
 </style>

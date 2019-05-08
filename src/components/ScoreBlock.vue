@@ -37,7 +37,6 @@
         </div>
         <div class="w-1/2 flex flex-col">
           <score-line
-            :editable="true"
             v-for="line of block.lines"
             :key="line.valueKey"
             :line="line"
@@ -99,6 +98,6 @@ export default {
 }
 
 .row-commentaar {
-  height: 4cm;
+  height: 2.4cm;
 }
 </style>

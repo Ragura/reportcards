@@ -3,10 +3,11 @@
     {
       "id": "leefhouding",
       "type": "ScoreBlock",
+      "page": 1,
       "content": {
         "layout": "row",
         "zillHeader": "Leefhouding",
-        "icons": [1, 3, 6],
+        "icons": [8, 4, 5],
         "valueKey": "leefhouding-commentaar",
         "blocks": [
           {
@@ -44,12 +45,76 @@
       }
     },
     {
+      "id": "lerenleren",
+      "type": "ScoreBlock",
+      "page": 1,
+      "content": {
+        "layout": "row",
+        "zillHeader": "Leren leren",
+        "icons": [8, 4, 5],
+        "valueKey": "lerenleren-commentaar",
+        "blocks": [
+          {
+            "title": "Jaarpunten",
+            "lines": [
+              {
+                "text": "Ik kan vlot (leerstof) onthouden (door herhaling – oefenen – instuderen)",
+                "valueKey": "onthouden"
+              },
+              {
+                "text": "Wat ik niet weet, zoek ik zelf op",
+                "valueKey": "opzoeken"
+              },
+              {
+                "text": "Ik kan mijn taken en lessen opnemen in een haalbare weekplanning",
+                "valueKey": "weekplanning"
+              }
+            ]
+          },
+          {
+            "title": "Periodepunten",
+            "valueKey": "lerenleren-periodepunten",
+            "lines": [
+              {
+                "text": "Ik kan een probleem onderzoeken door mogelijkheden uit te proberen en mezelf vragen te stellen, waarbij ik gebruik wat ik al weet.",
+                "valueKey": "probleem"
+              },
+              {
+                "text": "Ik kan zelf juist inschatten in welke niveaugroep ik best aan de slag ga",
+                "valueKey": "niveaugroep"
+              },
+              {
+                "text": "Ik kan een (eigen) project zelfstandig bedenken – plannen – voorbereiden – uitvoeren",
+                "valueKey": "zelfstandig"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "inzet",
+      "type": "Batteries",
+      "page": 1,
+      "content": {
+        "left": {
+          "valueKey": "inzetMeesterJuf",
+          "text": "Mijn inzet volgens de meester/juf"
+        },
+        "right": {
+          "valueKey": "inzetMezelf",
+          "text": "Mijn inzet volgens mezelf"
+        }
+      }
+    },
+    {
       "id": "muzisch",
       "type": "ScoreBlock",
+      "page": 2,
       "content": {
         "layout": "column",
         "zillHeader": "Muzische ontwikkeling",
-        "icons": [2, 1, 5],
+        "icons": [4, 5, 2],
         "valueKey": "",
         "blocks": [
           {
@@ -57,10 +122,12 @@
             "valueKey": "kunstervaringen",
             "lines": [
               {
+                "editable": true,
                 "text": "DOMEIN Activiteit",
                 "valueKey": "kunstervaringD1"
               },
               {
+                "editable": true,
                 "text": "DOMEIN Activiteit",
                 "valueKey": "kunstervaringD2"
               }
@@ -71,10 +138,12 @@
             "valueKey": "kunstwerk",
             "lines": [
               {
+                "editable": true,
                 "text": "DOMEIN Activiteit",
                 "valueKey": "kunstactiviteitD1"
               },
               {
+                "editable": true,
                 "text": "DOMEIN Activiteit",
                 "valueKey": "kunstactiviteitD2"
               }

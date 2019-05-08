@@ -23,7 +23,8 @@ export const state = {
     marginBottom: 1.7,
     marginLeft: 2,
     marginRight: 2
-  }
+  },
+  printing: false
 };
 
 export const getters = {
@@ -57,6 +58,12 @@ export const mutations = {
       l => l.id === leerlingId
     );
     Vue.set(state.activeRapport.leerlingen[indexOfLeerling].punten, key, value);
+  },
+  updateRapportText(state, { line, value }) {
+    line.text = value;
+  },
+  printRapport(state, print) {
+    state.printing = print;
   }
 };
 
@@ -97,6 +104,14 @@ export const actions = {
   updatePuntenLeerling({ commit, dispatch }, payload) {
     commit("updatePuntenLeerling", payload);
     dispatch("writeRapport");
+  },
+  updateRapportText({ commit, dispatch }, payload) {
+    commit("updateRapportText", payload);
+    dispatch("writeRapport");
+  },
+  printRapport({ commit }, payload) {
+    console.log("hier");
+    commit("printRapport", payload);
   }
 };
 

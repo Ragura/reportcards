@@ -12,7 +12,7 @@ export default {};
 
 <style lang="scss">
 header {
-  height: 1.5cm;
+  height: 0.5cm;
   padding: 0;
 }
 </style>

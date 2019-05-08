@@ -3,7 +3,10 @@
     <sidebar
       class="flex-none overflow-auto h-screen hidden sm:block w-56 py-10"
     />
-    <main class="container h-screen overflow-auto mx-auto p-8">
+    <main
+      :class="{ 'overflow-y-hidden': printing }"
+      class="container h-screen overflow-auto mx-auto p-8"
+    >
       <router-view />
     </main>
     <app-modal />
@@ -13,12 +16,15 @@
 <script>
 import Sidebar from "@/layouts/Sidebar.vue";
 import AppModal from "@/components/AppModal.vue";
-import { mapActions } from "vuex";
+import { mapState, mapActions } from "vuex";
 
 export default {
   components: {
     AppModal,
     Sidebar
+  },
+  computed: {
+    ...mapState(["printing"])
   },
   methods: {
     ...mapActions(["fetchSettings"])

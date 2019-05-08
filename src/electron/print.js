@@ -12,7 +12,8 @@ ipcMain.on("print-to-pdf", event => {
   win.webContents.printToPDF(
     {
       pageSize: "A4",
-      marginsType: 1
+      marginsType: 1,
+      printBackground: true
     },
     (error, data) => {
       if (error) {

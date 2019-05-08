@@ -2,10 +2,16 @@
   <div class="lijn border-b border-black flex items-center">
     <div
       class="tekst flex h-full flex-grow border-r border-black items-center text-sm"
-      :contenteditable="editable"
-    >
-      {{ line.text }}
-    </div>
+      :contenteditable="line.editable"
+      v-html="line.text"
+      @keypress.enter.prevent="$event.target.blur()"
+      @blur="
+        updateRapportText({
+          line,
+          value: $event.target.innerText
+        })
+      "
+    ></div>
     <div class="kleurblok flex-none h-full">
       <score-color
         v-show="line.valueKey"
@@ -34,10 +40,6 @@ export default {
   props: {
     line: {
       type: Object
-    },
-    editable: {
-      type: Boolean,
-      default: false
     }
   },
   computed: {
@@ -45,7 +47,7 @@ export default {
     ...mapGetters(["activeLeerling"])
   },
   methods: {
-    ...mapActions(["updatePuntenLeerling"])
+    ...mapActions(["updatePuntenLeerling", "updateRapportText"])
   },
   created() {}
 };
@@ -53,7 +55,7 @@ export default {
 
 <style scoped>
 .lijn {
-  height: 1.3cm;
+  height: 1.1cm;
 }
 
 .tekst {
