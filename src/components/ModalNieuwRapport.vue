@@ -133,6 +133,8 @@ export default {
       const klas = this.rapport.klas;
       const periode = this.rapport.periode;
 
+      const fullPath = `${path}/${schooljaar}_${leerjaar}${klas}_${periode}.rap`;
+
       const rapport = {
         id: uniqid(),
         schooljaar,
@@ -142,13 +144,9 @@ export default {
         ...rapportTemplate
       };
 
-      jsonfile.writeFileSync(
-        `${path}/${schooljaar}_${leerjaar}${klas}_${periode}.rap`,
-        rapport,
-        { spaces: 2 }
-      );
+      jsonfile.writeFileSync(fullPath, rapport, { spaces: 2 });
 
-      this.setActiveRapport({ rapport, path });
+      this.setActiveRapport({ rapport, path: fullPath });
       this.$router.push("/rapport");
       this.hideModal();
     },

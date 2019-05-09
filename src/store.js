@@ -5,7 +5,6 @@ import Vue from "vue";
 import Vuex from "vuex";
 
 Vue.use(Vuex);
-Vue.config.devtools = true;
 
 export const state = {
   modalVisible: false,
@@ -19,8 +18,8 @@ export const state = {
   rapportChanged: false,
   settings: {
     standardLocation: "",
-    marginTop: 1.7,
-    marginBottom: 1.7,
+    marginTop: 1.4,
+    marginBottom: 0,
     marginLeft: 2,
     marginRight: 2
   },
@@ -70,7 +69,6 @@ export const mutations = {
 export const actions = {
   async fetchSettings({ commit, dispatch }) {
     const path = app.getPath("userData");
-
     try {
       const data = await jsonfile.readFile(path + "/settings.json");
       commit("updateSettings", data);
@@ -78,8 +76,8 @@ export const actions = {
       console.log(err);
       dispatch("writeSettings", {
         standardLocation: app.getPath("documents"),
-        marginTop: 1.7,
-        marginBottom: 1.7,
+        marginTop: 1.4,
+        marginBottom: 0,
         marginLeft: 2,
         marginRight: 2
       });
@@ -110,7 +108,6 @@ export const actions = {
     dispatch("writeRapport");
   },
   printRapport({ commit }, payload) {
-    console.log("hier");
     commit("printRapport", payload);
   }
 };

@@ -19,7 +19,7 @@
           @click="$router.push('rapport')"
           class="pl-10 pb-5 flex items-center cursor-pointer hover:text-blue-800 bg-blue-600"
         >
-          <i class="material-icons mr-2">people</i>Rapport
+          <i class="material-icons mr-2">school</i>Rapport
         </li>
         <li
           @click="$router.push('leerlingen')"
@@ -31,7 +31,7 @@
           @click="$router.push('punten')"
           class="pl-10 pb-2 mb-5 flex items-center cursor-pointer hover:text-blue-800 bg-blue-600"
         >
-          <i class="material-icons mr-2">people</i>Punten
+          <i class="material-icons mr-2">poll</i>Punten
         </li>
       </div>
       <li

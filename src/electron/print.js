@@ -1,12 +1,12 @@
 import { BrowserWindow, ipcMain, shell } from "electron";
 
-const path = require("path");
+// const path = require("path");
 const fs = require("fs");
-const os = require("os");
+// const os = require("os");
 
 // Add printer events
-ipcMain.on("print-to-pdf", event => {
-  const pdfPath = path.join(os.tmpdir(), "test-pdf.pdf");
+ipcMain.on("print-to-pdf", (event, path) => {
+  // const pdfPath = path.join(os.tmpdir(), "test-pdf.pdf");
   const win = BrowserWindow.fromWebContents(event.sender);
 
   win.webContents.printToPDF(
@@ -20,12 +20,12 @@ ipcMain.on("print-to-pdf", event => {
         return console.log(error.message);
       }
 
-      fs.writeFile(pdfPath, data, err => {
+      fs.writeFile(path, data, err => {
         if (err) {
           return console.log(err.message);
         }
-        shell.openExternal("file://" + pdfPath);
-        event.sender.send("wrote-pdf", pdfPath);
+        // shell.openExternal("file://" + path);
+        event.sender.send("wrote-pdf", path);
       });
     }
   );

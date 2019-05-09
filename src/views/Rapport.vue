@@ -34,7 +34,16 @@
       </button>
     </div>
 
-    <div class="page mx-auto border" v-for="n of 3" :key="n">
+    <div
+      class="page mx-auto border"
+      v-for="n of 3"
+      :key="n"
+      :style="{
+        padding: `${settings.marginTop}cm ${settings.marginRight}cm ${
+          settings.marginBottom
+        }cm ${settings.marginLeft}cm`
+      }"
+    >
       <Header class="header" />
 
       <component
@@ -59,6 +68,7 @@ import ScoreLine from "@/components/ScoreLine.vue";
 import ScoreComments from "@/components/ScoreComments.vue";
 
 const ipc = require("electron").ipcRenderer;
+const { dialog } = require("electron").remote;
 
 export default {
   name: "rapport",
@@ -82,12 +92,21 @@ export default {
     }
   },
   computed: {
-    ...mapState(["activeRapport", "activeLeerling"])
+    ...mapState(["activeRapport", "activeLeerling", "settings", "activePath"])
   },
   methods: {
     printen() {
+      const path = dialog.showSaveDialog({
+        title: "PDF opslaan",
+        defaultPath:
+          this.settings.standardLocation +
+          this.activePath.replace(".rap", ".pdf"),
+        message: "Kies locatie om PDF op te slaan."
+      });
+
+      if (!path) return;
       this.printRapport(true);
-      ipc.send("print-to-pdf");
+      ipc.send("print-to-pdf", path);
     },
     ...mapMutations([`showModal`]),
     ...mapActions([
@@ -114,7 +133,7 @@ export default {
 .page {
   width: 21cm;
   height: 29.7cm;
-  padding: 1.4cm 2cm;
+  // padding: 1.4cm 2cm 0 2cm;
 
   .padding-klein {
     padding: 0.2cm;
