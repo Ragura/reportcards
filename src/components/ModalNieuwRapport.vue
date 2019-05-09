@@ -102,6 +102,7 @@
 
 <script>
 const jsonfile = require("jsonfile");
+const { cloneDeep } = require("lodash");
 
 import uniqid from "uniqid";
 import { mapState, mapMutations, mapActions } from "vuex";
@@ -134,6 +135,7 @@ export default {
       const periode = this.rapport.periode;
 
       const fullPath = `${path}/${schooljaar}_${leerjaar}${klas}_${periode}.rap`;
+      console.log(this.settings);
 
       const rapport = {
         id: uniqid(),
@@ -141,7 +143,7 @@ export default {
         leerjaar,
         periode,
         klas,
-        ...rapportTemplate
+        ...cloneDeep(rapportTemplate)
       };
 
       jsonfile.writeFileSync(fullPath, rapport, { spaces: 2 });

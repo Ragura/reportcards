@@ -36,6 +36,12 @@ export default {
 </script>
 
 <style lang="scss">
+#app {
+  font-family: -apple-system, BlinkMacSystemFont, "Calibri", "Segoe UI", Roboto,
+    "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji",
+    "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+}
+
 [v-cloak] > * {
   display: none;
 }

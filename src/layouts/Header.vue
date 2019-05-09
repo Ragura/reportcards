@@ -18,14 +18,16 @@ export default {
     ...mapState(["activeRapport"]),
     ...mapGetters(["activeLeerling"]),
     seizoen() {
+      console.log(this.activeRapport.periode);
+
       switch (this.activeRapport.periode) {
-        case 1:
+        case "1":
           return "Herfst";
-        case 2:
+        case "2":
           return "Winter";
-        case 3:
+        case "3":
           return "Lente";
-        case 4:
+        case "4":
           return "Zomer";
       }
       return "Herfst";

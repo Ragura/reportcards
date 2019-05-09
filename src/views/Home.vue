@@ -53,6 +53,7 @@ export default {
 
       const rapport = jsonfile.readFileSync(rapportPath[0]);
       this.setActiveRapport({ rapport, path: rapportPath[0] });
+
       this.$router.push("/rapport");
     }
   }

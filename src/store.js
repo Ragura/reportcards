@@ -1,6 +1,8 @@
 const jsonfile = require("jsonfile");
 const { app } = require("electron").remote;
 
+import uniqid from "uniqid";
+
 import Vue from "vue";
 import Vuex from "vuex";
 
@@ -9,6 +11,7 @@ Vue.use(Vuex);
 export const state = {
   modalVisible: false,
   modalComponent: null,
+  modalData: {},
   activeRapport: {
     rapportBlocks: [],
     leerlingen: []
@@ -42,11 +45,16 @@ export const mutations = {
   hideModal(state) {
     state.modalVisible = false;
   },
+  passModalData(state, modalData) {
+    state.modalData = { ...modalData };
+  },
   setActiveRapport(state, { rapport, path }) {
     state.activeRapport = { ...rapport };
     state.activePath = path;
   },
   updateSettings(state, settings) {
+    console.log(settings);
+
     state.settings = { ...settings };
   },
   changeActiveLeerlingId(state, leerlingId) {
@@ -63,14 +71,51 @@ export const mutations = {
   },
   printRapport(state, print) {
     state.printing = print;
+  },
+  addLeerling(state, { voornaam, familienaam }) {
+    state.activeRapport.leerlingen.push({
+      id: uniqid(),
+      voornaam,
+      familienaam,
+      punten: {}
+    });
+  },
+  deleteLeerling(state, leerlingId) {
+    const leerlingIndex = state.activeRapport.leerlingen.findIndex(
+      l => l.id === leerlingId
+    );
+
+    if (leerlingIndex >= 0) {
+      state.activeRapport.leerlingen.splice(leerlingIndex, 1);
+    }
+  },
+  editLeerling(state, { leerlingId, voornaam, familienaam }) {
+    const leerlingIndex = state.activeRapport.leerlingen.findIndex(
+      l => l.id === leerlingId
+    );
+
+    if (leerlingIndex >= 0) {
+      state.activeRapport.leerlingen[leerlingIndex].voornaam = voornaam;
+      state.activeRapport.leerlingen[leerlingIndex].familienaam = familienaam;
+    }
+  },
+  addLeerlingen(state, leerlingen) {
+    console.log(leerlingen);
+
+    state.activeRapport.leerlingen = state.activeRapport.leerlingen.concat(
+      leerlingen
+    );
   }
 };
 
 export const actions = {
-  async fetchSettings({ commit, dispatch }) {
+  passModalData({ commit }, modalData) {
+    commit("passModalData", modalData);
+  },
+  fetchSettings({ commit, dispatch }) {
     const path = app.getPath("userData");
     try {
-      const data = await jsonfile.readFile(path + "/settings.json");
+      const data = jsonfile.readFileSync(path + "\\settings.json");
       commit("updateSettings", data);
     } catch (err) {
       console.log(err);
@@ -83,9 +128,9 @@ export const actions = {
       });
     }
   },
-  async writeSettings({ commit }, settings) {
-    const path = app.getPath("userData") + "/settings.json";
-    await jsonfile.writeFile(path, settings, { spaces: 2 });
+  writeSettings({ commit }, settings) {
+    const path = app.getPath("userData") + "\\settings.json";
+    jsonfile.writeFileSync(path, settings, { spaces: 2 });
     commit("updateSettings", settings);
   },
   setActiveRapport({ commit }, payload) {
@@ -109,6 +154,22 @@ export const actions = {
   },
   printRapport({ commit }, payload) {
     commit("printRapport", payload);
+  },
+  addLeerling({ commit, dispatch }, payload) {
+    commit("addLeerling", payload);
+    dispatch("writeRapport");
+  },
+  deleteLeerling({ commit, dispatch }, leerlingId) {
+    commit("deleteLeerling", leerlingId);
+    dispatch("writeRapport");
+  },
+  editLeerling({ commit, dispatch }, payload) {
+    commit("editLeerling", payload);
+    dispatch("writeRapport");
+  },
+  addLeerlingen({ commit, dispatch }, leerlingen) {
+    commit("addLeerlingen", leerlingen);
+    dispatch("writeRapport");
   }
 };
 
