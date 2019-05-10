@@ -170,5 +170,37 @@
 
       }
     }
+  ],
+  "evaluaties": [
+    {
+      "id": "muzischeontwikkeling",
+      "titel": "Muzische ontwikkeling",
+      "domeinen": [
+        {
+          "type": "color",
+          "valueKey": "md1",
+          "titel": "Domein Activiteit",
+          "puntenMaxima": []
+        },
+        {
+          "type": "color",
+          "valueKey": "md2",
+          "titel": "Domein Activiteit",
+          "puntenMaxima": []
+        },
+        {
+          "type": "color",
+          "valueKey": "md3",
+          "titel": "Domein Activiteit",
+          "puntenMaxima": []
+        },
+        {
+          "type": "color",
+          "valueKey": "md4",
+          "titel": "Domein Activiteit",
+          "puntenMaxima": []
+        }
+      ]
+    }
   ]
 }
