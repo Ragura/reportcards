@@ -61,16 +61,11 @@ export default {
     };
   },
   computed: {
-    ...mapState(["settings", "modalData"])
+    ...mapState(["settings", "modalData", "leerlingen"])
   },
   methods: {
     ...mapMutations(["hideModal"]),
-    ...mapActions([
-      "passModalData",
-      "setActiveRapport",
-      "addLeerling",
-      "editLeerling"
-    ]),
+    ...mapActions(["passModalData", "addLeerling", "updateLeerling"]),
     addNewLeerling() {
       this.addLeerling({
         voornaam: this.voornaam,
@@ -79,8 +74,8 @@ export default {
       this.hideModal();
     },
     editExistingLeerling() {
-      this.editLeerling({
-        leerlingId: this.modalData.leerling.id,
+      this.updateLeerling({
+        id: this.modalData.id,
         voornaam: this.voornaam,
         familienaam: this.familienaam
       });
@@ -88,9 +83,10 @@ export default {
     }
   },
   created() {
-    if (this.modalData.leerling) {
-      this.voornaam = this.modalData.leerling.voornaam;
-      this.familienaam = this.modalData.leerling.familienaam;
+    const id = this.modalData.id;
+    if (id) {
+      this.voornaam = this.leerlingen[id].voornaam;
+      this.familienaam = this.leerlingen[id].familienaam;
     }
     this.$nextTick(() => {
       this.$refs["input-voornaam"].focus();

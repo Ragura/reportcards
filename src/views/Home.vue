@@ -28,8 +28,6 @@
 </template>
 
 <script>
-const jsonfile = require("jsonfile");
-
 const { dialog } = require("electron").remote;
 import { mapState, mapMutations, mapActions } from "vuex";
 
@@ -40,7 +38,7 @@ export default {
   },
   methods: {
     ...mapMutations(["showModal"]),
-    ...mapActions(["setActiveRapport"]),
+    ...mapActions(["loadRapport"]),
     openRapport() {
       const rapportPath = dialog.showOpenDialog({
         title: "Open een rapport",
@@ -49,12 +47,10 @@ export default {
         message: "Kies rapportbestand om het te openen."
       });
 
-      if (!rapportPath) return;
+      if (!rapportPath[0]) return;
 
-      const rapport = jsonfile.readFileSync(rapportPath[0]);
-      this.setActiveRapport({ rapport, path: rapportPath[0] });
-
-      this.$router.push("/rapport");
+      this.loadRapport(rapportPath[0]);
+      // this.$router.push("/rapport");
     }
   }
 };

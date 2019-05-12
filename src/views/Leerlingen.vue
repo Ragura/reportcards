@@ -29,13 +29,13 @@
       <ul class="border border-gray-500 flex-grow">
         <li
           class="border-b border-gray-500 p-2 flex justify-between items-center"
-          v-for="leerling of activeRapport.leerlingen"
-          :key="leerling.id"
+          v-for="leerling of Object.values(leerlingen)"
+          :key="`leerling-${leerling.id}`"
         >
           <p>{{ leerling.voornaam }} {{ leerling.familienaam }}</p>
           <div class="flex items-center">
             <i
-              @click="showEditLeerling(leerling)"
+              @click="showEditLeerling(leerling.id)"
               class="material-icons mr-2 cursor-pointer text-gray-700"
               >edit</i
             >
@@ -85,7 +85,7 @@ export default {
     };
   },
   computed: {
-    ...mapState(["activeRapport", "settings"])
+    ...mapState(["leerlingen", "settings", "meta"])
   },
   methods: {
     ...mapMutations(["showModal"]),
@@ -94,18 +94,18 @@ export default {
       "addLeerling",
       "addLeerlingen",
       "deleteLeerling",
-      "editLeerling"
+      "updateLeerling"
     ]),
     showNieuweLeerling() {
       this.passModalData({ mode: "new" });
       this.showModal("ModalLeerling");
     },
-    showEditLeerling(leerling) {
-      this.passModalData({ mode: "edit", leerling });
+    showEditLeerling(id) {
+      this.passModalData({ mode: "edit", id });
       this.showModal("ModalLeerling");
     },
-    showConfirmModal(leerlingId) {
-      this.leerlingToDelete = leerlingId;
+    showConfirmModal(id) {
+      this.leerlingToDelete = id;
       this.showConfirm = true;
     },
     removeLeerling() {
@@ -120,7 +120,7 @@ export default {
         message: "Kies rapportbestand om leerlingen uit te importeren."
       });
 
-      if (!rapportPath) return;
+      if (!rapportPath[0]) return;
 
       const rapport = jsonfile.readFileSync(rapportPath[0]);
       if (!rapport) return;
@@ -135,7 +135,7 @@ export default {
         message: "Kies een Excel bestand om leerlingen uit te importeren."
       });
 
-      if (!path) return;
+      if (!path[0]) return;
 
       const workbook = xlsx.readFile(path[0]);
 
@@ -145,15 +145,16 @@ export default {
           header: "A"
         }
       );
-      const leerlingen = [];
+      const leerlingen = {};
       sheetLeerlingen.forEach(l => {
-        if (l.A === this.activeRapport.leerjaar + this.activeRapport.klas) {
-          leerlingen.push({
-            id: uniqid(),
+        if (l.A === this.meta.leerjaar + this.meta.klas) {
+          const id = uniqid();
+          leerlingen[id] = {
+            id,
             voornaam: l.D,
             familienaam: l.C,
             punten: {}
-          });
+          };
         }
       });
 

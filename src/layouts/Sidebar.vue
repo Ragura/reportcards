@@ -7,12 +7,10 @@
       >
         <i class="material-icons mr-2">home</i>Home
       </li>
-      <div v-show="activeRapport.klas">
+      <div v-show="meta.klas">
         <li class="px-8 pt-2 pb-5 italic flex items-center bg-blue-600">
-          {{ activeRapport && activeRapport.leerjaar
-          }}{{ activeRapport && activeRapport.klas }}
-          {{ activeRapport && activeRapport.schooljaar }}-{{
-            (activeRapport && activeRapport.schooljaar) + 1
+          {{ meta.leerjaar }}{{ meta.klas }} {{ meta.schooljaar }}-{{
+            meta.schooljaar + 1
           }}
         </li>
         <li
@@ -48,7 +46,7 @@
 import { mapState, mapMutations } from "vuex";
 export default {
   computed: {
-    ...mapState(["activeRapport"])
+    ...mapState(["meta"])
   },
   methods: {
     ...mapMutations(["showModal"])

@@ -12,13 +12,21 @@ export const state = {
   modalVisible: false,
   modalComponent: null,
   modalData: {},
-  activeRapport: {
-    rapportBlocks: [],
-    leerlingen: []
+
+  meta: {
+    schooljaar: "",
+    leerjaar: 1,
+    klas: "",
+    periode: 1
   },
-  activeLeerlingId: "",
+
+  leerlingen: {},
+  evaluaties: {},
+  blocks: [],
+
   activePath: "",
-  rapportChanged: false,
+  activeLeerling: "",
+
   settings: {
     standardLocation: "",
     marginTop: 1.4,
@@ -29,13 +37,7 @@ export const state = {
   printing: false
 };
 
-export const getters = {
-  activeLeerling(state) {
-    return state.activeRapport.leerlingen.find(l => {
-      return l.id === state.activeLeerlingId;
-    });
-  }
-};
+export const getters = {};
 
 export const mutations = {
   showModal(state, componentName) {
@@ -48,63 +50,37 @@ export const mutations = {
   passModalData(state, modalData) {
     state.modalData = { ...modalData };
   },
-  setActiveRapport(state, { rapport, path }) {
-    state.activeRapport = { ...rapport };
-    state.activePath = path;
-  },
   updateSettings(state, settings) {
-    console.log(settings);
-
     state.settings = { ...settings };
   },
-  changeActiveLeerlingId(state, leerlingId) {
-    state.activeLeerlingId = leerlingId;
+  readRapport(state, { path, rapport }) {
+    state.activePath = path;
+    state.meta = rapport.meta;
+    state.leerlingen = rapport.leerlingen;
+    state.evaluaties = rapport.evaluaties;
+    state.blocks = rapport.blocks;
   },
-  updatePuntenLeerling(state, { leerlingId, key, value }) {
-    const indexOfLeerling = state.activeRapport.leerlingen.findIndex(
-      l => l.id === leerlingId
-    );
-    Vue.set(state.activeRapport.leerlingen[indexOfLeerling].punten, key, value);
-  },
-  updateRapportText(state, { line, value }) {
-    line.text = value;
-  },
-  printRapport(state, print) {
-    state.printing = print;
+  setActiveLeerling(state, id) {
+    this.activeLeerling = id;
   },
   addLeerling(state, { voornaam, familienaam }) {
-    state.activeRapport.leerlingen.push({
-      id: uniqid(),
+    const id = uniqid();
+    Vue.set(state.leerlingen, id, {
+      id,
       voornaam,
       familienaam,
       punten: {}
     });
   },
-  deleteLeerling(state, leerlingId) {
-    const leerlingIndex = state.activeRapport.leerlingen.findIndex(
-      l => l.id === leerlingId
-    );
-
-    if (leerlingIndex >= 0) {
-      state.activeRapport.leerlingen.splice(leerlingIndex, 1);
-    }
-  },
-  editLeerling(state, { leerlingId, voornaam, familienaam }) {
-    const leerlingIndex = state.activeRapport.leerlingen.findIndex(
-      l => l.id === leerlingId
-    );
-
-    if (leerlingIndex >= 0) {
-      state.activeRapport.leerlingen[leerlingIndex].voornaam = voornaam;
-      state.activeRapport.leerlingen[leerlingIndex].familienaam = familienaam;
-    }
-  },
   addLeerlingen(state, leerlingen) {
-    console.log(leerlingen);
-
-    state.activeRapport.leerlingen = state.activeRapport.leerlingen.concat(
-      leerlingen
-    );
+    state.leerlingen = { ...state.leerlingen, ...leerlingen };
+  },
+  updateLeerling(state, { id, voornaam, familienaam }) {
+    state.leerlingen[id].voornaam = voornaam;
+    state.leerlingen[id].familienaam = familienaam;
+  },
+  deleteLeerling(state, id) {
+    Vue.delete(state.leerlingen, id);
   }
 };
 
@@ -133,42 +109,66 @@ export const actions = {
     jsonfile.writeFileSync(path, settings, { spaces: 2 });
     commit("updateSettings", settings);
   },
-  setActiveRapport({ commit }, payload) {
-    commit("setActiveRapport", payload);
+
+  // Initialize new rapport
+  // Payload: path, rapport
+  createRapport({ commit, dispatch }, payload) {
+    commit("readRapport", payload);
+    dispatch("writeRapport");
   },
+
+  // Write rapport to file
   writeRapport({ state }) {
-    jsonfile.writeFile(state.activePath, state.activeRapport, {
-      spaces: 2
-    });
+    jsonfile.writeFileSync(
+      state.activePath,
+      {
+        meta: state.meta,
+        leerlingen: state.leerlingen,
+        evaluaties: state.evaluaties,
+        blocks: state.blocks
+      },
+      {
+        spaces: 2
+      }
+    );
   },
-  changeActiveLeerlingId({ commit }, leerlingId) {
-    commit("changeActiveLeerlingId", leerlingId);
+
+  // Load rapport from file
+  loadRapport({ commit }, path) {
+    const rapport = jsonfile.readFileSync(path, { spaces: 2 });
+    if (rapport) {
+      commit("readRapport", { path, rapport });
+    }
   },
-  updatePuntenLeerling({ commit, dispatch }, payload) {
-    commit("updatePuntenLeerling", payload);
-    dispatch("writeRapport");
+
+  // Set active leerling
+  setActiveLeerling({ commit }, id) {
+    commit("setActiveLeerling", id);
   },
-  updateRapportText({ commit, dispatch }, payload) {
-    commit("updateRapportText", payload);
-    dispatch("writeRapport");
-  },
-  printRapport({ commit }, payload) {
-    commit("printRapport", payload);
-  },
+
+  // Add new leerling
+  // Payload: voornaam, familienaam
   addLeerling({ commit, dispatch }, payload) {
     commit("addLeerling", payload);
     dispatch("writeRapport");
   },
-  deleteLeerling({ commit, dispatch }, leerlingId) {
-    commit("deleteLeerling", leerlingId);
-    dispatch("writeRapport");
-  },
-  editLeerling({ commit, dispatch }, payload) {
-    commit("editLeerling", payload);
-    dispatch("writeRapport");
-  },
+
+  // Add a batch of new leerlingen
   addLeerlingen({ commit, dispatch }, leerlingen) {
     commit("addLeerlingen", leerlingen);
+    dispatch("writeRapport");
+  },
+
+  // Update existing leerling
+  // Payload: id, voornaam, familienaam
+  updateLeerling({ commit, dispatch }, payload) {
+    commit("updateLeerling", payload);
+    dispatch("writeRapport");
+  },
+
+  // Delete existing leerling
+  deleteLeerling({ commit, dispatch }, id) {
+    commit("deleteLeerling", id);
     dispatch("writeRapport");
   }
 };

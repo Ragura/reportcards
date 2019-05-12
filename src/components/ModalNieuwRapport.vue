@@ -101,7 +101,6 @@
 </template>
 
 <script>
-const jsonfile = require("jsonfile");
 const { cloneDeep } = require("lodash");
 
 import uniqid from "uniqid";
@@ -126,7 +125,7 @@ export default {
   },
   methods: {
     ...mapMutations(["hideModal"]),
-    ...mapActions(["setActiveRapport"]),
+    ...mapActions(["createRapport"]),
     makeRapport() {
       const path = this.settings.standardLocation;
       const schooljaar = this.getSchooljaar();
@@ -138,17 +137,21 @@ export default {
       console.log(this.settings);
 
       const rapport = {
-        id: uniqid(),
-        schooljaar,
-        leerjaar,
-        periode,
-        klas,
+        meta: {
+          id: uniqid(),
+          schooljaar,
+          leerjaar,
+          periode,
+          klas
+        },
         ...cloneDeep(rapportTemplate)
       };
 
-      jsonfile.writeFileSync(fullPath, rapport, { spaces: 2 });
+      this.createRapport({
+        path: fullPath,
+        rapport
+      });
 
-      this.setActiveRapport({ rapport, path: fullPath });
       this.$router.push("/rapport");
       this.hideModal();
     },
