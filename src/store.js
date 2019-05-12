@@ -61,7 +61,7 @@ export const mutations = {
     state.blocks = rapport.blocks;
   },
   setActiveLeerling(state, id) {
-    this.activeLeerling = id;
+    state.activeLeerling = id;
   },
   addLeerling(state, { voornaam, familienaam }) {
     const id = uniqid();
@@ -81,6 +81,9 @@ export const mutations = {
   },
   deleteLeerling(state, id) {
     Vue.delete(state.leerlingen, id);
+  },
+  updatePunten(state, { leerlingId, evaluatieId, value }) {
+    Vue.set(state.leerlingen[leerlingId].punten, evaluatieId, value);
   }
 };
 
@@ -169,6 +172,13 @@ export const actions = {
   // Delete existing leerling
   deleteLeerling({ commit, dispatch }, id) {
     commit("deleteLeerling", id);
+    dispatch("writeRapport");
+  },
+
+  // Update punten of leerling
+  // Payload: leerlingId, evaluatieId, value
+  updatePunten({ commit, dispatch }, payload) {
+    commit("updatePunten", payload);
     dispatch("writeRapport");
   }
 };

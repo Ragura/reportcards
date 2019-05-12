@@ -2,34 +2,17 @@
   <div class="lijn border-b border-black flex items-center">
     <div
       class="tekst flex h-full flex-grow border-r border-black items-center text-sm"
-      :contenteditable="line.editable"
-      v-html="line.text"
-      @keypress.enter.prevent="$event.target.blur()"
-      @blur="
-        updateRapportText({
-          line,
-          value: $event.target.innerText
-        })
-      "
-    ></div>
+    >
+      {{ id ? evaluaties[id].text : "---" }}
+    </div>
     <div class="kleurblok flex-none h-full">
-      <score-color
-        v-show="line.valueKey"
-        :value="activeLeerling.punten[line.valueKey]"
-        @change="
-          updatePuntenLeerling({
-            leerlingId: activeLeerlingId,
-            key: line.valueKey,
-            value: $event
-          })
-        "
-      />
+      <score-color v-show="id" :value="leerlingen[activeLeerling].punten[id]" />
     </div>
   </div>
 </template>
 
 <script>
-import { mapState, mapGetters, mapActions } from "vuex";
+import { mapState } from "vuex";
 import ScoreColor from "@/components/ScoreColor.vue";
 
 export default {
@@ -38,17 +21,15 @@ export default {
     ScoreColor
   },
   props: {
-    line: {
-      type: Object
+    id: {
+      type: String,
+      default: ""
     }
   },
   computed: {
-    ...mapState(["activeLeerlingId"]),
-    ...mapGetters(["activeLeerling"])
+    ...mapState(["activeLeerling", "leerlingen", "evaluaties"])
   },
-  methods: {
-    ...mapActions(["updatePuntenLeerling", "updateRapportText"])
-  },
+  methods: {},
   created() {}
 };
 </script>

@@ -7,8 +7,8 @@
         v-model="selectedLeerling"
       >
         <option
-          v-for="leerling of activeRapport.leerlingen"
-          :key="leerling.id"
+          v-for="leerling of Object.values(leerlingen)"
+          :key="`select-${leerling.id}`"
           :value="leerling.id"
           >{{ leerling.familienaam }} {{ leerling.voornaam }}</option
         >
@@ -34,25 +34,34 @@
       </button>
     </div>
 
-    <div
-      class="page mx-auto border"
-      v-for="n of 3"
-      :key="n"
-      :style="{
-        padding: `${settings.marginTop}cm ${settings.marginRight}cm ${
-          settings.marginBottom
-        }cm ${settings.marginLeft}cm`
-      }"
-    >
-      <Header class="header" />
+    <template v-if="leerlingenArray.length">
+      <div
+        class="page mx-auto border"
+        v-for="n of 3"
+        :key="n"
+        :style="{
+          padding: `${settings.marginTop}cm ${settings.marginRight}cm ${
+            settings.marginBottom
+          }cm ${settings.marginLeft}cm`
+        }"
+      >
+        <Header class="header" />
+        <component
+          class="rapport-block"
+          v-for="block of Object.values(blocks)
+            .filter(b => b.page === n)
+            .sort((a, b) => a.order - b.order)"
+          :is="block.type"
+          :content="block.content"
+          :key="`block-${block.id}`"
+        />
+      </div>
+    </template>
 
-      <component
-        class="rapport-block"
-        v-for="block of activeRapport.rapportBlocks.filter(b => b.page === n)"
-        :is="block.type"
-        :content="block.content"
-        :key="block.id"
-      />
+    <div v-else>
+      <h2 class="text-2xl">
+        Voeg leerlingen toe vooraleer de rapporten zichtbaar worden.
+      </h2>
     </div>
   </div>
 </template>
@@ -88,11 +97,22 @@ export default {
   },
   watch: {
     selectedLeerling(newValue) {
-      this.changeActiveLeerlingId(newValue);
+      this.setActiveLeerling(newValue);
     }
   },
   computed: {
-    ...mapState(["activeRapport", "activeLeerling", "settings", "activePath"])
+    ...mapState([
+      "meta",
+      "evaluaties",
+      "blocks",
+      "leerlingen",
+      "activeLeerling",
+      "settings",
+      "activePath"
+    ]),
+    leerlingenArray() {
+      return Object.values(this.leerlingen);
+    }
   },
   methods: {
     printen() {
@@ -104,20 +124,18 @@ export default {
         message: "Kies locatie om PDF op te slaan."
       });
 
-      if (!path) return;
+      if (!path[0]) return;
       this.printRapport(true);
       ipc.send("print-to-pdf", path);
     },
     ...mapMutations([`showModal`]),
-    ...mapActions([
-      "updateRapportInhoud",
-      "changeActiveLeerlingId",
-      "printRapport"
-    ])
+    ...mapActions(["updateRapportInhoud", "setActiveLeerling", "printRapport"])
   },
   created() {
-    this.changeActiveLeerlingId(this.activeRapport.leerlingen[0].id);
-    this.selectedLeerling = this.activeRapport.leerlingen[0].id;
+    if (this.leerlingenArray.length > 0) {
+      this.selectedLeerling = this.leerlingenArray[0].id;
+      this.setActiveLeerling(this.leerlingenArray[0].id);
+    }
 
     ipc.on("wrote-pdf", (event, path) => {
       // eslint-disable-next-line

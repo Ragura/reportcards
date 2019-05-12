@@ -2,25 +2,21 @@
   <header class="flex justify-between items-center text-gray-700">
     <div class="header-block uppercase">{{ seizoen }}rapport</div>
     <div class="header-block">
-      {{ activeLeerling.voornaam }} {{ activeLeerling.familienaam }}
+      {{ leerlingen[activeLeerling].voornaam }}
+      {{ leerlingen[activeLeerling].familienaam }}
     </div>
-    <div class="header-block">
-      Klas {{ activeRapport.leerjaar }}{{ activeRapport.klas }}
-    </div>
+    <div class="header-block">Klas {{ meta.leerjaar }}{{ meta.klas }}</div>
   </header>
 </template>
 
 <script>
-import { mapState, mapGetters } from "vuex";
+import { mapState } from "vuex";
 
 export default {
   computed: {
-    ...mapState(["activeRapport"]),
-    ...mapGetters(["activeLeerling"]),
+    ...mapState(["leerlingen", "activeLeerling", "meta"]),
     seizoen() {
-      console.log(this.activeRapport.periode);
-
-      switch (this.activeRapport.periode) {
+      switch (this.meta.periode) {
         case "1":
           return "Herfst";
         case "2":

@@ -2,29 +2,27 @@
   <div class="flex flex-col border border-b-0 border-black">
     <zill-header :zills="content.icons">{{ content.zillHeader }}</zill-header>
 
-    <template v-if="content.layout === 'row'">
-      <div v-for="block of content.blocks" :key="block.title">
-        <score-title>{{ block.title }}</score-title>
-        <score-line
-          v-for="line of block.lines"
-          :key="line.valueKey"
-          :line="line"
-        />
-      </div>
+    <template v-if="content.layout === 'periode'">
+      <score-title>Jaarpunten</score-title>
+      <score-line v-for="id of content.jaarpunten" :key="id" :id="id" />
+
+      <score-title>Periodepunten</score-title>
+      <score-line v-for="id of content.periodepunten" :key="id" :id="id" />
+
       <score-comments
         class="row-commentaar border-b border-black"
         @blur.native="
-          updatePuntenLeerling({
-            leerlingId: activeLeerlingId,
-            key: content.valueKey,
+          updatePunten({
+            leerlingId: leerlingen[activeLeerling].id,
+            evaluatieId: content.commentKey,
             value: $event.target.innerText
           })
         "
-        v-html="activeLeerling.punten[content.valueKey]"
+        v-html="leerlingen[activeLeerling].punten[content.commentKey]"
       ></score-comments>
     </template>
 
-    <template v-else-if="content.layout === 'column'">
+    <!-- <template v-else-if="content.layout === 'column'">
       <div
         class="flex flex-wrap w-full"
         v-for="block of content.blocks"
@@ -54,12 +52,12 @@
           v-html="activeLeerling.punten[block.valueKey]"
         ></score-comments>
       </div>
-    </template>
+    </template> -->
   </div>
 </template>
 
 <script>
-import { mapState, mapGetters, mapActions } from "vuex";
+import { mapState, mapActions } from "vuex";
 
 import ZillHeader from "@/components/ZillHeader.vue";
 import ScoreTitle from "@/components/ScoreTitle.vue";
@@ -80,11 +78,10 @@ export default {
     }
   },
   computed: {
-    ...mapState(["activeRapport", "activeLeerlingId"]),
-    ...mapGetters(["activeLeerling"])
+    ...mapState(["leerlingen", "activeLeerling"])
   },
   methods: {
-    ...mapActions(["updatePuntenLeerling"])
+    ...mapActions(["updatePunten"])
   },
   created() {}
 };
