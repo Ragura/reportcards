@@ -3,6 +3,7 @@ import Router from "vue-router";
 import Home from "./views/Home.vue";
 import Rapport from "./views/Rapport.vue";
 import Leerlingen from "./views/Leerlingen.vue";
+import Punten from "./views/Punten.vue";
 
 Vue.use(Router);
 
@@ -19,6 +20,11 @@ export default new Router({
       path: "/leerlingen",
       name: "leerlingen",
       component: Leerlingen
+    },
+    {
+      path: "/punten",
+      name: "punten",
+      component: Punten
     },
     {
       path: "/",

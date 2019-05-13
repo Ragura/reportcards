@@ -134,7 +134,6 @@ export default {
       const periode = this.rapport.periode;
 
       const fullPath = `${path}/${schooljaar}_${leerjaar}${klas}_${periode}.rap`;
-      console.log(this.settings);
 
       const rapport = {
         meta: {

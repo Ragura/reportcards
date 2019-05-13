@@ -47,7 +47,7 @@ export default {
         message: "Kies rapportbestand om het te openen."
       });
 
-      if (!rapportPath[0]) return;
+      if (!rapportPath) return;
 
       this.loadRapport(rapportPath[0]);
       // this.$router.push("/rapport");

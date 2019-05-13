@@ -120,7 +120,7 @@ export default {
         message: "Kies rapportbestand om leerlingen uit te importeren."
       });
 
-      if (!rapportPath[0]) return;
+      if (!rapportPath) return;
 
       const rapport = jsonfile.readFileSync(rapportPath[0]);
       if (!rapport) return;
@@ -135,7 +135,7 @@ export default {
         message: "Kies een Excel bestand om leerlingen uit te importeren."
       });
 
-      if (!path[0]) return;
+      if (!path) return;
 
       const workbook = xlsx.readFile(path[0]);
 

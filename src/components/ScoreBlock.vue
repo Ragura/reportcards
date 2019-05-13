@@ -59,6 +59,32 @@
         </div>
       </div>
     </template>
+
+    <template v-else-if="content.layout === 'rij'">
+      <div
+        class="flex"
+        v-for="(punt, index) of content.punten"
+        :key="`punt-${punt}`"
+      >
+        <score-line
+          v-if="evaluaties[punt].type === 'points'"
+          :id="punt"
+          :note="content.notes[index]"
+          class="w-1/2"
+        />
+        <color-line
+          v-else-if="evaluaties[punt].type === 'color'"
+          :id="punt"
+          :note="content.notes[index]"
+          class="w-1/2"
+        />
+        <div
+          class="note w-1/2 border-b border-l border-black flex items-center"
+        >
+          {{ content.notes[index] }}
+        </div>
+      </div>
+    </template>
   </div>
 </template>
 
@@ -68,6 +94,7 @@ import { mapState, mapActions } from "vuex";
 import ZillHeader from "@/components/ZillHeader.vue";
 import ScoreTitle from "@/components/ScoreTitle.vue";
 import ColorLine from "@/components/ColorLine.vue";
+import ScoreLine from "@/components/ScoreLine.vue";
 import ScoreComments from "@/components/ScoreComments.vue";
 
 export default {
@@ -75,6 +102,7 @@ export default {
   components: {
     ScoreTitle,
     ColorLine,
+    ScoreLine,
     ScoreComments,
     ZillHeader
   },
@@ -84,7 +112,7 @@ export default {
     }
   },
   computed: {
-    ...mapState(["leerlingen", "activeLeerling"])
+    ...mapState(["leerlingen", "activeLeerling", "evaluaties"])
   },
   methods: {
     ...mapActions(["updatePunten"])
@@ -102,5 +130,9 @@ export default {
 
 .row-commentaar {
   height: 2.4cm;
+}
+
+.note {
+  padding-left: 0.2cm;
 }
 </style>

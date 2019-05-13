@@ -5,34 +5,25 @@
     >
       {{ id ? evaluaties[id].text : "---" }}
     </div>
-    <div class="kleurblok flex-none h-full">
+    <div class="pointsblok flex-none h-full">
       <div v-if="note" class="flex h-full items-center justify-center">
         <i class="material-icons mr-2">arrow_forward</i>
       </div>
-      <score-color
+      <div
+        class="flex h-full items-center justify-center"
         v-else-if="id && !note"
-        :value="leerlingen[activeLeerling].punten[colorKey]"
-        @change="
-          updatePunten({
-            leerlingId: activeLeerling,
-            evaluatieId: colorKey,
-            value: $event
-          })
-        "
-      />
+      >
+        {{ average }}
+      </div>
     </div>
   </div>
 </template>
 
 <script>
-import { mapState, mapActions } from "vuex";
-import ScoreColor from "@/components/ScoreColor.vue";
+import { mapState } from "vuex";
 
 export default {
-  name: "ColorLine",
-  components: {
-    ScoreColor
-  },
+  name: "ScoreLine",
   props: {
     id: {
       type: String,
@@ -45,15 +36,19 @@ export default {
   },
   computed: {
     ...mapState(["activeLeerling", "leerlingen", "evaluaties"]),
-    colorKey() {
-      return this.id && this.evaluaties[this.id].amount === 1
-        ? this.id
-        : `${this.id}-final`;
+    average() {
+      const punten = this.leerlingen[this.activeLeerling].punten[this.id].map(
+        (punt, index) => {
+          return punt * (10 / this.evaluaties[this.id].maximums[index]);
+        }
+      );
+      const total = punten.reduce((total, value) => {
+        return (total += value);
+      }, 0);
+      return (total / punten.length).toFixed(1);
     }
   },
-  methods: {
-    ...mapActions(["updatePunten"])
-  },
+  methods: {},
   created() {}
 };
 </script>
@@ -68,7 +63,7 @@ export default {
   padding-right: 0.2cm;
 }
 
-.kleurblok {
+.pointsblok {
   width: 2cm;
 }
 </style>

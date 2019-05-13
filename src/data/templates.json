@@ -18,7 +18,8 @@
         "d2a2": [2, 1, 2, 3],
         "d2a2-final": 2,
         "getallenkennis": [6, 7, 6, 8],
-        "rekenvaardigheid": [4, 9, 5],
+        "rekenvaardigheid": [3, 2, 4],
+        "rekenvaardigheid-final": 3,
         "metendrekenen": [3, 6, 9, 8, 7],
         "meetkunde": [5, 10, 10, 10, 10, 9],
         "leefhouding-commentaar": "Jantje doet het al bij al goed!"
@@ -121,7 +122,7 @@
       "id": "muzischeontwikkeling",
       "type": "ScoreBlock",
       "page": 2,
-      "order": 1,
+      "order": 2,
       "content": {
         "layout": "domein",
         "zillHeader": "Muzische ontwikkeling",
@@ -138,13 +139,13 @@
       "id": "wiskundigdenken",
       "type": "ScoreBlock",
       "page": 2,
-      "order": 2,
+      "order": 3,
       "content": {
         "layout": "rij",
         "zillHeader": "Logisch en wiskundig denken",
         "icons": [7, 5],
         "punten": ["getallenkennis", "rekenvaardigheid", "metendrekenen", "meetkunde"],
-        "notes": ["nota1", "nota2", "nota3", "nota4"]
+        "notes": ["", "", "", "later"]
       }
     }
   }
