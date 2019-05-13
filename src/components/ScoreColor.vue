@@ -30,7 +30,7 @@ export default {
   },
   data() {
     return {
-      colors: ["red", "yellow", "lightgreen", "lightblue"],
+      colors: ["white", "red", "yellow", "lightgreen", "lightblue"],
       displayColors: false
     };
   }

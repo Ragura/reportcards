@@ -6,17 +6,27 @@
       {{ id ? evaluaties[id].text : "---" }}
     </div>
     <div class="kleurblok flex-none h-full">
-      <score-color v-show="id" :value="leerlingen[activeLeerling].punten[id]" />
+      <score-color
+        v-show="id"
+        :value="leerlingen[activeLeerling].punten[colorKey]"
+        @change="
+          updatePunten({
+            leerlingId: activeLeerling,
+            evaluatieId: colorKey,
+            value: $event
+          })
+        "
+      />
     </div>
   </div>
 </template>
 
 <script>
-import { mapState } from "vuex";
+import { mapState, mapActions } from "vuex";
 import ScoreColor from "@/components/ScoreColor.vue";
 
 export default {
-  name: "ScoreLine",
+  name: "ColorLine",
   components: {
     ScoreColor
   },
@@ -27,9 +37,16 @@ export default {
     }
   },
   computed: {
-    ...mapState(["activeLeerling", "leerlingen", "evaluaties"])
+    ...mapState(["activeLeerling", "leerlingen", "evaluaties"]),
+    colorKey() {
+      return this.id && this.evaluaties[this.id].amount === 1
+        ? this.id
+        : `${this.id}-final`;
+    }
   },
-  methods: {},
+  methods: {
+    ...mapActions(["updatePunten"])
+  },
   created() {}
 };
 </script>

@@ -1,5 +1,8 @@
 <template>
-  <div class="commentaar text-sm" contenteditable></div>
+  <textarea
+    type="text"
+    class="commentaar text-sm overflow-hidden resize-none"
+  ></textarea>
 </template>
 
 <script>
@@ -10,6 +13,6 @@ export default {
 
 <style>
 .commentaar {
-  padding: 0.3cm;
+  padding: 0.2cm;
 }
 </style>

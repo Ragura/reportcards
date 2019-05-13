@@ -83,9 +83,8 @@
     },
     "rekenvaardigheid": {
       "id": "rekenvaardigheid",
-      "type": "points",
+      "type": "color",
       "amount": 6,
-      "maximums": [10, 10, 10, 10, 10, 10],
       "text": "Rekenvaardigheid"
     },
     "metendrekenen": {
@@ -127,9 +126,10 @@
         "layout": "domein",
         "zillHeader": "Muzische ontwikkeling",
         "icons": [4, 5, 2],
-        "subtitel": "Open staan voor nieuwe kunstervaringen - interesse tonen in kunst en ervan genieten - aanvaarden dat kunstbeleving persoonlijk is",
+        "subtitel1": "Open staan voor nieuwe kunstervaringen - interesse tonen in kunst en ervan genieten - aanvaarden dat kunstbeleving persoonlijk is",
         "domeinen1": ["d1a1", "d1a2"],
         "commentKey1": "domein1-commentaar",
+        "subtitel2": "Kenmerken van een kunstwerk (bouwstenen, werkvorm, vormgevingsmiddelen) ontdekken en met eigen woorden beschrijven",
         "domeinen2": ["d2a1", "d2a2"],
         "commentKey2": "domein2-commentaar"
       }

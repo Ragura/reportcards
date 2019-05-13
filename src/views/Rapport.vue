@@ -71,10 +71,6 @@ import { mapState, mapMutations, mapActions } from "vuex";
 import Header from "@/layouts/Header.vue";
 import Batteries from "@/components/Batteries.vue";
 import ScoreBlock from "@/components/ScoreBlock.vue";
-import ZillHeader from "@/components/ZillHeader.vue";
-import ScoreTitle from "@/components/ScoreTitle.vue";
-import ScoreLine from "@/components/ScoreLine.vue";
-import ScoreComments from "@/components/ScoreComments.vue";
 
 const ipc = require("electron").ipcRenderer;
 const { dialog } = require("electron").remote;
@@ -89,11 +85,7 @@ export default {
   components: {
     Header,
     Batteries,
-    ScoreBlock,
-    ScoreTitle,
-    ScoreLine,
-    ScoreComments,
-    ZillHeader
+    ScoreBlock
   },
   watch: {
     selectedLeerling(newValue) {
