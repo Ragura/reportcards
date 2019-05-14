@@ -5,24 +5,20 @@
     </h1>
 
     <accordion
-      v-for="block of Object.values(blocks)"
+      v-for="block of Object.values(blocks).filter(b => !b.rapportOnly)"
       :key="`block-${block.id}`"
       titleclass="bg-blue-400 text-white"
     >
       <div slot="title">{{ block.content.zillHeader }}</div>
       <div slot="content">
-        <template v-if="block.content.layout === 'domein'">
-          <accordion
-            v-for="punt of block.content.domeinen1.concat(
-              block.content.domeinen2
-            )"
-            :key="punt"
-            titleclass="bg-blue-300 text-white"
-          >
-            <div slot="title">{{ evaluaties[punt].text }}</div>
-            <score-table :punt="punt" slot="content" />
-          </accordion>
-        </template>
+        <accordion
+          v-for="punt of getPunten(block)"
+          :key="punt"
+          titleclass="bg-blue-300 text-white"
+        >
+          <div slot="title">{{ evaluaties[punt].text }}</div>
+          <score-table :punt="punt" slot="content" />
+        </accordion>
       </div>
     </accordion>
   </div>
@@ -49,6 +45,16 @@ export default {
       } else {
         this.openedBlock = id;
       }
+    },
+    getPunten(block) {
+      if (block.content.layout === "domein") {
+        return block.content.domeinen1.concat(block.content.domeinen2);
+      } else if (block.content.layout === "rij") {
+        return block.content.punten;
+      } else if (block.content.layout === "periode") {
+        return block.content.jaarpunten.concat(block.content.periodepunten);
+      }
+      return [];
     }
   }
 };

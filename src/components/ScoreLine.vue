@@ -37,6 +37,8 @@ export default {
   computed: {
     ...mapState(["activeLeerling", "leerlingen", "evaluaties"]),
     average() {
+      if (!this.leerlingen[this.activeLeerling].punten[this.id]) return "";
+
       const punten = this.leerlingen[this.activeLeerling].punten[this.id].map(
         (punt, index) => {
           return punt * (10 / this.evaluaties[this.id].maximums[index]);
@@ -45,7 +47,7 @@ export default {
       const total = punten.reduce((total, value) => {
         return (total += value);
       }, 0);
-      return (total / punten.length).toFixed(1);
+      return parseFloat((total / punten.length).toFixed(1));
     }
   },
   methods: {},

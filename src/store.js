@@ -84,6 +84,10 @@ export const mutations = {
   },
   updatePunten(state, { leerlingId, evaluatieId, value }) {
     Vue.set(state.leerlingen[leerlingId].punten, evaluatieId, value);
+  },
+  updatePuntenArray(state, { leerlingId, evaluatieId, index, value }) {
+    if (isNaN(value)) value = null;
+    Vue.set(state.leerlingen[leerlingId].punten[evaluatieId], index, value);
   }
 };
 
@@ -179,6 +183,13 @@ export const actions = {
   // Payload: leerlingId, evaluatieId, value
   updatePunten({ commit, dispatch }, payload) {
     commit("updatePunten", payload);
+    dispatch("writeRapport");
+  },
+
+  // Update punten array of leerling
+  // Payload: leerlingId, evaluatieId, index, value
+  updatePuntenArray({ commit, dispatch }, payload) {
+    commit("updatePuntenArray", payload);
     dispatch("writeRapport");
   }
 };

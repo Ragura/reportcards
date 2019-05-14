@@ -106,6 +106,7 @@
   "blocks": {
     "leefhouding": {
       "id": "leefhouding",
+      "rapportOnly": true,
       "type": "ScoreBlock",
       "page": 1,
       "order": 1,
