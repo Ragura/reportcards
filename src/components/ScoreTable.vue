@@ -10,7 +10,7 @@
       </tr>
     </thead>
     <tbody>
-      <tr class="h-3">
+      <tr class="h-2">
         <!-- SPACER ROW -->
       </tr>
       <tr
@@ -22,22 +22,25 @@
         <td class="">{{ leerling.voornaam }} {{ leerling.familienaam }}</td>
         <!-- Score -->
         <td
-          class="text-center h-10"
+          class="text-center h-8"
           v-for="n of evaluatie.amount"
           :key="punt + n"
         >
           <table-color
+            class="border border-gray-300"
             v-if="evaluatie.type === 'color'"
             :value="leerling.punten[punt] && leerling.punten[punt][n - 1]"
             @change="updateColorArray(n - 1, leerling.id, punt, $event)"
           />
           <table-select
+            class="border border-gray-300"
             v-if="evaluatie.type === 'level'"
             :value="leerling.punten[punt] && leerling.punten[punt][n - 1]"
             :options="evaluatie.levels"
             @change="updateLevelsArray(n - 1, leerling.id, punt, $event)"
           />
           <p
+            class="border border-gray-300"
             v-else-if="evaluatie.type === 'points'"
             :data-previous="
               leerling.punten[punt] ? leerling.punten[punt][n - 1] : ''
@@ -48,7 +51,7 @@
           ></p>
         </td>
         <!-- Gemiddelde per leerling -->
-        <td class="h-10 text-center">
+        <td class="h-8 text-center">
           <table-color
             v-if="evaluatie.type === 'color'"
             :value="

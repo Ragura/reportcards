@@ -87,6 +87,18 @@
       "amount": 1,
       "text": "Ik kan een (eigen) project zelfstandig bedenken – plannen – voorbereiden – uitvoeren"
     },
+    "inzetmeesterjuf": {
+      "id": "inzetmeesterjuf",
+      "type": "battery",
+      "amount": 1,
+      "text": "Mijn inzet volgens de meester/juf"
+    },
+    "inzetmezelf": {
+      "id": "inzetmezelf",
+      "type": "battery",
+      "amount": 1,
+      "text": "Mijn inzet volgens mezelf"
+    },
     "d1a1": {
       "id": "d1a1",
       "type": "color",
@@ -253,6 +265,16 @@
         "commentKey": "lerenleren-commentaar",
         "jaarpunten": ["onthouden", "opzoeken", "weekplanning"],
         "periodepunten": ["onderzoeken", "inschatten", "project"]
+      }
+    },
+    "inzet": {
+      "id": "inzet",
+      "rapportOnly": true,
+      "type": "Batteries",
+      "page": 1,
+      "order": 3,
+      "content": {
+        "punten": ["inzetmeesterjuf", "inzetmezelf"]
       }
     },
     "muzischeontwikkeling": {

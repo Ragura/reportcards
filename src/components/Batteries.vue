@@ -2,19 +2,26 @@
   <div class="batteries w-full border border-black flex">
     <!-- Left column -->
     <div
-      class="flex flex-wrap w-1/2 border-r border-black flex justify-around items-center"
+      v-for="i of 2"
+      :key="`batteryside-${i}`"
+      :class="{ 'border-r': i === 1 }"
+      class="flex flex-wrap w-1/2 border-black flex justify-around items-center"
     >
-      <h2 class="w-full font-bold">{{ content.left.text }}</h2>
-      <div class="battery" v-for="n of 4" :key="`battery-left-${n}`">
+      <h2 class="w-full font-bold">
+        {{ evaluaties[content.punten[i - 1]].text }}
+      </h2>
+      <div class="battery" v-for="n of 4" :key="`battery-${i}-${n}`">
         <BatteryCircle
-          v-show="activeLeerling.punten[content.left.valueKey] === n"
+          v-show="
+            leerlingen[activeLeerling].punten[content.punten[i - 1]] === n
+          "
           class="circle"
         />
         <img
           @click="
-            updatePuntenLeerling({
-              leerlingId: activeLeerlingId,
-              key: content.left.valueKey,
+            updatePunten({
+              leerlingId: activeLeerling,
+              evaluatieId: content.punten[i - 1],
               value: n
             })
           "
@@ -24,7 +31,7 @@
       </div>
     </div>
     <!-- Right column -->
-    <div class="flex flex-wrap w-1/2 flex justify-around items-center">
+    <!-- <div class="flex flex-wrap w-1/2 flex justify-around items-center">
       <h2 class="w-full font-bold">{{ content.right.text }}</h2>
       <div class="battery" v-for="n of 4" :key="`battery-right-${n}`">
         <BatteryCircle
@@ -43,12 +50,12 @@
           :src="`/images/battery${n}.png`"
         />
       </div>
-    </div>
+    </div> -->
   </div>
 </template>
 
 <script>
-import { mapState, mapGetters, mapActions } from "vuex";
+import { mapState, mapActions } from "vuex";
 import BatteryCircle from "@/components/BatteryCircle.vue";
 
 export default {
@@ -61,11 +68,10 @@ export default {
     }
   },
   computed: {
-    ...mapState(["activeRapport", "activeLeerlingId"]),
-    ...mapGetters(["activeLeerling"])
+    ...mapState(["leerlingen", "evaluaties", "activeLeerling"])
   },
   methods: {
-    ...mapActions(["updatePuntenLeerling"])
+    ...mapActions(["updatePunten"])
   }
 };
 </script>

@@ -1,7 +1,7 @@
 <template>
   <div class="lijn border-b border-black flex items-center">
     <div
-      class="tekst flex h-full flex-grow border-r border-black items-center text-sm"
+      class="tekst flex h-full flex-grow border-r border-black items-center text-sm leading-tight"
     >
       {{ id ? evaluaties[id].text : "---" }}
     </div>

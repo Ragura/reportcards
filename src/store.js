@@ -50,6 +50,9 @@ export const mutations = {
   passModalData(state, modalData) {
     state.modalData = { ...modalData };
   },
+  printRapport(state, print) {
+    state.printing = print;
+  },
   updateSettings(state, settings) {
     state.settings = { ...settings };
   },
@@ -86,7 +89,6 @@ export const mutations = {
     Vue.set(state.leerlingen[leerlingId].punten, evaluatieId, value);
   },
   updatePuntenArray(state, { leerlingId, evaluatieId, index, value }) {
-    // if (typeof value !== "number") value = null;
     Vue.set(state.leerlingen[leerlingId].punten[evaluatieId], index, value);
   },
   updateMaximums(state, { evaluatieId, value }) {
@@ -101,6 +103,9 @@ export const mutations = {
 export const actions = {
   passModalData({ commit }, modalData) {
     commit("passModalData", modalData);
+  },
+  printRapport({ commit }, payload) {
+    commit("printRapport", payload);
   },
   fetchSettings({ commit, dispatch }) {
     const path = app.getPath("userData");
