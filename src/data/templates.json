@@ -51,29 +51,65 @@
       "amount": 1,
       "text": "Ik kan zelfbewust en zelfzeker mijn werk presenteren voor de klas"
     },
+    "onthouden": {
+      "id": "onthouden",
+      "type": "color",
+      "amount": 1,
+      "text": "Ik kan vlot (leerstof) onthouden (door herhaling – oefenen – instuderen)"
+    },
+    "opzoeken": {
+      "id": "opzoeken",
+      "type": "color",
+      "amount": 1,
+      "text": "Wat ik niet weet, zoek ik zelf op"
+    },
+    "weekplanning": {
+      "id": "weekplanning",
+      "type": "color",
+      "amount": 1,
+      "text": "Ik kan mijn taken en lessen opnemen in een haalbare weekplanning"
+    },
+    "onderzoeken": {
+      "id": "onderzoeken",
+      "type": "color",
+      "amount": 1,
+      "text": "Ik kan een probleem onderzoeken door mogelijkheden uit te proberen en mezelf vragen te stellen, waarbij ik gebruik wat ik al weet."
+    },
+    "inschatten": {
+      "id": "inschatten",
+      "type": "color",
+      "amount": 1,
+      "text": "Ik kan zelf juist inschatten in welke niveaugroep ik best aan de slag ga"
+    },
+    "project": {
+      "id": "project",
+      "type": "color",
+      "amount": 1,
+      "text": "Ik kan een (eigen) project zelfstandig bedenken – plannen – voorbereiden – uitvoeren"
+    },
     "d1a1": {
       "id": "d1a1",
       "type": "color",
       "amount": 6,
-      "text": "Domein Activiteit 1"
+      "text": "DOMEIN - Activiteit"
     },
     "d1a2": {
       "id": "d1a2",
       "type": "color",
       "amount": 6,
-      "text": "Domein Activiteit 2"
+      "text": "DOMEIN - Activiteit"
     },
     "d2a1": {
       "id": "d2a1",
       "type": "color",
       "amount": 6,
-      "text": "Domein Activiteit 1"
+      "text": "DOMEIN - Activiteit"
     },
     "d2a2": {
       "id": "d2a2",
       "type": "color",
       "amount": 6,
-      "text": "Domein Activiteit 2"
+      "text": "DOMEIN - Activiteit"
     },
     "getallenkennis": {
       "id": "getallenkennis",
@@ -84,8 +120,9 @@
     },
     "rekenvaardigheid": {
       "id": "rekenvaardigheid",
-      "type": "color",
+      "type": "points",
       "amount": 6,
+      "maximums": [10, 10, 10, 10, 10, 10],
       "text": "Rekenvaardigheid"
     },
     "metendrekenen": {
@@ -101,6 +138,90 @@
       "amount": 6,
       "maximums": [10, 10, 10, 10, 10, 10],
       "text": "Meetkunde"
+    },
+    "luisteren": {
+      "id": "luisteren",
+      "type": "points",
+      "amount": 6,
+      "maximums": [10, 10, 10, 10, 10, 10],
+      "text": "Luisteren"
+    },
+    "spreken": {
+      "id": "spreken",
+      "type": "color",
+      "amount": 6,
+      "maximums": [10, 10, 10, 10, 10, 10],
+      "text": "Spreken"
+    },
+    "spelling": {
+      "id": "spelling",
+      "type": "points",
+      "amount": 6,
+      "maximums": [10, 10, 10, 10, 10, 10],
+      "text": "Spelling"
+    },
+    "schrijven": {
+      "id": "schrijven",
+      "type": "color",
+      "amount": 6,
+      "maximums": [10, 10, 10, 10, 10, 10],
+      "text": "Toegepast schrijven"
+    },
+    "taalbeschouwing": {
+      "id": "taalbeschouwing",
+      "type": "points",
+      "amount": 6,
+      "maximums": [10, 10, 10, 10, 10, 10],
+      "text": "Taalbeschouwing"
+    },
+    "leesvaardigheid": {
+      "id": "leesvaardigheid",
+      "type": "level",
+      "levels": ["E1", "E2", "E3", "E4", "E5", "E6"],
+      "amount": 6,
+      "text": "Leesvaardigheig (AVI)"
+    },
+    "begrijpendlezen": {
+      "id": "begrijpendlezen",
+      "type": "points",
+      "amount": 6,
+      "maximums": [10, 10, 10, 10, 10, 10],
+      "text": "Begrijpend lezen"
+    },
+    "luisterenspreken": {
+      "id": "luisterenspreken",
+      "type": "points",
+      "amount": 6,
+      "maximums": [10, 10, 10, 10, 10, 10],
+      "text": "Luisteren & spreken"
+    },
+    "lezenschrijven": {
+      "id": "lezenschrijven",
+      "type": "points",
+      "amount": 6,
+      "maximums": [10, 10, 10, 10, 10, 10],
+      "text": "Lezen & schrijven"
+    },
+    "zill1": {
+      "id": "zill1",
+      "type": "points",
+      "amount": 6,
+      "maximums": [10, 10, 10, 10, 10, 10],
+      "text": "Zill-thema 1"
+    },
+    "zill2": {
+      "id": "zill2",
+      "type": "points",
+      "amount": 6,
+      "maximums": [10, 10, 10, 10, 10, 10],
+      "text": "Zill-thema 2"
+    },
+    "zill3": {
+      "id": "zill3",
+      "type": "points",
+      "amount": 6,
+      "maximums": [10, 10, 10, 10, 10, 10],
+      "text": "Zill-thema 3"
     }
   },
   "blocks": {
@@ -119,19 +240,34 @@
         "periodepunten": ["neen", "zelfbewust"]
       }
     },
+    "lerenleren": {
+      "id": "lerenleren",
+      "rapportOnly": true,
+      "type": "ScoreBlock",
+      "page": 1,
+      "order": 2,
+      "content": {
+        "layout": "periode",
+        "zillHeader": "Leren leren",
+        "icons": [4, 5, 2],
+        "commentKey": "lerenleren-commentaar",
+        "jaarpunten": ["onthouden", "opzoeken", "weekplanning"],
+        "periodepunten": ["onderzoeken", "inschatten", "project"]
+      }
+    },
     "muzischeontwikkeling": {
       "id": "muzischeontwikkeling",
       "type": "ScoreBlock",
       "page": 2,
-      "order": 2,
+      "order": 4,
       "content": {
         "layout": "domein",
         "zillHeader": "Muzische ontwikkeling",
         "icons": [4, 5, 2],
-        "subtitel1": "Open staan voor nieuwe kunstervaringen - interesse tonen in kunst en ervan genieten - aanvaarden dat kunstbeleving persoonlijk is",
+        "subtitel1": "MUxx 0: ...",
         "domeinen1": ["d1a1", "d1a2"],
         "commentKey1": "domein1-commentaar",
-        "subtitel2": "Kenmerken van een kunstwerk (bouwstenen, werkvorm, vormgevingsmiddelen) ontdekken en met eigen woorden beschrijven",
+        "subtitel2": "MUxx 0: ...",
         "domeinen2": ["d2a1", "d2a2"],
         "commentKey2": "domein2-commentaar"
       }
@@ -140,13 +276,48 @@
       "id": "wiskundigdenken",
       "type": "ScoreBlock",
       "page": 2,
-      "order": 3,
+      "order": 5,
       "content": {
         "layout": "rij",
         "zillHeader": "Logisch en wiskundig denken",
         "icons": [7, 5],
-        "punten": ["getallenkennis", "rekenvaardigheid", "metendrekenen", "meetkunde"],
-        "notes": ["", "", "", "later"]
+        "punten": ["getallenkennis", "rekenvaardigheid", "metendrekenen", "meetkunde"]
+      }
+    },
+    "taalontwikkeling": {
+      "id": "taalontwikkeling",
+      "type": "ScoreBlock",
+      "page": 2,
+      "order": 6,
+      "content": {
+        "layout": "rij",
+        "zillHeader": "Taalontwikkeling Nederlands",
+        "icons": [9, 2, 6],
+        "punten": ["luisteren", "spreken", "spelling", "schrijven", "taalbeschouwing", "leesvaardigheid", "begrijpendlezen"]
+      }
+    },
+    "frans": {
+      "id": "frans",
+      "type": "ScoreBlock",
+      "page": 3,
+      "order": 7,
+      "content": {
+        "layout": "rij",
+        "zillHeader": "Taalontwikkeling Frans",
+        "icons": [9, 2, 6],
+        "punten": ["luisterenspreken", "lezenschrijven"]
+      }
+    },
+    "thema": {
+      "id": "thema",
+      "type": "ScoreBlock",
+      "page": 3,
+      "order": 8,
+      "content": {
+        "layout": "rij",
+        "zillHeader": "ORIËNTATIE OP DE WERELD - Thema mens & ...",
+        "icons": [6, 2],
+        "punten": ["zill1", "zill2", "zill3"]
       }
     }
   }

@@ -31,6 +31,12 @@
             :value="leerling.punten[punt] && leerling.punten[punt][n - 1]"
             @change="updateColorArray(n - 1, leerling.id, punt, $event)"
           />
+          <table-select
+            v-if="evaluatie.type === 'level'"
+            :value="leerling.punten[punt] && leerling.punten[punt][n - 1]"
+            :options="evaluatie.levels"
+            @change="updateLevelsArray(n - 1, leerling.id, punt, $event)"
+          />
           <p
             v-else-if="evaluatie.type === 'points'"
             :data-previous="
@@ -59,7 +65,7 @@
       </tr>
     </tbody>
     <tfoot>
-      <tr class="border-t border-black" v-if="evaluatie.type !== 'color'">
+      <tr class="border-t border-black" v-if="evaluatie.type === 'points'">
         <th class="text-left">Maxima</th>
         <td
           class="text-center h-10 border-t border-black"
@@ -74,7 +80,7 @@
         ></td>
         <td></td>
       </tr>
-      <tr class="border-t border-black" v-if="evaluatie.type !== 'color'">
+      <tr class="border-t border-black" v-if="evaluatie.type === 'points'">
         <th class="text-left">Klasgemiddelde</th>
         <td
           class="text-center h-10 border-t border-black"
@@ -92,10 +98,13 @@
 <script>
 import { mapState, mapActions } from "vuex";
 import TableColor from "@/components/TableColor.vue";
+import TableSelect from "@/components/TableSelect.vue";
+
 export default {
   name: "ScoreTable",
   components: {
-    TableColor
+    TableColor,
+    TableSelect
   },
   props: {
     punt: {
@@ -202,15 +211,22 @@ export default {
       });
     },
     updatePoints(leerlingId, eventTarget, index) {
-      if (isNaN(eventTarget.innerText)) {
-        eventTarget.innerHTML = eventTarget.dataset.previous;
+      let value = eventTarget.innerText;
+
+      if (isNaN(value)) {
+        eventTarget.innerHTML = eventTarget.dataset.previous
+          ? eventTarget.dataset.previous
+          : null;
         return;
+      }
+
+      if (+value > this.evaluaties[this.punt].maximums[index]) {
+        value = this.evaluaties[this.punt].maximums[index];
       }
 
       if (!this.leerlingen[leerlingId].punten[this.punt]) {
         const punten = Array(this.evaluaties[this.punt].amount).fill(null);
-        punten[index] =
-          eventTarget.innerText !== "" ? +eventTarget.innerText : null;
+        punten[index] = value !== "" ? +value : null;
         this.updatePunten({
           leerlingId,
           evaluatieId: this.punt,
@@ -221,7 +237,7 @@ export default {
           leerlingId,
           evaluatieId: this.punt,
           index,
-          value: eventTarget.innerText !== "" ? +eventTarget.innerText : null
+          value: value !== "" ? +value : null
         });
       }
     },
@@ -243,6 +259,24 @@ export default {
           evaluatieId: this.punt,
           index,
           value: eventTarget.innerText !== "" ? +eventTarget.innerText : null
+        });
+      }
+    },
+    updateLevelsArray(index, leerlingId, evaluatieId, value) {
+      if (!this.leerlingen[leerlingId].punten[this.punt]) {
+        const punten = Array(this.evaluaties[this.punt].amount).fill("");
+        punten[index] = value;
+        this.updatePunten({
+          leerlingId,
+          evaluatieId: this.punt,
+          value: punten
+        });
+      } else {
+        this.updatePuntenArray({
+          leerlingId,
+          evaluatieId,
+          index,
+          value
         });
       }
     }

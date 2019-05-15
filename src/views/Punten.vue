@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="punten">
     <h1 class="text-2xl uppercase pb-4 border-b border-gray-200 mb-4">
       Punten
     </h1>
@@ -60,4 +60,8 @@ export default {
 };
 </script>
 
-<style></style>
+<style>
+.punten {
+  min-width: 480px;
+}
+</style>

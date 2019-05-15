@@ -86,7 +86,7 @@ export const mutations = {
     Vue.set(state.leerlingen[leerlingId].punten, evaluatieId, value);
   },
   updatePuntenArray(state, { leerlingId, evaluatieId, index, value }) {
-    if (typeof value !== "number") value = null;
+    // if (typeof value !== "number") value = null;
     Vue.set(state.leerlingen[leerlingId].punten[evaluatieId], index, value);
   },
   updateMaximums(state, { evaluatieId, value }) {
