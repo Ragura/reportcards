@@ -13,7 +13,7 @@
         class="flex h-full items-center justify-center"
         v-else-if="id && !note"
       >
-        {{ average }}
+        {{ formatDecimal(average) }}
       </div>
     </div>
   </div>
@@ -53,7 +53,12 @@ export default {
       return parseFloat((total / filled).toFixed(1));
     }
   },
-  methods: {},
+  methods: {
+    formatDecimal(value) {
+      if (value === null) return value;
+      return value.toLocaleString(undefined, { useGrouping: false });
+    }
+  },
   created() {}
 };
 </script>

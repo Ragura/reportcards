@@ -40,14 +40,18 @@
             @change="updateLevelsArray(n - 1, leerling.id, punt, $event)"
           />
           <p
-            class="border border-gray-300"
+            class="point border border-gray-300"
             v-else-if="evaluatie.type === 'points'"
             :data-previous="
               leerling.punten[punt] ? leerling.punten[punt][n - 1] : ''
             "
             contenteditable
             @blur="updatePoints(leerling.id, $event.target, n - 1)"
-            v-html="leerling.punten[punt] ? leerling.punten[punt][n - 1] : ''"
+            v-html="
+              leerling.punten[punt]
+                ? formatDecimal(leerling.punten[punt][n - 1])
+                : ''
+            "
           ></p>
         </td>
         <!-- Gemiddelde per leerling -->
@@ -62,7 +66,7 @@
             @change="updateColorValue(leerling.id, `${punt}-final`, $event)"
           />
           <p v-else-if="evaluatie.type === 'points'">
-            {{ average(leerling.punten[punt]) }}
+            {{ formatDecimal(average(leerling.punten[punt])) }}
           </p>
         </td>
       </tr>
@@ -90,9 +94,9 @@
           v-for="n of evaluatie.amount"
           :key="`${punt}-${n}-avg`"
         >
-          {{ classAverage(n - 1) }}
+          {{ formatDecimal(classAverage(n - 1)) }}
         </td>
-        <td class="text-center">{{ totalAverage() }}</td>
+        <td class="text-center">{{ formatDecimal(totalAverage()) }}</td>
       </tr>
     </tfoot>
   </table>
@@ -133,6 +137,10 @@ export default {
       "updateMaximums",
       "updateMaximumsArray"
     ]),
+    formatDecimal(value) {
+      if (value === null) return value;
+      return value.toLocaleString(undefined, { useGrouping: false });
+    },
     average(arrayPunten) {
       if (!arrayPunten || typeof arrayPunten !== "object") return "";
 
@@ -216,6 +224,8 @@ export default {
     updatePoints(leerlingId, eventTarget, index) {
       let value = eventTarget.innerText;
 
+      value = value.replace(",", ".");
+
       if (isNaN(value)) {
         eventTarget.innerHTML = eventTarget.dataset.previous
           ? eventTarget.dataset.previous
@@ -283,7 +293,8 @@ export default {
         });
       }
     }
-  }
+  },
+  created() {}
 };
 </script>
 

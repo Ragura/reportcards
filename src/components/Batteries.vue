@@ -30,27 +30,6 @@
         />
       </div>
     </div>
-    <!-- Right column -->
-    <!-- <div class="flex flex-wrap w-1/2 flex justify-around items-center">
-      <h2 class="w-full font-bold">{{ content.right.text }}</h2>
-      <div class="battery" v-for="n of 4" :key="`battery-right-${n}`">
-        <BatteryCircle
-          v-show="activeLeerling.punten[content.right.valueKey] === n"
-          class="circle"
-        />
-        <img
-          @click="
-            updatePuntenLeerling({
-              leerlingId: activeLeerlingId,
-              key: content.right.valueKey,
-              value: n
-            })
-          "
-          class="mx-auto"
-          :src="`/images/battery${n}.png`"
-        />
-      </div>
-    </div> -->
   </div>
 </template>
 
