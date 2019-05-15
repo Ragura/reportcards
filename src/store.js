@@ -86,8 +86,15 @@ export const mutations = {
     Vue.set(state.leerlingen[leerlingId].punten, evaluatieId, value);
   },
   updatePuntenArray(state, { leerlingId, evaluatieId, index, value }) {
-    if (isNaN(value)) value = null;
+    if (typeof value !== "number") value = null;
     Vue.set(state.leerlingen[leerlingId].punten[evaluatieId], index, value);
+  },
+  updateMaximums(state, { evaluatieId, value }) {
+    Vue.set(state.evaluaties[evaluatieId], "maximums", value);
+  },
+  updateMaximumsArray(state, { evaluatieId, index, value }) {
+    if (typeof value !== "number") value = null;
+    Vue.set(state.evaluaties[evaluatieId].maximums, index, value);
   }
 };
 
@@ -190,6 +197,20 @@ export const actions = {
   // Payload: leerlingId, evaluatieId, index, value
   updatePuntenArray({ commit, dispatch }, payload) {
     commit("updatePuntenArray", payload);
+    dispatch("writeRapport");
+  },
+
+  // Update maxima of evaluatie
+  // Payload: evaluatieId, value
+  updateMaximums({ commit, dispatch }, payload) {
+    commit("updateMaximums", payload);
+    dispatch("writeRapport");
+  },
+
+  // Update maxima array of evaluatie
+  // Payload: leerlingId, evaluatieId, index, value
+  updateMaximumsArray({ commit, dispatch }, payload) {
+    commit("updateMaximumsArray", payload);
     dispatch("writeRapport");
   }
 };

@@ -41,7 +41,7 @@
             v-html="leerling.punten[punt] ? leerling.punten[punt][n - 1] : ''"
           ></p>
         </td>
-        <!-- Gemiddelde -->
+        <!-- Gemiddelde per leerling -->
         <td class="h-10 text-center">
           <table-color
             v-if="evaluatie.type === 'color'"
@@ -65,9 +65,13 @@
           class="text-center h-10 border-t border-black"
           v-for="n of evaluatie.amount"
           :key="`${punt}-${n}-max`"
-        >
-          {{ evaluatie.maximums[n - 1] }}
-        </td>
+          :data-previous="
+            evaluatie.maximums[n - 1] ? evaluatie.maximums[n - 1] : ''
+          "
+          contenteditable
+          @blur="updateMaximums($event.target, n - 1)"
+          v-html="evaluatie.maximums[n - 1] ? evaluatie.maximums[n - 1] : ''"
+        ></td>
         <td></td>
       </tr>
       <tr class="border-t border-black" v-if="evaluatie.type !== 'color'">
@@ -77,7 +81,7 @@
           v-for="n of evaluatie.amount"
           :key="`${punt}-${n}-avg`"
         >
-          {{ classAverage(n - 1) | hideZero }}
+          {{ classAverage(n - 1) }}
         </td>
         <td class="text-center">{{ totalAverage() }}</td>
       </tr>
@@ -111,51 +115,65 @@ export default {
     }
   },
   methods: {
-    ...mapActions(["updatePunten", "updatePuntenArray"]),
+    ...mapActions([
+      "updatePunten",
+      "updatePuntenArray",
+      "updateMaximums",
+      "updateMaximumsArray"
+    ]),
     average(arrayPunten) {
-      if (!arrayPunten) return "";
+      if (!arrayPunten || typeof arrayPunten !== "object") return "";
 
       let filled = 0;
-      const punten = arrayPunten.map((punt, index) => {
-        if (punt) filled++;
-        return punt * (10 / this.evaluaties[this.punt].maximums[index]);
-      });
-
-      const total = punten.reduce((total, value) => {
-        return total + value;
+      const total = arrayPunten.reduce((total, punt, index) => {
+        if (punt !== null) {
+          filled++;
+          return (
+            total + punt * (10 / this.evaluaties[this.punt].maximums[index])
+          );
+        }
+        return total;
       }, 0);
 
       if (!filled) return "";
       return parseFloat((total / filled).toFixed(1));
     },
     classAverage(index) {
+      let filled = 0;
+
       const totaal = Object.values(this.leerlingen).reduce(
         (total, leerling) => {
           if (
             leerling.punten[this.punt] &&
-            leerling.punten[this.punt][index] >= 0
+            typeof leerling.punten[this.punt][index] === "number"
           ) {
-            return total + leerling.punten[this.punt][index];
+            filled++;
+            return total + +leerling.punten[this.punt][index];
           }
           return total;
         },
         0
       );
-      return parseFloat(
-        (totaal * (10 / this.evaluaties[this.punt].maximums[index])).toFixed(1)
-      );
+
+      if (!filled) return "";
+
+      return parseFloat((totaal / filled).toFixed(1));
     },
     totalAverage() {
-      if (!this.leerlingen) return "";
+      if (!Object.keys(this.leerlingen)) return "";
 
       let total = 0;
       let filled = 0;
 
-      for (let i = 0; i < this.evaluaties[this.punt].amount; i++) {
-        const average = this.classAverage(i);
-        if (average) filled++;
-        total += this.classAverage(i);
+      const leerlingenArray = Object.values(this.leerlingen);
+      for (let i = 0; i < leerlingenArray.length; i++) {
+        const average = this.average(leerlingenArray[i].punten[this.punt]);
+        if (typeof average === "number") {
+          filled++;
+          total += average;
+        }
       }
+
       if (!filled) return "";
 
       return parseFloat((total / filled).toFixed(1));
@@ -190,20 +208,43 @@ export default {
       }
 
       if (!this.leerlingen[leerlingId].punten[this.punt]) {
-        const punten = Array(this.evaluaties[this.punt].amount).fill("");
-        punten[index] = +eventTarget.innerText;
+        const punten = Array(this.evaluaties[this.punt].amount).fill(null);
+        punten[index] =
+          eventTarget.innerText !== "" ? +eventTarget.innerText : null;
         this.updatePunten({
           leerlingId,
           evaluatieId: this.punt,
           value: punten
         });
+      } else {
+        this.updatePuntenArray({
+          leerlingId,
+          evaluatieId: this.punt,
+          index,
+          value: eventTarget.innerText !== "" ? +eventTarget.innerText : null
+        });
       }
-      this.updatePuntenArray({
-        leerlingId,
-        evaluatieId: this.punt,
-        index,
-        value: +eventTarget.innerText
-      });
+    },
+    updateMaximums(eventTarget, index) {
+      if (isNaN(eventTarget.innerText)) {
+        eventTarget.innerHTML = eventTarget.dataset.previous;
+        return;
+      }
+
+      if (typeof this.evaluaties[this.punt].maximums !== "object") {
+        const maxima = Array(this.evaluaties[this.punt].amount).fill(null);
+        maxima[index] = +eventTarget.innerText;
+        this.updateMaximums({
+          evaluatieId: this.punt,
+          value: maxima
+        });
+      } else {
+        this.updateMaximumsArray({
+          evaluatieId: this.punt,
+          index,
+          value: eventTarget.innerText !== "" ? +eventTarget.innerText : null
+        });
+      }
     }
   }
 };

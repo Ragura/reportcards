@@ -37,17 +37,20 @@ export default {
   computed: {
     ...mapState(["activeLeerling", "leerlingen", "evaluaties"]),
     average() {
-      if (!this.leerlingen[this.activeLeerling].punten[this.id]) return "";
+      const arrayPunten = this.leerlingen[this.activeLeerling].punten[this.id];
+      if (!arrayPunten || typeof arrayPunten !== "object") return "";
 
-      const punten = this.leerlingen[this.activeLeerling].punten[this.id].map(
-        (punt, index) => {
-          return punt * (10 / this.evaluaties[this.id].maximums[index]);
+      let filled = 0;
+      const total = arrayPunten.reduce((total, punt, index) => {
+        if (punt !== null) {
+          filled++;
+          return total + punt * (10 / this.evaluaties[this.id].maximums[index]);
         }
-      );
-      const total = punten.reduce((total, value) => {
-        return (total += value);
+        return total;
       }, 0);
-      return parseFloat((total / punten.length).toFixed(1));
+
+      if (!filled) return "";
+      return parseFloat((total / filled).toFixed(1));
     }
   },
   methods: {},
