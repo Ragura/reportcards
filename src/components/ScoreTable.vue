@@ -15,7 +15,7 @@
       </tr>
       <tr
         class=""
-        v-for="leerling of Object.values(leerlingen)"
+        v-for="(leerling, leerlingIndex) of Object.values(leerlingen)"
         :key="`${leerling.id}-${punt}`"
       >
         <!-- Leerling naam -->
@@ -41,6 +41,7 @@
           /> -->
           <p
             class="point border border-gray-300"
+            :ref="`${punt}-${leerlingIndex}-${n}`"
             v-else-if="evaluatie.type === 'points'"
             :data-previous="
               leerling.punten[punt] ? leerling.punten[punt][n - 1] : ''
@@ -52,6 +53,9 @@
                 ? formatDecimal(leerling.punten[punt][n - 1])
                 : ''
             "
+            @keydown.enter.prevent="nextPoint(leerlingIndex, n)"
+            @keydown.down.prevent="nextPoint(leerlingIndex, n)"
+            @keydown.up.prevent="previousPoint(leerlingIndex, n)"
           ></p>
         </td>
         <!-- Gemiddelde per leerling -->
@@ -126,11 +130,6 @@ export default {
       default: ""
     }
   },
-  filters: {
-    hideZero(value) {
-      return value === 0 ? "" : value;
-    }
-  },
   computed: {
     ...mapState(["leerlingen", "evaluaties"]),
     evaluatie() {
@@ -147,6 +146,16 @@ export default {
     formatDecimal(value) {
       if (value === null) return value;
       return value.toLocaleString(undefined, { useGrouping: false });
+    },
+    nextPoint(leerlingIndex, index) {
+      if (leerlingIndex < Object.keys(this.leerlingen).length - 1) {
+        this.$refs[`${this.punt}-${leerlingIndex + 1}-${index}`][0].focus();
+      }
+    },
+    previousPoint(leerlingIndex, index) {
+      if (leerlingIndex > 0) {
+        this.$refs[`${this.punt}-${leerlingIndex - 1}-${index}`][0].focus();
+      }
     },
     average(arrayPunten) {
       if (!arrayPunten || typeof arrayPunten !== "object") return "";
