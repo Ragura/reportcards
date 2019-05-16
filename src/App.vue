@@ -11,18 +11,21 @@
       <router-view />
     </main>
     <app-modal />
+    <loading v-show="printing" />
   </div>
 </template>
 
 <script>
 import Sidebar from "@/layouts/Sidebar.vue";
 import AppModal from "@/components/AppModal.vue";
+import Loading from "@/components/Loading.vue";
 import { mapState, mapActions } from "vuex";
 
 export default {
   components: {
     AppModal,
-    Sidebar
+    Sidebar,
+    Loading
   },
   computed: {
     ...mapState(["printing"])

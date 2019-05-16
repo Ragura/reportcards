@@ -143,7 +143,6 @@ export default {
 .page {
   width: 21cm;
   height: 29.7cm;
-  // padding: 1.4cm 2cm 0 2cm;
 
   .padding-klein {
     padding: 0.2cm;
@@ -159,13 +158,6 @@ export default {
 }
 
 @media print {
-  @page {
-    // margin-top: 1.7cm;
-    // margin-bottom: 1.7cm;
-    // margin-left: 2cm;
-    // margin-right: 2cm;
-  }
-
   .toolbar {
     display: none;
   }
@@ -175,7 +167,7 @@ export default {
     height: auto;
     border: none;
     page-break-after: always;
-    // break-after: page;
+    break-after: page;
   }
 }
 </style>
