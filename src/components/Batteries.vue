@@ -18,6 +18,7 @@
           class="circle"
         />
         <img
+          v-if="i === 1"
           @click="
             updatePunten({
               leerlingId: activeLeerling,
@@ -28,6 +29,7 @@
           class="mx-auto"
           :src="`/images/battery${n}.png`"
         />
+        <img v-else class="mx-auto" :src="`/images/battery${n}.png`" />
       </div>
     </div>
   </div>

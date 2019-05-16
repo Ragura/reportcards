@@ -189,8 +189,7 @@
     "leesvaardigheid": {
       "id": "leesvaardigheid",
       "type": "level",
-      "levels": ["E1", "E2", "E3", "E4", "E5", "E6"],
-      "amount": 6,
+      "levels": ["M1", "M2", "M3", "M4", "M5", "M6", "E1", "E2", "E3", "E4", "E5", "E6"],
       "text": "Leesvaardigheig (AVI)"
     },
     "begrijpendlezen": {
@@ -303,6 +302,7 @@
         "layout": "rij",
         "zillHeader": "Logisch en wiskundig denken",
         "icons": [7, 5],
+        "commentKey": "wiskundigdenken-commentaar",
         "punten": ["getallenkennis", "rekenvaardigheid", "metendrekenen", "meetkunde"]
       }
     },
@@ -315,6 +315,7 @@
         "layout": "rij",
         "zillHeader": "Taalontwikkeling Nederlands",
         "icons": [9, 2, 6],
+        "commentKey": "taalontwikkeling-commentaar",
         "punten": ["luisteren", "spreken", "spelling", "schrijven", "taalbeschouwing", "leesvaardigheid", "begrijpendlezen"]
       }
     },
@@ -327,6 +328,7 @@
         "layout": "rij",
         "zillHeader": "Taalontwikkeling Frans",
         "icons": [9, 2, 6],
+        "commentKey": "frans-commentaar",
         "punten": ["luisterenspreken", "lezenschrijven"]
       }
     },
@@ -339,6 +341,7 @@
         "layout": "rij",
         "zillHeader": "ORIËNTATIE OP DE WERELD - Thema mens & ...",
         "icons": [6, 2],
+        "commentKey": "thema-commentaar",
         "punten": ["zill1", "zill2", "zill3"]
       }
     }

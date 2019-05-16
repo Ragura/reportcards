@@ -32,13 +32,13 @@
             :value="leerling.punten[punt] && leerling.punten[punt][n - 1]"
             @change="updateColorArray(n - 1, leerling.id, punt, $event)"
           />
-          <table-select
+          <!-- <table-select
             class="border border-gray-300"
             v-if="evaluatie.type === 'level'"
             :value="leerling.punten[punt] && leerling.punten[punt][n - 1]"
             :options="evaluatie.levels"
             @change="updateLevelsArray(n - 1, leerling.id, punt, $event)"
-          />
+          /> -->
           <p
             class="point border border-gray-300"
             v-else-if="evaluatie.type === 'points'"
@@ -64,6 +64,13 @@
                 : 0
             "
             @change="updateColorValue(leerling.id, `${punt}-final`, $event)"
+          />
+          <table-select
+            class="border border-gray-300"
+            v-else-if="evaluatie.type === 'level'"
+            :value="leerling.punten[punt] ? leerling.punten[punt] : ''"
+            :options="evaluatie.levels"
+            @change="updateLevelValue(leerling.id, $event)"
           />
           <p v-else-if="evaluatie.type === 'points'">
             {{ formatDecimal(average(leerling.punten[punt])) }}
@@ -275,23 +282,30 @@ export default {
         });
       }
     },
-    updateLevelsArray(index, leerlingId, evaluatieId, value) {
-      if (!this.leerlingen[leerlingId].punten[this.punt]) {
-        const punten = Array(this.evaluaties[this.punt].amount).fill("");
-        punten[index] = value;
-        this.updatePunten({
-          leerlingId,
-          evaluatieId: this.punt,
-          value: punten
-        });
-      } else {
-        this.updatePuntenArray({
-          leerlingId,
-          evaluatieId,
-          index,
-          value
-        });
-      }
+    // updateLevelsArray(index, leerlingId, evaluatieId, value) {
+    //   if (!this.leerlingen[leerlingId].punten[this.punt]) {
+    //     const punten = Array(this.evaluaties[this.punt].amount).fill("");
+    //     punten[index] = value;
+    //     this.updatePunten({
+    //       leerlingId,
+    //       evaluatieId: this.punt,
+    //       value: punten
+    //     });
+    //   } else {
+    //     this.updatePuntenArray({
+    //       leerlingId,
+    //       evaluatieId,
+    //       index,
+    //       value
+    //     });
+    //   }
+    // },
+    updateLevelValue(leerlingId, value) {
+      this.updatePunten({
+        leerlingId,
+        evaluatieId: this.punt,
+        value
+      });
     }
   },
   created() {}

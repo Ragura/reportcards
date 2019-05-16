@@ -13,7 +13,12 @@
         class="flex h-full items-center justify-center"
         v-else-if="id && !note"
       >
-        {{ formatDecimal(average) }}
+        <p v-if="evaluaties[id].type === 'points'">
+          {{ formatDecimal(average) }}
+        </p>
+        <p v-if="evaluaties[id].type === 'level'">
+          {{ leerlingen[activeLeerling].punten[id] }}
+        </p>
       </div>
     </div>
   </div>
@@ -37,6 +42,7 @@ export default {
   computed: {
     ...mapState(["activeLeerling", "leerlingen", "evaluaties"]),
     average() {
+      if (this.evaluaties[this.id].type !== "points") return "";
       const arrayPunten = this.leerlingen[this.activeLeerling].punten[this.id];
       if (!arrayPunten || typeof arrayPunten !== "object") return "";
 

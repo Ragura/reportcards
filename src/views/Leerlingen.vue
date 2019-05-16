@@ -116,6 +116,7 @@ export default {
       const rapportPath = dialog.showOpenDialog({
         title: "Open een rapport",
         defaultPath: this.settings.standardLocation,
+        filters: [{ name: "Rapport", extensions: ["rap"] }],
         properties: ["openFile"],
         message: "Kies rapportbestand om leerlingen uit te importeren."
       });
@@ -131,6 +132,7 @@ export default {
       const path = dialog.showOpenDialog({
         title: "Open een Excel bestand met geëxporteerde data",
         defaultPath: this.settings.standardLocation,
+        filters: [{ name: "Excel bestand", extensions: ["xls", "xlsx"] }],
         properties: ["openFile"],
         message: "Kies een Excel bestand om leerlingen uit te importeren."
       });

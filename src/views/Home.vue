@@ -43,6 +43,7 @@ export default {
       const rapportPath = dialog.showOpenDialog({
         title: "Open een rapport",
         defaultPath: this.settings.standardLocation,
+        filters: [{ name: "Rapport", extensions: ["rap"] }],
         properties: ["openFile"],
         message: "Kies rapportbestand om het te openen."
       });
@@ -50,7 +51,7 @@ export default {
       if (!rapportPath) return;
 
       this.loadRapport(rapportPath[0]);
-      // this.$router.push("/rapport");
+      this.$router.push("/rapport");
     }
   }
 };

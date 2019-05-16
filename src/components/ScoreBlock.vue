@@ -61,26 +61,46 @@
     </template>
 
     <template v-else-if="content.layout === 'rij'">
-      <div
-        class="notes flex"
-        v-for="(punt, index) of content.punten"
-        :key="`punt-${punt}`"
-      >
-        <score-line
-          v-if="evaluaties[punt].type === 'points'"
-          :id="punt"
-          :note="content.notes ? content.notes[index] : ''"
-          class="w-1/2"
-        />
-        <color-line
-          v-else-if="evaluaties[punt].type === 'color'"
-          :id="punt"
-          :note="content.notes ? content.notes[index] : ''"
-          class="w-1/2"
-        />
-        <div class="note w-1/2 border-l border-black flex items-center">
+      <div class="w-full flex overflow-hidden">
+        <div class="w-1/2 flex flex-col">
+          <div
+            v-for="(punt, index) of content.punten"
+            :key="`punt-${punt}`"
+            class=""
+          >
+            <template
+              v-if="
+                evaluaties[punt].type === 'points' ||
+                  evaluaties[punt].type === 'level'
+              "
+            >
+              <score-line
+                :id="punt"
+                :note="content.notes ? content.notes[index] : ''"
+              />
+            </template>
+            <template v-else-if="evaluaties[punt].type === 'color'">
+              <color-line
+                :id="punt"
+                :note="content.notes ? content.notes[index] : ''"
+              />
+            </template>
+          </div>
+          <!-- <div class="note w-1/2 border-l border-black flex items-center">
           {{ content.notes ? content.notes[index] : "" }}
+        </div> -->
         </div>
+        <score-comments
+          class="w-1/2 border-b border-l border-black"
+          @blur.native="
+            updatePunten({
+              leerlingId: activeLeerling,
+              evaluatieId: content.commentKey,
+              value: $event.target.value
+            })
+          "
+          v-html="leerlingen[activeLeerling].punten[content.commentKey] || ''"
+        ></score-comments>
       </div>
     </template>
   </div>
