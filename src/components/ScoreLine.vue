@@ -3,7 +3,7 @@
     <div
       class="tekst flex h-full flex-grow border-r border-black items-center text-sm leading-tight"
     >
-      {{ id ? evaluaties[id].text : "---" }}
+      {{ id ? evaluaties[id].text : "- - -" }}
     </div>
     <div class="pointsblok flex-none h-full">
       <div v-if="note" class="flex h-full items-center justify-center">

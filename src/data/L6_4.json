@@ -103,25 +103,13 @@
       "id": "d1a1",
       "type": "color",
       "amount": 6,
-      "text": "DOMEIN - Activiteit"
-    },
-    "d1a2": {
-      "id": "d1a2",
-      "type": "color",
-      "amount": 6,
-      "text": "DOMEIN - Activiteit"
+      "text": "DANS - Dansende elektriciteitspylonen"
     },
     "d2a1": {
       "id": "d2a1",
       "type": "color",
       "amount": 6,
-      "text": "DOMEIN - Activiteit"
-    },
-    "d2a2": {
-      "id": "d2a2",
-      "type": "color",
-      "amount": 6,
-      "text": "DOMEIN - Activiteit"
+      "text": "MUZIEK - Afvalconcert"
     },
     "getallenkennis": {
       "id": "getallenkennis",
@@ -189,7 +177,7 @@
     "leesvaardigheid": {
       "id": "leesvaardigheid",
       "type": "level",
-      "levels": ["M1", "M2", "M3", "M4", "M5", "M6", "E1", "E2", "E3", "E4", "E5", "E6"],
+      "levels": ["M3", "M4", "M5", "M6", "M7", "M8", "E3", "E4", "E5", "E6", "E7", "E8", "+"],
       "text": "Leesvaardigheig (AVI)"
     },
     "begrijpendlezen": {
@@ -218,21 +206,14 @@
       "type": "points",
       "amount": 6,
       "maximums": [10, 10, 10, 10, 10, 10],
-      "text": "Zill-thema 1"
+      "text": "RUIMTE + NATUUR - Weer & klimaat"
     },
     "zill2": {
       "id": "zill2",
       "type": "points",
       "amount": 6,
       "maximums": [10, 10, 10, 10, 10, 10],
-      "text": "Zill-thema 2"
-    },
-    "zill3": {
-      "id": "zill3",
-      "type": "points",
-      "amount": 6,
-      "maximums": [10, 10, 10, 10, 10, 10],
-      "text": "Zill-thema 3"
+      "text": "ALLE ZILL-THEMA's - Meesterwerk"
     }
   },
   "blocks": {
@@ -285,11 +266,11 @@
         "layout": "domein",
         "zillHeader": "Muzische ontwikkeling",
         "icons": [4, 5, 2],
-        "subtitel1": "MUxx 0: ...",
-        "domeinen1": ["d1a1", "d1a2"],
+        "subtitel1": "MUge 2: De muzische bouwstenen ontdekken en creatief leren gebruiken",
+        "domeinen1": ["d1a1", ""],
         "commentKey1": "domein1-commentaar",
-        "subtitel2": "MUxx 0: ...",
-        "domeinen2": ["d2a1", "d2a2"],
+        "subtitel2": "MUva 3: Vaardigheden leren, oefenen en gebruiken om je beter uit te drukken in muzisch werk",
+        "domeinen2": ["d2a1", ""],
         "commentKey2": "domein2-commentaar"
       }
     },
@@ -340,10 +321,28 @@
       "content": {
         "layout": "rij",
         "zillHeader": "ORIËNTATIE OP DE WERELD - Thema mens & ...",
-        "icons": [6, 2],
+        "icons": [6, 2, 8, 4, 5, 10],
         "commentKey": "thema-commentaar",
-        "punten": ["zill1", "zill2", "zill3"]
+        "punten": ["zill1", "zill2", ""]
       }
+    },
+    "eindcommentaar": {
+      "id": "eindcommentaar",
+      "rapportOnly": true,
+      "type": "EindCommentaar",
+      "page": 3,
+      "order": 10,
+      "content": {
+        "commentKey": "eindcommentaar"
+      }
+    },
+    "handtekening": {
+      "id": "handtekening",
+      "rapportOnly": true,
+      "type": "Handtekening",
+      "page": 3,
+      "order": 11,
+      "content": {}
     }
   }
   

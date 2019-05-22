@@ -71,6 +71,8 @@ import { mapState, mapMutations, mapActions } from "vuex";
 import Header from "@/layouts/Header.vue";
 import Batteries from "@/components/Batteries.vue";
 import ScoreBlock from "@/components/ScoreBlock.vue";
+import EindCommentaar from "@/components/EindCommentaar.vue";
+import Handtekening from "@/components/Handtekening.vue";
 
 const ipc = require("electron").ipcRenderer;
 const { dialog } = require("electron").remote;
@@ -85,7 +87,9 @@ export default {
   components: {
     Header,
     Batteries,
-    ScoreBlock
+    ScoreBlock,
+    EindCommentaar,
+    Handtekening
   },
   watch: {
     selectedLeerling(newValue) {

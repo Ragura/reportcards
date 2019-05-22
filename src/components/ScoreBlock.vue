@@ -70,8 +70,9 @@
           >
             <template
               v-if="
-                evaluaties[punt].type === 'points' ||
-                  evaluaties[punt].type === 'level'
+                punt &&
+                  (evaluaties[punt].type === 'points' ||
+                    evaluaties[punt].type === 'level')
               "
             >
               <score-line
@@ -79,7 +80,7 @@
                 :note="content.notes ? content.notes[index] : ''"
               />
             </template>
-            <template v-else-if="evaluaties[punt].type === 'color'">
+            <template v-else-if="punt && evaluaties[punt].type === 'color'">
               <color-line
                 :id="punt"
                 :note="content.notes ? content.notes[index] : ''"

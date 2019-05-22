@@ -1,6 +1,6 @@
 <template>
   <div
-    class="zill-header flex justify-between items-center border-b tracking-wider font-bold border-black"
+    class="zill-header flex justify-between tracking-wide items-center border-b font-bold border-black"
   >
     <h2 class="uppercase"><slot></slot></h2>
     <div class="flex">
@@ -47,7 +47,7 @@ export default {
 
   img {
     height: 1cm;
-    margin-left: 0.4cm;
+    margin-left: 0.2cm;
   }
 }
 </style>

@@ -11,14 +11,16 @@
     >
       <div slot="title">{{ block.content.zillHeader }}</div>
       <div slot="content">
-        <accordion
-          v-for="punt of getPunten(block)"
-          :key="punt"
-          titleclass="bg-blue-300 text-white"
-        >
-          <div slot="title">{{ evaluaties[punt].text }}</div>
-          <score-table :punt="punt" slot="content" />
-        </accordion>
+        <template v-for="(punt, index) of getPunten(block)">
+          <accordion
+            v-if="punt"
+            :key="`punt-${index}`"
+            titleclass="bg-blue-300 text-white"
+          >
+            <div slot="title">{{ evaluaties[punt].text }}</div>
+            <score-table :punt="punt" slot="content" />
+          </accordion>
+        </template>
       </div>
     </accordion>
   </div>

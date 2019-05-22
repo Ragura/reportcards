@@ -105,7 +105,7 @@ const { cloneDeep } = require("lodash");
 
 import uniqid from "uniqid";
 import { mapState, mapMutations, mapActions } from "vuex";
-import rapportTemplate from "@/data/templates.json";
+import rapportTemplates from "@/data/templates";
 
 export default {
   name: `ModalNieuwRapport`,
@@ -143,7 +143,7 @@ export default {
           periode,
           klas
         },
-        ...cloneDeep(rapportTemplate)
+        ...cloneDeep(rapportTemplates[`L${leerjaar}_${periode}`])
       };
 
       this.createRapport({
