@@ -5,12 +5,7 @@ module.exports = {
         appId: "com.electron.sjcarapporten",
         productName: "SJCA Rapporten",
         copyright: "Copyright © 2019-* Steven Schoovaerts",
-        publish: [
-          {
-            provider: "github",
-            private: true
-          }
-        ],
+        publish: ["github"],
         win: {
           publisherName: "Studieanker",
           target: "nsis"

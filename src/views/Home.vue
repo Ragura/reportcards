@@ -34,6 +34,8 @@
 <script>
 const { dialog } = require("electron").remote;
 const { ipcRenderer } = require("electron");
+const log = require("electron-log");
+
 import { mapState, mapMutations, mapActions } from "vuex";
 
 export default {
@@ -69,15 +71,19 @@ export default {
   },
   created() {
     ipcRenderer.on("checking-for-update", (event, data) => {
+      log.info("CHECKING FOR UPDATES");
       this.checking = "checking!";
     });
     ipcRenderer.on("update-available", (event, data) => {
+      log.info("UPDATE AVAILABLE");
       this.available = data;
     });
     ipcRenderer.on("update-not-available", (event, data) => {
+      log.info("UPDATE NOT AVAILABLE");
       this.notAvailable = data;
     });
     ipcRenderer.on("error", (event, err) => {
+      log.info("ERROR: " + err);
       this.error = err;
     });
   }

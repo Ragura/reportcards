@@ -73,11 +73,15 @@ app.on("ready", async () => {
       console.error("Vue Devtools failed to install:", e.toString());
     }
   }
-  autoUpdater.checkForUpdatesAndNotify();
   createWindow();
+
+  autoUpdater.currentVersion = "0.7.0";
+  autoUpdater.allowPrerelease = true;
+
+  autoUpdater.checkForUpdatesAndNotify();
 });
 
-autoUpdater.autoDownload = true;
+// autoUpdater.autoDownload = true;
 
 autoUpdater.on("checking-for-update", () => {
   win.webContents.send("checking-for-update", "Zoeken naar updates...");
