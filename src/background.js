@@ -1,6 +1,6 @@
 "use strict";
 
-import { app, protocol, BrowserWindow, dialog } from "electron";
+import { app, protocol, BrowserWindow } from "electron";
 import { autoUpdater } from "electron-updater";
 import "./electron/print";
 
@@ -75,7 +75,6 @@ app.on("ready", async () => {
   }
   createWindow();
 
-  autoUpdater.currentVersion = "0.7.0";
   autoUpdater.allowPrerelease = true;
 
   autoUpdater.checkForUpdatesAndNotify();
