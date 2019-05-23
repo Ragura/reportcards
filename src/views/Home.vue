@@ -1,6 +1,9 @@
 <template>
   <div>
-    <h3 class="mb-2">BETA versie 0.8.2</h3>
+    <h3 class="mb-2">Checking: {{ checking }}</h3>
+    <h3 class="mb-2">Available: {{ available }}</h3>
+    <h3 class="mb-2">Not available: {{ notAvailable }}</h3>
+    <h3 class="mb-2">Error: {{ error }}</h3>
     <h1 class="text-2xl uppercase pb-4 border-b border-gray-200 mb-4">
       Nieuw rapport
     </h1>
@@ -30,10 +33,19 @@
 
 <script>
 const { dialog } = require("electron").remote;
+const { ipcRenderer } = require("electron");
 import { mapState, mapMutations, mapActions } from "vuex";
 
 export default {
   name: "Home",
+  data() {
+    return {
+      checking: "",
+      available: "",
+      notAvailable: "",
+      error: ""
+    };
+  },
   computed: {
     ...mapState(["settings"])
   },
@@ -54,6 +66,20 @@ export default {
       this.loadRapport(rapportPath[0]);
       this.$router.push("/rapport");
     }
+  },
+  created() {
+    ipcRenderer.on("checking-for-update", (event, data) => {
+      this.checking = data;
+    });
+    ipcRenderer.on("update-available", (event, data) => {
+      this.available = data;
+    });
+    ipcRenderer.on("update-not-available", (event, data) => {
+      this.notAvailable = data;
+    });
+    ipcRenderer.on("error", (event, err) => {
+      this.error = err;
+    });
   }
 };
 </script>

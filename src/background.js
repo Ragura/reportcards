@@ -18,7 +18,12 @@ let win;
 protocol.registerStandardSchemes(["app"], { secure: true });
 function createWindow() {
   // Create the browser window.
-  win = new BrowserWindow({ width: 1110, height: 768, show: false });
+  win = new BrowserWindow({
+    width: 1110,
+    height: 768,
+    show: false,
+    title: "SJCA Rapporten"
+  });
 
   if (process.env.WEBPACK_DEV_SERVER_URL) {
     // Load the url of the dev server if in development mode
@@ -68,37 +73,50 @@ app.on("ready", async () => {
       console.error("Vue Devtools failed to install:", e.toString());
     }
   }
+  autoUpdater.checkForUpdatesAndNotify();
   createWindow();
 });
 
 autoUpdater.autoDownload = true;
 
+autoUpdater.on("checking-for-update", () => {
+  win.webContents.send("checking-for-update", "Zoeken naar updates...");
+});
+
 autoUpdater.on("update-available", info => {
-  console.log("Update beschikbaar", info);
+  win.webContents.send("update-available", info);
+});
+
+autoUpdater.on("update-not-available", info => {
+  win.webContents.send("update-not-available", info);
+});
+
+autoUpdater.on("error", err => {
+  win.webContents.send("Fout bij updaten.", err);
 });
 
 // Auto Update
-autoUpdater.on("update-downloaded", () => {
-  console.log("update-downloaded lats quitAndInstall");
+// autoUpdater.on("update-downloaded", () => {
+//   console.log("update-downloaded lats quitAndInstall");
 
-  if (process.env.NODE_ENV === "production") {
-    dialog.showMessageBox(
-      {
-        type: "info",
-        title: "Found Updates",
-        message: "Found updates, do you want update now?",
-        buttons: ["Sure", "No"]
-      },
-      buttonIndex => {
-        if (buttonIndex === 0) {
-          const isSilent = true;
-          const isForceRunAfter = true;
-          autoUpdater.quitAndInstall(isSilent, isForceRunAfter);
-        }
-      }
-    );
-  }
-});
+//   if (process.env.NODE_ENV === "production") {
+//     dialog.showMessageBox(
+//       {
+//         type: "info",
+//         title: "Found Updates",
+//         message: "Found updates, do you want update now?",
+//         buttons: ["Sure", "No"]
+//       },
+//       buttonIndex => {
+//         if (buttonIndex === 0) {
+//           const isSilent = true;
+//           const isForceRunAfter = true;
+//           autoUpdater.quitAndInstall(isSilent, isForceRunAfter);
+//         }
+//       }
+//     );
+//   }
+// });
 
 // Exit cleanly on request from parent process in development mode.
 if (isDevelopment) {

@@ -1,4 +1,4 @@
-import { BrowserWindow, ipcMain, shell } from "electron";
+import { BrowserWindow, ipcMain } from "electron";
 
 // const path = require("path");
 const fs = require("fs");
