@@ -1,5 +1,6 @@
 <template>
   <div>
+    <h3 class="mb-2">BETA versie 0.8.2</h3>
     <h1 class="text-2xl uppercase pb-4 border-b border-gray-200 mb-4">
       Nieuw rapport
     </h1>
