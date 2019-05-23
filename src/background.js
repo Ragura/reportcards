@@ -1,7 +1,7 @@
 "use strict";
 
 import { app, protocol, BrowserWindow, dialog } from "electron";
-import { autoUpdater } from "electron-updater";
+const { autoUpdater } = require("electron-updater");
 import "./electron/print";
 
 import {
@@ -10,8 +10,9 @@ import {
 } from "vue-cli-plugin-electron-builder/lib";
 const isDevelopment = process.env.NODE_ENV !== "production";
 
-const logger = require("electron-log");
-autoUpdater.logger = logger;
+// const logger = require("electron-log");
+
+// autoUpdater.logger = logger;
 
 // Keep a global reference of the window object, if you don't, the window will
 // be closed automatically when the JavaScript object is garbage collected.
@@ -44,7 +45,6 @@ function createWindow() {
 
   win.on("ready-to-show", () => {
     win.show();
-    //autoUpdater.checkForUpdatesAndNotify();
   });
 }
 
@@ -79,6 +79,8 @@ app.on("ready", async () => {
   }
 
   createWindow();
+  autoUpdater.checkForUpdates();
+  autoUpdater.downloadUpdate();
 });
 
 // autoUpdater.autoDownload = true;
@@ -89,8 +91,6 @@ autoUpdater.on("checking-for-update", () => {
 
 autoUpdater.on("update-available", info => {
   win.webContents.send("update-available", info);
-
-  autoUpdater.downloadUpdate();
 });
 
 autoUpdater.on("update-not-available", info => {
