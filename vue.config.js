@@ -3,12 +3,19 @@ module.exports = {
     electronBuilder: {
       builderOptions: {
         appId: "com.electron.sjcarapporten",
-        productName: "SJCA Rapporten",
+        productName: "Rapporten SJCA",
         copyright: "Copyright © 2019-* Steven Schoovaerts",
-        publish: ["github"],
+        publish: [
+          {
+            provider: "github",
+            owner: "Ragura",
+            repo: "reportcards"
+          }
+        ],
         win: {
           publisherName: "Studieanker",
-          target: "nsis"
+          target: "nsis",
+          verifyUpdateCodeSignature: false
           // icon: "./icon.ico"
         }
       }

@@ -1,8 +1,8 @@
 <template>
   <div>
-    <h3 class="mb-2">NEW VERSION</h3>
+    <h3 class="mb-2">NEW VERSION 2</h3>
     <h3 class="mb-2">Available: {{ available }}</h3>
-    <h3 class="mb-2">Not available: {{ notAvailable }}</h3>
+    <h3 class="mb-2">Downloaded: {{ downloaded }}</h3>
     <h3 class="mb-2">Error: {{ error }}</h3>
     <h1 class="text-2xl uppercase pb-4 border-b border-gray-200 mb-4">
       Nieuw rapport
@@ -44,7 +44,7 @@ export default {
     return {
       checking: "",
       available: "",
-      notAvailable: "",
+      downloaded: "",
       error: ""
     };
   },
@@ -73,6 +73,10 @@ export default {
     ipcRenderer.on("update-available", (event, data) => {
       log.info("UPDATE AVAILABLE");
       this.available = data;
+    });
+    ipcRenderer.on("update-downloaded", (event, data) => {
+      log.info("UPDATE DOWNLOADED");
+      this.downloaded = data;
     });
 
     ipcRenderer.on("error", (event, err) => {

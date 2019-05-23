@@ -10,6 +10,9 @@ import {
 } from "vue-cli-plugin-electron-builder/lib";
 const isDevelopment = process.env.NODE_ENV !== "production";
 
+const logger = require("electron-log");
+autoUpdater.logger = logger;
+
 // Keep a global reference of the window object, if you don't, the window will
 // be closed automatically when the JavaScript object is garbage collected.
 let win;
@@ -41,7 +44,7 @@ function createWindow() {
 
   win.on("ready-to-show", () => {
     win.show();
-    autoUpdater.checkForUpdatesAndNotify();
+    //autoUpdater.checkForUpdatesAndNotify();
   });
 }
 
@@ -74,10 +77,11 @@ app.on("ready", async () => {
       console.error("Vue Devtools failed to install:", e.toString());
     }
   }
+
   createWindow();
 });
 
-autoUpdater.autoDownload = true;
+// autoUpdater.autoDownload = true;
 
 autoUpdater.on("checking-for-update", () => {
   win.webContents.send("checking-for-update", "Zoeken naar updates...");
@@ -85,6 +89,8 @@ autoUpdater.on("checking-for-update", () => {
 
 autoUpdater.on("update-available", info => {
   win.webContents.send("update-available", info);
+
+  autoUpdater.downloadUpdate();
 });
 
 autoUpdater.on("update-not-available", info => {
@@ -97,25 +103,23 @@ autoUpdater.on("error", err => {
 
 //Auto Update
 autoUpdater.on("update-downloaded", () => {
-  console.log("update-downloaded lats quitAndInstall");
+  win.webContents.send("update-downloaded", "Gedownload");
 
-  if (process.env.NODE_ENV === "production") {
-    dialog.showMessageBox(
-      {
-        type: "info",
-        title: "Found Updates",
-        message: "Found updates, do you want update now?",
-        buttons: ["Sure", "No"]
-      },
-      buttonIndex => {
-        if (buttonIndex === 0) {
-          const isSilent = true;
-          const isForceRunAfter = true;
-          autoUpdater.quitAndInstall(isSilent, isForceRunAfter);
-        }
+  dialog.showMessageBox(
+    {
+      type: "info",
+      title: "Found Updates",
+      message: "Found updates, do you want update now?",
+      buttons: ["Sure", "No"]
+    },
+    buttonIndex => {
+      if (buttonIndex === 0) {
+        const isSilent = true;
+        const isForceRunAfter = true;
+        autoUpdater.quitAndInstall(isSilent, isForceRunAfter);
       }
-    );
-  }
+    }
+  );
 });
 
 // Exit cleanly on request from parent process in development mode.
