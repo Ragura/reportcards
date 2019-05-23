@@ -116,11 +116,16 @@ export default {
         title: "PDF opslaan",
         defaultPath:
           this.settings.standardLocation +
-          this.activePath.replace(".rap", ".pdf"),
+          this.activePath.replace(
+            ".rap",
+            `_${this.leerlingen[this.activeLeerling].voornaam}_${
+              this.leerlingen[this.activeLeerling].familienaam
+            }.pdf`
+          ),
         message: "Kies locatie om PDF op te slaan."
       });
 
-      if (!path[0]) return;
+      if (!path) return;
       this.printRapport(true);
       ipc.send("print-to-pdf", path);
     },
