@@ -1,9 +1,7 @@
 <template>
   <div>
-    <h3 class="mb-2">NEW VERSION 4</h3>
-    <h3 class="mb-2">Available: {{ available }}</h3>
-    <h3 class="mb-2">Downloaded: {{ downloaded }}</h3>
-    <h3 class="mb-2">Error: {{ error }}</h3>
+    <h3 class="mb-2">VERSION beta 0.8</h3>
+
     <h1 class="text-2xl uppercase pb-4 border-b border-gray-200 mb-4">
       Nieuw rapport
     </h1>

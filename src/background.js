@@ -108,9 +108,10 @@ autoUpdater.on("update-downloaded", () => {
   dialog.showMessageBox(
     {
       type: "info",
-      title: "Found Updates",
-      message: "Found updates, do you want update now?",
-      buttons: ["Sure", "No"]
+      title: "Nieuwe update beschikbaar",
+      message:
+        "Er is een nieuwe update beschikbaar. Wil je deze installeren (het programma start automatisch terug op)?",
+      buttons: ["Ja", "Nee"]
     },
     buttonIndex => {
       if (buttonIndex === 0) {
