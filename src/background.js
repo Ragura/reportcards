@@ -41,6 +41,7 @@ function createWindow() {
 
   win.on("ready-to-show", () => {
     win.show();
+    autoUpdater.checkForUpdatesAndNotify();
   });
 }
 
@@ -74,29 +75,25 @@ app.on("ready", async () => {
     }
   }
   createWindow();
-
-  autoUpdater.allowPrerelease = true;
-
-  autoUpdater.checkForUpdatesAndNotify();
 });
 
 // autoUpdater.autoDownload = true;
 
-autoUpdater.on("checking-for-update", () => {
-  win.webContents.send("checking-for-update", "Zoeken naar updates...");
-});
+// autoUpdater.on("checking-for-update", () => {
+//   win.webContents.send("checking-for-update", "Zoeken naar updates...");
+// });
 
-autoUpdater.on("update-available", info => {
-  win.webContents.send("update-available", info);
-});
+// autoUpdater.on("update-available", info => {
+//   win.webContents.send("update-available", info);
+// });
 
-autoUpdater.on("update-not-available", info => {
-  win.webContents.send("update-not-available", info);
-});
+// autoUpdater.on("update-not-available", info => {
+//   win.webContents.send("update-not-available", info);
+// });
 
-autoUpdater.on("error", err => {
-  win.webContents.send("Fout bij updaten.", err);
-});
+// autoUpdater.on("error", err => {
+//   win.webContents.send("Fout bij updaten.", err);
+// });
 
 // Auto Update
 // autoUpdater.on("update-downloaded", () => {
