@@ -69,7 +69,7 @@ export default {
   },
   created() {
     ipcRenderer.on("checking-for-update", (event, data) => {
-      this.checking = data;
+      this.checking = "checking!";
     });
     ipcRenderer.on("update-available", (event, data) => {
       this.available = data;
