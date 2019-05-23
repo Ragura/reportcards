@@ -8,3 +8,6 @@ Leesvaardigheid -> NIET
 Begrijpend lezen -> R3
 
 In R1 valt volledig blok dus weg!
+
+
+Github release private token: 6aad2c55e930facbf104fbbfc14bb23c7bf70174
