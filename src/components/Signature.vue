@@ -1,6 +1,6 @@
 <template>
   <div class="handtekening border border-black">
-    <section style="height: 3.5cm">
+    <section style="height: 2.7cm">
       Handtekening ouder(s)
     </section>
     <section>
@@ -11,7 +11,7 @@
 
 <script>
 export default {
-  name: "EindCommentaar",
+  name: "Signature",
   props: {
     content: {
       type: Object
@@ -22,7 +22,7 @@ export default {
 
 <style scoped>
 .handtekening {
-  height: 6cm;
+  height: 5.2cm;
   padding: 0.2cm;
 }
 </style>

@@ -326,10 +326,21 @@
         "punten": ["zill1", "zill2", ""]
       }
     },
+    "tijdbekaf": {
+      "id": "tijdbekaf",
+      "rapportOnly": true,
+      "type": "Question",
+      "page": 3,
+      "order": 9,
+      "content": {
+        "question": "Wat vond je van je tijd op Bekaf?\n\nKleur de smiley die het best past!\n(Meer dan 1 mag ook! 😃)",
+        "layout": "smileys"
+      }
+    },
     "eindcommentaar": {
       "id": "eindcommentaar",
       "rapportOnly": true,
-      "type": "EindCommentaar",
+      "type": "FinalComments",
       "page": 3,
       "order": 10,
       "content": {
@@ -339,7 +350,7 @@
     "handtekening": {
       "id": "handtekening",
       "rapportOnly": true,
-      "type": "Handtekening",
+      "type": "Signature",
       "page": 3,
       "order": 11,
       "content": {}

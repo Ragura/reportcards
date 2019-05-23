@@ -79,8 +79,11 @@ app.on("ready", async () => {
   }
 
   createWindow();
-  autoUpdater.checkForUpdates();
-  autoUpdater.downloadUpdate();
+
+  if (!isDevelopment) {
+    autoUpdater.checkForUpdates();
+    autoUpdater.downloadUpdate();
+  }
 });
 
 // autoUpdater.autoDownload = true;

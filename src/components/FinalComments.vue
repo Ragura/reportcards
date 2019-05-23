@@ -17,7 +17,7 @@
 import { mapState, mapActions } from "vuex";
 
 export default {
-  name: "EindCommentaar",
+  name: "FinalComments",
   props: {
     content: {
       type: Object
@@ -34,7 +34,7 @@ export default {
 
 <style scoped>
 textarea {
-  height: 6cm;
+  height: 7cm;
   padding: 0.2cm;
 }
 </style>
