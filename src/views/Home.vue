@@ -1,6 +1,6 @@
 <template>
   <div>
-    <h3 class="mb-2">Checking: {{ checking }}</h3>
+    <h3 class="mb-2">NEW VERSION</h3>
     <h3 class="mb-2">Available: {{ available }}</h3>
     <h3 class="mb-2">Not available: {{ notAvailable }}</h3>
     <h3 class="mb-2">Error: {{ error }}</h3>
