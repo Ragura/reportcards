@@ -1,6 +1,7 @@
 "use strict";
 
-import { app, protocol, BrowserWindow } from "electron";
+import { app, protocol, BrowserWindow, dialog } from "electron";
+import { autoUpdater } from "electron-updater";
 import "./electron/print";
 
 import {
@@ -68,6 +69,35 @@ app.on("ready", async () => {
     }
   }
   createWindow();
+});
+
+autoUpdater.autoDownload = true;
+
+autoUpdater.on("update-available", info => {
+  console.log("Update beschikbaar", info);
+});
+
+// Auto Update
+autoUpdater.on("update-downloaded", () => {
+  console.log("update-downloaded lats quitAndInstall");
+
+  if (process.env.NODE_ENV === "production") {
+    dialog.showMessageBox(
+      {
+        type: "info",
+        title: "Found Updates",
+        message: "Found updates, do you want update now?",
+        buttons: ["Sure", "No"]
+      },
+      buttonIndex => {
+        if (buttonIndex === 0) {
+          const isSilent = true;
+          const isForceRunAfter = true;
+          autoUpdater.quitAndInstall(isSilent, isForceRunAfter);
+        }
+      }
+    );
+  }
 });
 
 // Exit cleanly on request from parent process in development mode.

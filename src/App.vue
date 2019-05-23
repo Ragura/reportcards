@@ -21,8 +21,6 @@ import AppModal from "@/components/AppModal.vue";
 import Loading from "@/components/Loading.vue";
 import { mapState, mapActions } from "vuex";
 
-import { autoUpdater } from "electron-updater";
-
 export default {
   components: {
     AppModal,
@@ -37,10 +35,6 @@ export default {
   },
   created() {
     this.fetchSettings();
-    autoUpdater.on("update-available", info => console.log("VERSIE", info));
-    autoUpdater
-      .checkForUpdatesAndNotify()
-      .then(v => console.log("Nieuwe versie beschikbaar", v));
   }
 };
 </script>
