@@ -9,7 +9,8 @@ module.exports = {
           {
             provider: "github",
             owner: "Ragura",
-            repo: "reportcards"
+            repo: "reportcards",
+            verifyUpdateCodeSignature: false
           }
         ],
         win: {

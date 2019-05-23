@@ -1,6 +1,6 @@
 <template>
   <div>
-    <h3 class="mb-2">NEW VERSION 2</h3>
+    <h3 class="mb-2">NEW VERSION 3</h3>
     <h3 class="mb-2">Available: {{ available }}</h3>
     <h3 class="mb-2">Downloaded: {{ downloaded }}</h3>
     <h3 class="mb-2">Error: {{ error }}</h3>
