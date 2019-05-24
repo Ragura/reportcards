@@ -1,5 +1,8 @@
 <template>
   <div>
+    <h3 class="mb-1" v-show="available">
+      NIEUWE VERSIE BESCHIKBAAR - JE KRIJGT ZO DADELIJK BERICHT
+    </h3>
     <h3 class="mb-1 text-sm">Betaversie {{ version }}</h3>
 
     <h1 class="text-2xl uppercase pb-4 border-b border-gray-200 mb-4">
