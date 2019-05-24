@@ -1,6 +1,7 @@
 <template>
   <textarea
     class="border border-black w-full"
+    :key="`${activeLeerling}-${content.commentKey}`"
     v-html="leerlingen[activeLeerling].punten[content.commentKey]"
     @blur="
       updatePunten({

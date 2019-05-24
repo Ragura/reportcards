@@ -15,6 +15,7 @@
 
       <score-comments
         class="row-commentaar border-b border-black"
+        :key="`${activeLeerling}-${content.commentKey}`"
         @blur.native="
           updatePunten({
             leerlingId: activeLeerling,
@@ -44,6 +45,7 @@
             </div>
             <score-comments
               class="w-1/2 border-b border-l border-black"
+              :key="`${activeLeerling}-${content.commentKey}`"
               @blur.native="
                 updatePunten({
                   leerlingId: activeLeerling,
@@ -93,6 +95,7 @@
         </div>
         <score-comments
           class="w-1/2 border-b border-l border-black"
+          :key="`${activeLeerling}-${content.commentKey}`"
           @blur.native="
             updatePunten({
               leerlingId: activeLeerling,

@@ -18,6 +18,12 @@ module.exports = {
           target: "nsis",
           verifyUpdateCodeSignature: false,
           icon: "./icon.ico"
+        },
+        nsis: {
+          oneClick: false,
+          perMachine: true,
+          allowElevation: true,
+          allowToChangeInstallationDirectory: true
         }
       }
     }
