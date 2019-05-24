@@ -1,6 +1,6 @@
 <template>
   <div>
-    <h3 class="mb-2">VERSION beta 0.8</h3>
+    <h3 class="mb-1 text-sm">Betaversie {{ version }}</h3>
 
     <h1 class="text-2xl uppercase pb-4 border-b border-gray-200 mb-4">
       Nieuw rapport
@@ -30,7 +30,7 @@
 </template>
 
 <script>
-const { dialog } = require("electron").remote;
+const { dialog, app } = require("electron").remote;
 const { ipcRenderer } = require("electron");
 const log = require("electron-log");
 
@@ -43,7 +43,8 @@ export default {
       checking: "",
       available: "",
       downloaded: "",
-      error: ""
+      error: "",
+      version: ""
     };
   },
   computed: {
@@ -81,6 +82,8 @@ export default {
       log.info("ERROR: " + err);
       this.error = err;
     });
+
+    this.version = app.getVersion();
   }
 };
 </script>

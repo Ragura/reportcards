@@ -16,8 +16,8 @@ module.exports = {
         win: {
           publisherName: "Studieanker",
           target: "nsis",
-          verifyUpdateCodeSignature: false
-          // icon: "./icon.ico"
+          verifyUpdateCodeSignature: false,
+          icon: "./icon.ico"
         }
       }
     }
