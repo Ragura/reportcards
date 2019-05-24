@@ -14,7 +14,7 @@
     "electron:build32": "vue-cli-service electron:build --ia32",
     "electron:build3264": "vue-cli-service electron:build --ia32 --x64",
     "electron:serve": "vue-cli-service electron:serve",
-    "release": "vue-cli-service electron:build",
+    "release": "vue-cli-service electron:build --ia32 --x64",
     "postinstall": "electron-builder install-app-deps",
     "postuninstall": "electron-builder install-app-deps"
   },
