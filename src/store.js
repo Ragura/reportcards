@@ -68,6 +68,7 @@ export const mutations = {
   },
   addLeerling(state, { voornaam, familienaam }) {
     const id = uniqid();
+
     Vue.set(state.leerlingen, id, {
       id,
       voornaam,

@@ -7,7 +7,7 @@
         v-model="selectedLeerling"
       >
         <option
-          v-for="leerling of Object.values(leerlingen)"
+          v-for="leerling of leerlingenArray"
           :key="`select-${leerling.id}`"
           :value="leerling.id"
           >{{ leerling.familienaam }} {{ leerling.voornaam }}</option
@@ -109,7 +109,10 @@ export default {
       "activePath"
     ]),
     leerlingenArray() {
-      return Object.values(this.leerlingen);
+      if (this.leerlingen && Object.keys(this.leerlingen).length > 0) {
+        return Object.values(this.leerlingen);
+      }
+      return [];
     }
   },
   methods: {

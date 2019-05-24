@@ -37,8 +37,8 @@
           <div class="w-full flex overflow-hidden">
             <div class="w-1/2 flex flex-col">
               <color-line
-                v-for="id of content[`domeinen${n}`]"
-                :key="`domein${n}-${id}`"
+                v-for="(id, index) of content[`domeinen${n}`]"
+                :key="`domein${n}-${id ? id : index}`"
                 :id="id"
               />
             </div>

@@ -29,7 +29,7 @@
       <ul class="border border-gray-500 flex-grow">
         <li
           class="border-b border-gray-500 p-2 flex justify-between items-center"
-          v-for="leerling of Object.values(leerlingen)"
+          v-for="leerling of leerlingenArray"
           :key="`leerling-${leerling.id}`"
         >
           <p>{{ leerling.voornaam }} {{ leerling.familienaam }}</p>
@@ -85,7 +85,13 @@ export default {
     };
   },
   computed: {
-    ...mapState(["leerlingen", "settings", "meta"])
+    ...mapState(["leerlingen", "settings", "meta"]),
+    leerlingenArray() {
+      if (this.leerlingen && Object.keys(this.leerlingen).length > 0) {
+        return Object.values(this.leerlingen);
+      }
+      return [];
+    }
   },
   methods: {
     ...mapMutations(["showModal"]),
