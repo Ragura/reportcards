@@ -128,12 +128,17 @@ export default {
     ...mapActions(["createRapport"]),
     makeRapport() {
       const path = this.settings.standardLocation;
-      const schooljaar = this.getSchooljaar();
+      const schooljaar = this.rapport.schooljaar;
       const leerjaar = this.rapport.leerjaar;
       const klas = this.rapport.klas;
       const periode = this.rapport.periode;
 
-      const fullPath = `${path}/${schooljaar}_${leerjaar}${klas}_${periode}.rap`;
+      // Write schooljaar as combined short notation of current + next (ex. 1819)
+      const schooljaarKort =
+        schooljaar.toString().substring(2) +
+        (+schooljaar + 1).toString().substring(2);
+
+      const fullPath = `${path}/${schooljaarKort}_${leerjaar}${klas}_${periode}.rap`;
 
       const rapport = {
         meta: {

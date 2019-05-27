@@ -111,9 +111,9 @@ autoUpdater.on("update-downloaded", () => {
   dialog.showMessageBox(
     {
       type: "info",
-      title: "Nieuwe update beschikbaar",
+      title: "Rapporten SJCA: nieuwe update beschikbaar",
       message:
-        "Er is een nieuwe update beschikbaar. Wil je deze installeren (het programma start automatisch terug op)?",
+        "Er is een nieuwe update beschikbaar. Wil je deze installeren? (het programma start automatisch terug op)",
       buttons: ["Ja", "Nee"]
     },
     buttonIndex => {

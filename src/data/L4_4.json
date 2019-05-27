@@ -152,7 +152,7 @@
       "id": "leesvaardigheid",
       "type": "level",
       "levels": ["M3", "M4", "M5", "M6", "M7", "M8", "E3", "E4", "E5", "E6", "E7", "E8", "+"],
-      "text": "Leesvaardigheig (AVI)"
+      "text": "Leesvaardigheid (AVI)"
     },
     "begrijpendlezen": {
       "id": "begrijpendlezen",
@@ -242,7 +242,7 @@
         "domeinen1": ["d1a1", "d1a2"],
         "commentKey1": "domein1-commentaar",
         "subtitel2": "MUgr 5: Je laten meevoeren als toeschouwer & als uitvoerder rekening houden met je publiek",
-        "domeinen2": ["d2a1"],
+        "domeinen2": ["d2a1", ""],
         "commentKey2": "domein2-commentaar"
       }
     },
