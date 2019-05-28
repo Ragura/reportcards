@@ -250,10 +250,10 @@
         "layout": "domein",
         "zillHeader": "Muzische ontwikkeling",
         "icons": [4, 5, 2],
-        "subtitel1": "MUgr 3: Je eigen creatieve mogelijkheden ontdekken en die tonen aan anderen",
+        "subtitel1": "Je eigen creatieve mogelijkheden ontdekken en die tonen aan anderen",
         "domeinen1": ["d1a1", "d1a2"],
         "commentKey1": "domein1-commentaar",
-        "subtitel2": "MUva 2: Écht kijken naar en nadenken over muzisch werk en er samen over kunnen praten",
+        "subtitel2": "Écht kijken naar en nadenken over muzisch werk en er samen over kunnen praten",
         "domeinen2": ["d2a1", "d2a2"],
         "commentKey2": "domein2-commentaar"
       }

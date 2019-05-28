@@ -5,13 +5,10 @@
     class="h-full w-full relative"
     :style="{ backgroundColor: colors[value] }"
   >
-    <div
-      v-show="displayColors"
-      class="w-full h-full flex flex-col cursor-pointer"
-    >
+    <div v-show="displayColors" class="w-full h-full flex cursor-pointer">
       <div
         @click="$emit('change', index)"
-        class="w-full h-16"
+        class="w-full h-full"
         v-for="(color, index) of colors"
         :key="color"
         :style="{ backgroundColor: color }"
@@ -30,7 +27,13 @@ export default {
   },
   data() {
     return {
-      colors: ["white", "red", "yellow", "lightgreen", "lightblue"],
+      colors: [
+        "white",
+        "red",
+        "yellow",
+        "rgb(146, 208, 80)",
+        "rgb(0, 176, 240)"
+      ],
       displayColors: false
     };
   }

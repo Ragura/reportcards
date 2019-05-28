@@ -157,23 +157,40 @@ export default {
         this.$refs[`${this.punt}-${leerlingIndex - 1}-${index}`][0].focus();
       }
     },
+    // Average with weighting depening on max score amount
     average(arrayPunten) {
       if (!arrayPunten || typeof arrayPunten !== "object") return "";
 
-      let filled = 0;
+      let max = 0;
       const total = arrayPunten.reduce((total, punt, index) => {
         if (punt !== null) {
-          filled++;
-          return (
-            total + punt * (10 / this.evaluaties[this.punt].maximums[index])
-          );
+          max += this.evaluaties[this.punt].maximums[index];
+          return total + punt;
         }
         return total;
       }, 0);
 
-      if (!filled) return "";
-      return parseFloat((total / filled).toFixed(1));
+      if (!max) return "";
+      return parseFloat((total / (max / 10)).toFixed(1));
     },
+    // Average without weighting
+    // average(arrayPunten) {
+    //   if (!arrayPunten || typeof arrayPunten !== "object") return "";
+
+    //   let filled = 0;
+    //   const total = arrayPunten.reduce((total, punt, index) => {
+    //     if (punt !== null) {
+    //       filled++;
+    //       return (
+    //         total + punt * (10 / this.evaluaties[this.punt].maximums[index])
+    //       );
+    //     }
+    //     return total;
+    //   }, 0);
+
+    //   if (!filled) return "";
+    //   return parseFloat((total / filled).toFixed(1));
+    // },
     classAverage(index) {
       let filled = 0;
 

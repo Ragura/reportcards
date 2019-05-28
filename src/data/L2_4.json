@@ -183,20 +183,13 @@
       "id": "schrijfwerk",
       "type": "color",
       "amount": 6,
-      "text": "Ik schrijf tussen de lijnen"
+      "text": "Ik vorm de hoofdletters juist"
     },
     "hoofdletters": {
       "id": "hoofdletters",
       "type": "color",
       "amount": 6,
       "text": "Ik schrijf verzorgd"
-    },
-    "zill1": {
-      "id": "zill1",
-      "type": "points",
-      "amount": 6,
-      "maximums": [10, 10, 10, 10, 10, 10],
-      "text": "NATUUR - De tanden"
     },
     "zill2": {
       "id": "zill2",
@@ -263,10 +256,10 @@
         "layout": "domein",
         "zillHeader": "Muzische ontwikkeling",
         "icons": [4, 5, 2],
-        "subtitel1": "MUge 2: De muzische bouwstenen ontdekken en leren gebruiken",
+        "subtitel1": "De muzische bouwstenen ontdekken en leren gebruiken",
         "domeinen1": ["d1a1", "d1a2"],
         "commentKey1": "domein1-commentaar",
-        "subtitel2": "MUva 3: Vaardigheden leren, oefenen en verbeteren om je beter uit te kunnen drukken",
+        "subtitel2": "Vaardigheden leren, oefenen en verbeteren om je beter uit te kunnen drukken",
         "domeinen2": ["d2a1", "d2a2"],
         "commentKey2": "domein2-commentaar"
       }
@@ -320,7 +313,7 @@
         "zillHeader": "ORIËNTATIE OP DE WERELD - Thema mens & ...",
         "icons": [6, 2, 8, 4, 5, 10],
         "commentKey": "thema-commentaar",
-        "punten": ["zill1", "zill2", "zill3"]
+        "punten": ["zill2", "zill3", ""]
       }
     },
     "schooljaar": {
