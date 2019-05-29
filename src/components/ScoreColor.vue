@@ -2,8 +2,11 @@
   <div
     @mouseover="displayColors = true"
     @mouseleave="displayColors = false"
-    class="h-full w-full relative"
-    :style="{ backgroundColor: colors[value] }"
+    class="color h-full w-full relative"
+    :style="{
+      backgroundColor: colors[value],
+      backgroundImage: value ? `url(/images/mannetje_${value}.png)` : 'none'
+    }"
   >
     <div v-show="displayColors" class="w-full h-full flex cursor-pointer">
       <div
@@ -40,4 +43,10 @@ export default {
 };
 </script>
 
-<style></style>
+<style scoped>
+.color {
+  background-size: 0.7cm;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+</style>
