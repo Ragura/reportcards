@@ -1,0 +1,332 @@
+{
+  "leerlingen": {},
+  "evaluaties": {
+    "groep": {
+      "id": "groep",
+      "type": "color",
+      "amount": 1,
+      "text": "Ik kan ernstig in groep samenwerken aan een opdracht"
+    },
+    "raad": {
+      "id": "raad",
+      "type": "color",
+      "amount": 1,
+      "text": "Ik hou rekening met de raad en tips die ik krijg om fijn om te gaan met anderen"
+    },
+    "kritiek": {
+      "id": "kritiek",
+      "type": "color",
+      "amount": 1,
+      "text": "Ik kan omgaan met kritiek en doe er iets mee"
+    },
+    "voorstellen": {
+      "id": "voorstellen",
+      "type": "color",
+      "amount": 1,
+      "text": "Ik kan een werk voorstellen aan de klasgroep volgens de gemaakte afspraken"
+    },
+    "afspraken": {
+      "id": "afspraken",
+      "type": "color",
+      "amount": 1,
+      "text": "Ik kan werken volgens de vooraf gemaakte afspraken"
+    },
+    "storen": {
+      "id": "storen",
+      "type": "color",
+      "amount": 1,
+      "text": "Ik stoor niet als de leerkracht of medeleerlingen iets aan het uitleggen zijn"
+    },
+    "leesbaar": {
+      "id": "leesbaar",
+      "type": "color",
+      "amount": 1,
+      "text": "Mijn schrift is voor iedereen vlot leesbaar"
+    },
+    "leerwerk": {
+      "id": "leerwerk",
+      "type": "color",
+      "amount": 1,
+      "text": "Ik kan mijn leerwerk thuis zo plannen dat ik altijd met alles klaar geraak"
+    },
+    "project": {
+      "id": "project",
+      "type": "color",
+      "amount": 1,
+      "text": "Ik kan een (eigen) project met gepaste hulp en begeleiding volledig uitwerken en uitvoeren"
+    },
+    "inzetmeesterjuf": {
+      "id": "inzetmeesterjuf",
+      "type": "battery",
+      "amount": 1,
+      "text": "Mijn inzet volgens de meester/juf"
+    },
+    "inzetmezelf": {
+      "id": "inzetmezelf",
+      "type": "battery",
+      "amount": 1,
+      "text": "Mijn inzet volgens mezelf"
+    },
+    "d1a1": {
+      "id": "d1a1",
+      "type": "color",
+      "amount": 6,
+      "text": "BEELD - Vlekinsecten"
+    },
+    "d1a2": {
+      "id": "d1a2",
+      "type": "color",
+      "amount": 6,
+      "text": "DANS - Deel je dans"
+    },
+    "d2a1": {
+      "id": "d2a1",
+      "type": "color",
+      "amount": 6,
+      "text": "DRAMA - Rollenspel"
+    },
+    "getallenkennis": {
+      "id": "getallenkennis",
+      "type": "points",
+      "amount": 6,
+      "maximums": [10, 10, 10, 10, 10, 10],
+      "text": "Getallenkennis"
+    },
+    "rekenvaardigheid": {
+      "id": "rekenvaardigheid",
+      "type": "points",
+      "amount": 6,
+      "maximums": [10, 10, 10, 10, 10, 10],
+      "text": "Rekenvaardigheid"
+    },
+    "metendrekenen": {
+      "id": "metendrekenen",
+      "type": "points",
+      "amount": 6,
+      "maximums": [10, 10, 10, 10, 10, 10],
+      "text": "Meten & Metend Rekenen"
+    },
+    "meetkunde": {
+      "id": "meetkunde",
+      "type": "points",
+      "amount": 6,
+      "maximums": [10, 10, 10, 10, 10, 10],
+      "text": "Meetkunde"
+    },
+    "luisteren": {
+      "id": "luisteren",
+      "type": "points",
+      "amount": 6,
+      "maximums": [10, 10, 10, 10, 10, 10],
+      "text": "Luisteren"
+    },
+    "spreken": {
+      "id": "spreken",
+      "type": "color",
+      "amount": 6,
+      "maximums": [10, 10, 10, 10, 10, 10],
+      "text": "Spreken"
+    },
+    "spelling": {
+      "id": "spelling",
+      "type": "points",
+      "amount": 6,
+      "maximums": [10, 10, 10, 10, 10, 10],
+      "text": "Spelling"
+    },
+    "schrijven": {
+      "id": "schrijven",
+      "type": "color",
+      "amount": 6,
+      "maximums": [10, 10, 10, 10, 10, 10],
+      "text": "Toegepast schrijven"
+    },
+    "taalbeschouwing": {
+      "id": "taalbeschouwing",
+      "type": "points",
+      "amount": 6,
+      "maximums": [10, 10, 10, 10, 10, 10],
+      "text": "Taalbeschouwing"
+    },
+    "leesvaardigheid": {
+      "id": "leesvaardigheid",
+      "type": "level",
+      "levels": ["M3", "M4", "M5", "M6", "M7", "M8", "E3", "E4", "E5", "E6", "E7", "E8", "+"],
+      "text": "Leesvaardigheid (AVI)"
+    },
+    "begrijpendlezen": {
+      "id": "begrijpendlezen",
+      "type": "points",
+      "amount": 6,
+      "maximums": [10, 10, 10, 10, 10, 10],
+      "text": "Begrijpend lezen"
+    },
+    "agenda": {
+      "id": "agenda",
+      "type": "color",
+      "amount": 6,
+      "text": "Agenda netjes en volledig invullen"
+    },
+    "hoofdletters": {
+      "id": "hoofdletters",
+      "type": "color",
+      "amount": 6,
+      "text": "Hoofdletters schrijven waar het hoort"
+    },
+    "zill1": {
+      "id": "zill1",
+      "type": "points",
+      "amount": 6,
+      "maximums": [10, 10, 10, 10, 10, 10],
+      "text": "RUIMTE + SAMENLEVING - Welkom in onze provincie"
+    },
+    "zill2": {
+      "id": "zill2",
+      "type": "points",
+      "amount": 6,
+      "maximums": [10, 10, 10, 10, 10, 10],
+      "text": "NATUUR - Niet alle natuur leeft"
+    }
+  },
+  "blocks": {
+    "leefhouding": {
+      "id": "leefhouding",
+      "rapportOnly": true,
+      "type": "ScoreBlock",
+      "page": 1,
+      "order": 1,
+      "content": {
+        "layout": "periode",
+        "zillHeader": "Leefhouding",
+        "icons": [8, 4, 5],
+        "commentKey": "leefhouding-commentaar",
+        "jaarpunten": ["groep", "raad", ""],
+        "periodepunten": ["kritiek", "voorstellen"]
+      }
+    },
+    "lerenleren": {
+      "id": "lerenleren",
+      "rapportOnly": true,
+      "type": "ScoreBlock",
+      "page": 1,
+      "order": 2,
+      "content": {
+        "layout": "periode",
+        "zillHeader": "Leren Leren",
+        "icons": [4, 5, 2],
+        "commentKey": "lerenleren-commentaar",
+        "jaarpunten": ["afspraken", "storen", "leesbaar"],
+        "periodepunten": ["leerwerk", "project", ""]
+      }
+    },
+    "inzet": {
+      "id": "inzet",
+      "rapportOnly": true,
+      "type": "Batteries",
+      "page": 1,
+      "order": 3,
+      "content": {
+        "punten": ["inzetmeesterjuf", "inzetmezelf"]
+      }
+    },
+    "muzischeontwikkeling": {
+      "id": "muzischeontwikkeling",
+      "type": "ScoreBlock",
+      "page": 2,
+      "order": 4,
+      "content": {
+        "layout": "domein",
+        "zillHeader": "Muzische ontwikkeling",
+        "icons": [4, 5, 2],
+        "subtitel1": "Écht kijken naar en nadenken over muzisch werk en er samen over kunnen praten",
+        "domeinen1": ["d1a1", "d1a2"],
+        "commentKey1": "domein1-commentaar",
+        "subtitel2": "Je laten meevoeren als toeschouwer & als uitvoerder rekening houden met je publiek",
+        "domeinen2": ["d2a1", ""],
+        "commentKey2": "domein2-commentaar"
+      }
+    },
+    "wiskundigdenken": {
+      "id": "wiskundigdenken",
+      "type": "ScoreBlock",
+      "page": 2,
+      "order": 5,
+      "content": {
+        "layout": "rij",
+        "zillHeader": "Logisch en wiskundig denken",
+        "icons": [7, 5],
+        "commentKey": "wiskundigdenken-commentaar",
+        "punten": ["getallenkennis", "rekenvaardigheid", "metendrekenen", "meetkunde"]
+      }
+    },
+    "taalontwikkeling": {
+      "id": "taalontwikkeling",
+      "type": "ScoreBlock",
+      "page": 2,
+      "order": 6,
+      "content": {
+        "layout": "rij",
+        "zillHeader": "Taalontwikkeling Nederlands",
+        "icons": [9, 2, 6],
+        "commentKey": "taalontwikkeling-commentaar",
+        "punten": ["luisteren", "spreken", "spelling", "schrijven", "taalbeschouwing", "leesvaardigheid", "begrijpendlezen"]
+      }
+    },
+    "schrift": {
+      "id": "schrift",
+      "type": "ScoreBlock",
+      "page": 3,
+      "order": 7,
+      "content": {
+        "layout": "rij",
+        "zillHeader": "Schrift",
+        "icons": [9, 10],
+        "commentKey": "schrift-commentaar",
+        "punten": ["agenda", "hoofdletters"]
+      }
+    },
+    "thema": {
+      "id": "thema",
+      "type": "ScoreBlock",
+      "page": 3,
+      "order": 8,
+      "content": {
+        "layout": "rij",
+        "zillHeader": "ORIËNTATIE OP DE WERELD - Thema mens & ...",
+        "icons": [6, 2, 8, 4, 5, 10],
+        "commentKey": "thema-commentaar",
+        "punten": ["zill1", "zill2", ""]
+      }
+    },
+    "schooljaar": {
+      "id": "schooljaar",
+      "rapportOnly": true,
+      "type": "Question",
+      "page": 3,
+      "order": 9,
+      "content": {
+        "question": "Wat vond je het leukste aan het voorbije schooljaar?",
+        "layout": "image"
+      }
+    },
+    "eindcommentaar": {
+      "id": "eindcommentaar",
+      "rapportOnly": true,
+      "type": "FinalComments",
+      "page": 3,
+      "order": 10,
+      "content": {
+        "commentKey": "eindcommentaar"
+      }
+    },
+    "handtekening": {
+      "id": "handtekening",
+      "rapportOnly": true,
+      "type": "Signature",
+      "page": 3,
+      "order": 11,
+      "content": {}
+    }
+  }
+  
+}

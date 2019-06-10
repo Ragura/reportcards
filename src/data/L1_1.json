@@ -1,0 +1,351 @@
+{
+  "leerlingen": {},
+  "evaluaties": {
+    "spelen": {
+      "id": "spelen",
+      "type": "color",
+      "amount": 1,
+      "text": "Ik kan fijn samen spelen met mijn klasgenoten"
+    },
+    "help": {
+      "id": "help",
+      "type": "color",
+      "amount": 1,
+      "text": "Ik help graag andere kinderen"
+    },
+    "regels": {
+      "id": "regels",
+      "type": "color",
+      "amount": 1,
+      "text": "Ik hou me aan de regels in de klas en op de speelplaats"
+    },
+    "samenwerken": {
+      "id": "samenwerken",
+      "type": "color",
+      "amount": 1,
+      "text": "Ik kan vlot samenwerken met anderen tijdens een groepswerk"
+    },
+    "ruzie": {
+      "id": "ruzie",
+      "type": "color",
+      "amount": 1,
+      "text": "Ik kan een ruzie uitpraten"
+    },
+    "volhouden": {
+      "id": "volhouden",
+      "type": "color",
+      "amount": 1,
+      "text": "Ik kan een gegeven opdracht volhouden tot het eind"
+    },
+    "bank": {
+      "id": "bank",
+      "type": "color",
+      "amount": 1,
+      "text": "Op mijn bank ligt alleen wat ik nodig heb"
+    },
+    "aandachtig": {
+      "id": "aandachtig",
+      "type": "color",
+      "amount": 1,
+      "text": "Ik kan aandachtig luisteren naar wat de leerkracht of klasgenootjes vertellen"
+    },
+    "bedenken": {
+      "id": "bedenken",
+      "type": "color",
+      "amount": 1,
+      "text": "Ik kan bedenken en vertellen wat ik een volgende keer anders ga aanpakken en hoe. Ik leer uit mijn fouten."
+    },
+    "idee": {
+      "id": "idee",
+      "type": "color",
+      "amount": 1,
+      "text": "Ik kan een eigen idee vooraf opdelen in opeenvolgende stappen en die vertellen"
+    },
+    "oplossing": {
+      "id": "oplossing",
+      "type": "color",
+      "amount": 1,
+      "text": "Ik probeer eerst zelf tot een goede oplossing te komen alvorens hulp te vragen"
+    },
+    "inzetmeesterjuf": {
+      "id": "inzetmeesterjuf",
+      "type": "battery",
+      "amount": 1,
+      "text": "Mijn inzet volgens de meester/juf"
+    },
+    "inzetmezelf": {
+      "id": "inzetmezelf",
+      "type": "battery",
+      "amount": 1,
+      "text": "Mijn inzet volgens mezelf"
+    },
+    "d1a1": {
+      "id": "d1a1",
+      "type": "color",
+      "amount": 6,
+      "text": "BEELD - Monsters in foam clay"
+    },
+    "d1a2": {
+      "id": "d1a2",
+      "type": "color",
+      "amount": 6,
+      "text": "BEELD - bouwen met papier-maché"
+    },
+    "d2a1": {
+      "id": "d2a1",
+      "type": "color",
+      "amount": 6,
+      "text": "MUZIEK - Raste pasta pizzaman"
+    },
+    "d2a2": {
+      "id": "d2a2",
+      "type": "color",
+      "amount": 6,
+      "text": "DRAMA - Goed nieuws journaal"
+    },
+    "getallenkennis": {
+      "id": "getallenkennis",
+      "type": "points",
+      "amount": 6,
+      "maximums": [10, 10, 10, 10, 10, 10],
+      "text": "Getallenkennis"
+    },
+    "rekenvaardigheid": {
+      "id": "rekenvaardigheid",
+      "type": "points",
+      "amount": 6,
+      "maximums": [10, 10, 10, 10, 10, 10],
+      "text": "Rekenvaardigheid"
+    },
+    "metendrekenen": {
+      "id": "metendrekenen",
+      "type": "points",
+      "amount": 6,
+      "maximums": [10, 10, 10, 10, 10, 10],
+      "text": "Meten & Metend Rekenen"
+    },
+    "meetkunde": {
+      "id": "meetkunde",
+      "type": "points",
+      "amount": 6,
+      "maximums": [10, 10, 10, 10, 10, 10],
+      "text": "Meetkunde"
+    },
+    "luisteren": {
+      "id": "luisteren",
+      "type": "points",
+      "amount": 6,
+      "maximums": [10, 10, 10, 10, 10, 10],
+      "text": "Luisteren"
+    },
+    "spreken": {
+      "id": "spreken",
+      "type": "color",
+      "amount": 6,
+      "maximums": [10, 10, 10, 10, 10, 10],
+      "text": "Spreken"
+    },
+    "spelling": {
+      "id": "spelling",
+      "type": "points",
+      "amount": 6,
+      "maximums": [10, 10, 10, 10, 10, 10],
+      "text": "Spelling"
+    },
+    "schrijven": {
+      "id": "schrijven",
+      "type": "color",
+      "amount": 6,
+      "maximums": [10, 10, 10, 10, 10, 10],
+      "text": "Toegepast schrijven"
+    },
+    "taalbeschouwing": {
+      "id": "taalbeschouwing",
+      "type": "points",
+      "amount": 6,
+      "maximums": [10, 10, 10, 10, 10, 10],
+      "text": "Taalbeschouwing"
+    },
+    "begrijpendlezen": {
+      "id": "begrijpendlezen",
+      "type": "points",
+      "amount": 6,
+      "maximums": [10, 10, 10, 10, 10, 10],
+      "text": "Begrijpend lezen"
+    },
+    "lijnen": {
+      "id": "lijnen",
+      "type": "color",
+      "amount": 6,
+      "text": "Ik schrijf tussen de lijnen"
+    },
+    "verzorgd": {
+      "id": "verzorgd",
+      "type": "color",
+      "amount": 6,
+      "text": "Ik schrijf verzorgd"
+    },
+    "zill1": {
+      "id": "zill1",
+      "type": "points",
+      "amount": 6,
+      "maximums": [10, 10, 10, 10, 10, 10],
+      "text": "NATUUR - Planten en zaaien"
+    },
+    "zill2": {
+      "id": "zill2",
+      "type": "points",
+      "amount": 6,
+      "maximums": [10, 10, 10, 10, 10, 10],
+      "text": "TIJD - De tijd vliegt snel"
+    },
+    "zill3": {
+      "id": "zill3",
+      "type": "points",
+      "amount": 6,
+      "maximums": [10, 10, 10, 10, 10, 10],
+      "text": "RUIMTE - Veilig op stap"
+    }
+  },
+  "blocks": {
+    "leefhouding": {
+      "id": "leefhouding",
+      "rapportOnly": true,
+      "type": "ScoreBlock",
+      "page": 1,
+      "order": 1,
+      "content": {
+        "layout": "periode",
+        "zillHeader": "Leefhouding",
+        "icons": [8, 4, 5],
+        "commentKey": "leefhouding-commentaar",
+        "jaarpunten": ["spelen", "help", "regels"],
+        "periodepunten": ["samenwerken", "ruzie"]
+      }
+    },
+    "werkhouding": {
+      "id": "werkhouding",
+      "rapportOnly": true,
+      "type": "ScoreBlock",
+      "page": 1,
+      "order": 2,
+      "content": {
+        "layout": "periode",
+        "zillHeader": "Werkhouding",
+        "icons": [4, 5, 2],
+        "commentKey": "werkhouding-commentaar",
+        "jaarpunten": ["volhouden", "bank", "aandachting"],
+        "periodepunten": ["bedenken", "idee", "oplossing"]
+      }
+    },
+    "inzet": {
+      "id": "inzet",
+      "rapportOnly": true,
+      "type": "Batteries",
+      "page": 1,
+      "order": 3,
+      "content": {
+        "punten": ["inzetmeesterjuf", "inzetmezelf"]
+      }
+    },
+    "muzischeontwikkeling": {
+      "id": "muzischeontwikkeling",
+      "type": "ScoreBlock",
+      "page": 2,
+      "order": 4,
+      "content": {
+        "layout": "domein",
+        "zillHeader": "Muzische ontwikkeling",
+        "icons": [4, 5, 2],
+        "subtitel1": "Durven en kunnen fantaseren en daar plezier aan beleven",
+        "domeinen1": ["d1a1", "d1a2"],
+        "commentKey1": "domein1-commentaar",
+        "subtitel2": "Op een fijne manier tot sterk en mooi muzisch samenspel komen",
+        "domeinen2": ["d2a1", "d2a2"],
+        "commentKey2": "domein2-commentaar"
+      }
+    },
+    "wiskundigdenken": {
+      "id": "wiskundigdenken",
+      "type": "ScoreBlock",
+      "page": 2,
+      "order": 5,
+      "content": {
+        "layout": "rij",
+        "zillHeader": "Logisch en wiskundig denken",
+        "icons": [7, 5],
+        "commentKey": "wiskundigdenken-commentaar",
+        "punten": ["getallenkennis", "rekenvaardigheid", "metendrekenen", "meetkunde"]
+      }
+    },
+    "taalontwikkeling": {
+      "id": "taalontwikkeling",
+      "type": "ScoreBlock",
+      "page": 2,
+      "order": 6,
+      "content": {
+        "layout": "rij",
+        "zillHeader": "Taalontwikkeling Nederlands",
+        "icons": [9, 2, 6],
+        "commentKey": "taalontwikkeling-commentaar",
+        "punten": ["luisteren", "spreken", "spelling", "schrijven", "taalbeschouwing", "begrijpendlezen"]
+      }
+    },
+    "schrift": {
+      "id": "schrift",
+      "type": "ScoreBlock",
+      "page": 3,
+      "order": 7,
+      "content": {
+        "layout": "rij",
+        "zillHeader": "Schrift",
+        "icons": [9, 10],
+        "commentKey": "schrift-commentaar",
+        "punten": ["lijnen", "verzorgd"]
+      }
+    },
+    "thema": {
+      "id": "thema",
+      "type": "ScoreBlock",
+      "page": 3,
+      "order": 8,
+      "content": {
+        "layout": "rij",
+        "zillHeader": "ORIËNTATIE OP DE WERELD - Thema mens & ...",
+        "icons": [6, 2, 8, 4, 5, 10],
+        "commentKey": "thema-commentaar",
+        "punten": ["zill1", "zill2", "zill3"]
+      }
+    },
+    "schooljaar": {
+      "id": "schooljaar",
+      "rapportOnly": true,
+      "type": "Question",
+      "page": 3,
+      "order": 9,
+      "content": {
+        "question": "Wat vond jij van het voorbije schooljaar?\n\nKleur de smiley die het best past!\n(meer dan 1 mag ook 😃)",
+        "layout": "smileys"
+      }
+    },
+    "eindcommentaar": {
+      "id": "eindcommentaar",
+      "rapportOnly": true,
+      "type": "FinalComments",
+      "page": 3,
+      "order": 10,
+      "content": {
+        "commentKey": "eindcommentaar"
+      }
+    },
+    "handtekening": {
+      "id": "handtekening",
+      "rapportOnly": true,
+      "type": "Signature",
+      "page": 3,
+      "order": 11,
+      "content": {}
+    }
+  }
+  
+}

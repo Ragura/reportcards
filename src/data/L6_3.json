@@ -1,0 +1,360 @@
+{
+  "leerlingen": {
+    "fd3sdhc3": {
+      "id": "fd3sdhc3",
+      "voornaam": "Jantje",
+      "familienaam": "Kruimeldief",
+      "punten": {
+        "mening": 3,
+        "regels": 2,
+        "neen": 4,
+        "zelfbewust": 1,
+        "d1a1": [1, 3, 4, null, null, null],
+        "d1a1-final": 3,
+        "d1a2": [2, 1, null, null, null, null],
+        "d1a2-final": 2,
+        "d2a1": [4, 4, 3, 4, null, null],
+        "d2a1-final": 4,
+        "d2a2": [2, 1, 2, 3, null, null],
+        "d2a2-final": 2,
+        "getallenkennis": [6, 7, 6, 8, null, null],
+        "rekenvaardigheid": [3, 2, 4, null, null, null],
+        "rekenvaardigheid-final": 3,
+        "metendrekenen": [3, 6, 9, 8, 7, null],
+        "meetkunde": [5, 10, 10, 10, 10, 9],
+        "leefhouding-commentaar": "Jantje doet het al bij al goed!"
+      }
+    }
+  },
+  "evaluaties": {
+    "mening": {
+      "id": "mening",
+      "type": "color",
+      "amount": 1,
+      "text": "Ik aanvaard de mening van anderen en werk samen om tot een oplossing te komen"
+    },
+    "regels": {
+      "id": "regels",
+      "type": "color",
+      "amount": 1,
+      "text": "Ik houd mij aan regels en afspraken omdat die nodig zijn voor een goeie klas- en schoolwerking"
+    },
+    "neen": {
+      "id": "neen",
+      "type": "color",
+      "amount": 1,
+      "text": "Ik kan en durf \"neen\" zeggen"
+    },
+    "zelfbewust": {
+      "id": "zelfbewust",
+      "type": "color",
+      "amount": 1,
+      "text": "Ik kan zelfbewust en zelfzeker mijn werk presenteren voor de klas"
+    },
+    "onthouden": {
+      "id": "onthouden",
+      "type": "color",
+      "amount": 1,
+      "text": "Ik kan vlot (leerstof) onthouden (door herhaling – oefenen – instuderen)"
+    },
+    "opzoeken": {
+      "id": "opzoeken",
+      "type": "color",
+      "amount": 1,
+      "text": "Wat ik niet weet, zoek ik zelf op"
+    },
+    "weekplanning": {
+      "id": "weekplanning",
+      "type": "color",
+      "amount": 1,
+      "text": "Ik kan mijn taken en lessen opnemen in een haalbare weekplanning"
+    },
+    "onderzoeken": {
+      "id": "onderzoeken",
+      "type": "color",
+      "amount": 1,
+      "text": "Ik kan een probleem onderzoeken door mogelijkheden uit te proberen en mezelf vragen te stellen, waarbij ik gebruik wat ik al weet."
+    },
+    "inschatten": {
+      "id": "inschatten",
+      "type": "color",
+      "amount": 1,
+      "text": "Ik kan zelf juist inschatten in welke niveaugroep ik best aan de slag ga"
+    },
+    "project": {
+      "id": "project",
+      "type": "color",
+      "amount": 1,
+      "text": "Ik kan een (eigen) project zelfstandig bedenken – plannen – voorbereiden – uitvoeren"
+    },
+    "inzetmeesterjuf": {
+      "id": "inzetmeesterjuf",
+      "type": "battery",
+      "amount": 1,
+      "text": "Mijn inzet volgens de meester/juf"
+    },
+    "inzetmezelf": {
+      "id": "inzetmezelf",
+      "type": "battery",
+      "amount": 1,
+      "text": "Mijn inzet volgens mezelf"
+    },
+    "d1a1": {
+      "id": "d1a1",
+      "type": "color",
+      "amount": 6,
+      "text": "DANS - Dansende elektriciteitspylonen"
+    },
+    "d2a1": {
+      "id": "d2a1",
+      "type": "color",
+      "amount": 6,
+      "text": "MUZIEK - Afvalconcert"
+    },
+    "getallenkennis": {
+      "id": "getallenkennis",
+      "type": "points",
+      "amount": 6,
+      "maximums": [10, 10, 10, 10, 10, 10],
+      "text": "Getallenkennis"
+    },
+    "rekenvaardigheid": {
+      "id": "rekenvaardigheid",
+      "type": "points",
+      "amount": 6,
+      "maximums": [10, 10, 10, 10, 10, 10],
+      "text": "Rekenvaardigheid"
+    },
+    "metendrekenen": {
+      "id": "metendrekenen",
+      "type": "points",
+      "amount": 6,
+      "maximums": [10, 10, 10, 10, 10, 10],
+      "text": "Meten & Metend Rekenen"
+    },
+    "meetkunde": {
+      "id": "meetkunde",
+      "type": "points",
+      "amount": 6,
+      "maximums": [10, 10, 10, 10, 10, 10],
+      "text": "Meetkunde"
+    },
+    "luisteren": {
+      "id": "luisteren",
+      "type": "points",
+      "amount": 6,
+      "maximums": [10, 10, 10, 10, 10, 10],
+      "text": "Luisteren"
+    },
+    "spreken": {
+      "id": "spreken",
+      "type": "color",
+      "amount": 6,
+      "maximums": [10, 10, 10, 10, 10, 10],
+      "text": "Spreken"
+    },
+    "spelling": {
+      "id": "spelling",
+      "type": "points",
+      "amount": 6,
+      "maximums": [10, 10, 10, 10, 10, 10],
+      "text": "Spelling"
+    },
+    "schrijven": {
+      "id": "schrijven",
+      "type": "color",
+      "amount": 6,
+      "maximums": [10, 10, 10, 10, 10, 10],
+      "text": "Toegepast schrijven"
+    },
+    "taalbeschouwing": {
+      "id": "taalbeschouwing",
+      "type": "points",
+      "amount": 6,
+      "maximums": [10, 10, 10, 10, 10, 10],
+      "text": "Taalbeschouwing"
+    },
+    "leesvaardigheid": {
+      "id": "leesvaardigheid",
+      "type": "level",
+      "levels": ["M3", "M4", "M5", "M6", "M7", "M8", "E3", "E4", "E5", "E6", "E7", "E8", "+"],
+      "text": "Leesvaardigheid (AVI)"
+    },
+    "begrijpendlezen": {
+      "id": "begrijpendlezen",
+      "type": "points",
+      "amount": 6,
+      "maximums": [10, 10, 10, 10, 10, 10],
+      "text": "Begrijpend lezen"
+    },
+    "luisterenspreken": {
+      "id": "luisterenspreken",
+      "type": "points",
+      "amount": 6,
+      "maximums": [10, 10, 10, 10, 10, 10],
+      "text": "Luisteren & spreken"
+    },
+    "lezenschrijven": {
+      "id": "lezenschrijven",
+      "type": "points",
+      "amount": 6,
+      "maximums": [10, 10, 10, 10, 10, 10],
+      "text": "Lezen & schrijven"
+    },
+    "zill1": {
+      "id": "zill1",
+      "type": "points",
+      "amount": 6,
+      "maximums": [10, 10, 10, 10, 10, 10],
+      "text": "RUIMTE + NATUUR - Weer & klimaat"
+    },
+    "zill2": {
+      "id": "zill2",
+      "type": "points",
+      "amount": 6,
+      "maximums": [10, 10, 10, 10, 10, 10],
+      "text": "ALLE ZILL-THEMA's - Meesterwerk"
+    }
+  },
+  "blocks": {
+    "leefhouding": {
+      "id": "leefhouding",
+      "rapportOnly": true,
+      "type": "ScoreBlock",
+      "page": 1,
+      "order": 1,
+      "content": {
+        "layout": "periode",
+        "zillHeader": "Leefhouding",
+        "icons": [8, 4, 5],
+        "commentKey": "leefhouding-commentaar",
+        "jaarpunten": ["mening", "regels", ""],
+        "periodepunten": ["neen", "zelfbewust"]
+      }
+    },
+    "lerenleren": {
+      "id": "lerenleren",
+      "rapportOnly": true,
+      "type": "ScoreBlock",
+      "page": 1,
+      "order": 2,
+      "content": {
+        "layout": "periode",
+        "zillHeader": "Leren leren",
+        "icons": [4, 5, 2],
+        "commentKey": "lerenleren-commentaar",
+        "jaarpunten": ["onthouden", "opzoeken", "weekplanning"],
+        "periodepunten": ["onderzoeken", "inschatten", "project"]
+      }
+    },
+    "inzet": {
+      "id": "inzet",
+      "rapportOnly": true,
+      "type": "Batteries",
+      "page": 1,
+      "order": 3,
+      "content": {
+        "punten": ["inzetmeesterjuf", "inzetmezelf"]
+      }
+    },
+    "muzischeontwikkeling": {
+      "id": "muzischeontwikkeling",
+      "type": "ScoreBlock",
+      "page": 2,
+      "order": 4,
+      "content": {
+        "layout": "domein",
+        "zillHeader": "Muzische ontwikkeling",
+        "icons": [4, 5, 2],
+        "subtitel1": "De muzische bouwstenen ontdekken en creatief leren gebruiken",
+        "domeinen1": ["d1a1", ""],
+        "commentKey1": "domein1-commentaar",
+        "subtitel2": "Vaardigheden leren, oefenen en gebruiken om je beter uit te drukken in muzisch werk",
+        "domeinen2": ["d2a1", ""],
+        "commentKey2": "domein2-commentaar"
+      }
+    },
+    "wiskundigdenken": {
+      "id": "wiskundigdenken",
+      "type": "ScoreBlock",
+      "page": 2,
+      "order": 5,
+      "content": {
+        "layout": "rij",
+        "zillHeader": "Logisch en wiskundig denken",
+        "icons": [7, 5],
+        "commentKey": "wiskundigdenken-commentaar",
+        "punten": ["getallenkennis", "rekenvaardigheid", "metendrekenen", "meetkunde"]
+      }
+    },
+    "taalontwikkeling": {
+      "id": "taalontwikkeling",
+      "type": "ScoreBlock",
+      "page": 2,
+      "order": 6,
+      "content": {
+        "layout": "rij",
+        "zillHeader": "Taalontwikkeling Nederlands",
+        "icons": [9, 2, 6],
+        "commentKey": "taalontwikkeling-commentaar",
+        "punten": ["luisteren", "spreken", "spelling", "schrijven", "taalbeschouwing", "leesvaardigheid", "begrijpendlezen"]
+      }
+    },
+    "frans": {
+      "id": "frans",
+      "type": "ScoreBlock",
+      "page": 3,
+      "order": 7,
+      "content": {
+        "layout": "rij",
+        "zillHeader": "Taalontwikkeling Frans",
+        "icons": [9, 2, 6],
+        "commentKey": "frans-commentaar",
+        "punten": ["luisterenspreken", "lezenschrijven"]
+      }
+    },
+    "thema": {
+      "id": "thema",
+      "type": "ScoreBlock",
+      "page": 3,
+      "order": 8,
+      "content": {
+        "layout": "rij",
+        "zillHeader": "ORIËNTATIE OP DE WERELD - Thema mens & ...",
+        "icons": [6, 2, 8, 4, 5, 10],
+        "commentKey": "thema-commentaar",
+        "punten": ["zill1", "zill2", ""]
+      }
+    },
+    "tijdbekaf": {
+      "id": "tijdbekaf",
+      "rapportOnly": true,
+      "type": "Question",
+      "page": 3,
+      "order": 9,
+      "content": {
+        "question": "Wat vond je van je tijd op Bekaf?\n\nKleur de smiley die het best past!\n(Meer dan 1 mag ook! 😃)",
+        "layout": "smileys"
+      }
+    },
+    "eindcommentaar": {
+      "id": "eindcommentaar",
+      "rapportOnly": true,
+      "type": "FinalComments",
+      "page": 3,
+      "order": 10,
+      "content": {
+        "commentKey": "eindcommentaar"
+      }
+    },
+    "handtekening": {
+      "id": "handtekening",
+      "rapportOnly": true,
+      "type": "Signature",
+      "page": 3,
+      "order": 11,
+      "content": {}
+    }
+  }
+  
+}
