@@ -234,7 +234,7 @@
         "zillHeader": "Werkhouding",
         "icons": [4, 5, 2],
         "commentKey": "werkhouding-commentaar",
-        "jaarpunten": ["volhouden", "bank", "aandachting"],
+        "jaarpunten": ["volhouden", "bank", "aandachtig"],
         "periodepunten": ["bedenken", "idee", "oplossing"]
       }
     },

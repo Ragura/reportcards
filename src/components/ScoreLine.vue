@@ -46,17 +46,17 @@ export default {
       const arrayPunten = this.leerlingen[this.activeLeerling].punten[this.id];
       if (!arrayPunten || typeof arrayPunten !== "object") return "";
 
-      let filled = 0;
+      let max = 0;
       const total = arrayPunten.reduce((total, punt, index) => {
         if (punt !== null) {
-          filled++;
-          return total + punt * (10 / this.evaluaties[this.id].maximums[index]);
+          max += this.evaluaties[this.id].maximums[index];
+          return total + punt;
         }
         return total;
       }, 0);
 
-      if (!filled) return "";
-      return parseFloat((total / filled).toFixed(1));
+      if (!max) return "";
+      return parseFloat((total / (max / 10)).toFixed(1));
     }
   },
   methods: {
