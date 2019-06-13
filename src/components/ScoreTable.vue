@@ -56,6 +56,9 @@
             @keydown.enter.prevent="nextPoint(leerlingIndex, n)"
             @keydown.down.prevent="nextPoint(leerlingIndex, n)"
             @keydown.up.prevent="previousPoint(leerlingIndex, n)"
+            @keydown.right="nextEval(leerlingIndex, n, $event)"
+            @keydown.left="previousEval(leerlingIndex, n, $event)"
+            @keydown.space.prevent
           ></p>
         </td>
         <!-- Gemiddelde per leerling -->
@@ -155,6 +158,47 @@ export default {
     previousPoint(leerlingIndex, index) {
       if (leerlingIndex > 0) {
         this.$refs[`${this.punt}-${leerlingIndex - 1}-${index}`][0].focus();
+      }
+    },
+    getCaretPosition() {
+      if (window.getSelection && window.getSelection().getRangeAt) {
+        var range = window.getSelection().getRangeAt(0);
+        var selectedObj = window.getSelection();
+        var rangeCount = 0;
+        var childNodes = selectedObj.anchorNode.parentNode.childNodes;
+        for (var i = 0; i < childNodes.length; i++) {
+          if (childNodes[i] == selectedObj.anchorNode) {
+            break;
+          }
+          if (childNodes[i].outerHTML)
+            rangeCount += childNodes[i].outerHTML.length;
+          else if (childNodes[i].nodeType == 3) {
+            rangeCount += childNodes[i].textContent.length;
+          }
+        }
+        return range.startOffset + rangeCount;
+      }
+      return -1;
+    },
+    nextEval(leerlingIndex, index, event) {
+      if (
+        index + 1 <= this.evaluatie.amount &&
+        this.getCaretPosition() ==
+          this.$refs[`${this.punt}-${leerlingIndex}-${index}`][0].innerHTML
+            .length
+      ) {
+        index++;
+        const target = this.$refs[`${this.punt}-${leerlingIndex}-${index}`][0];
+        target.focus();
+        event.preventDefault();
+      }
+    },
+    previousEval(leerlingIndex, index, event) {
+      if (index - 1 > 0 && this.getCaretPosition() == 0) {
+        index--;
+        const target = this.$refs[`${this.punt}-${leerlingIndex}-${index}`][0];
+        target.focus();
+        event.preventDefault();
       }
     },
     // Average with weighting depening on max score amount

@@ -2,6 +2,7 @@
 
 import { app, protocol, BrowserWindow, dialog } from "electron";
 const { autoUpdater } = require("electron-updater");
+const contextMenu = require("electron-context-menu");
 import "./electron/print";
 
 import {
@@ -13,6 +14,22 @@ const isDevelopment = process.env.NODE_ENV !== "production";
 // const logger = require("electron-log");
 
 // autoUpdater.logger = logger;
+
+// Create contextmenu
+contextMenu({
+  prepend: (defaultActions, params, browserWindow) => [
+    {
+      label: "Rainbow",
+      // Only show it when right-clicking images
+      visible: params.mediaType === "image"
+    }
+  ],
+  labels: {
+    copy: "Kopiëren",
+    cut: "Knippen",
+    paste: "Plakken"
+  }
+});
 
 // Keep a global reference of the window object, if you don't, the window will
 // be closed automatically when the JavaScript object is garbage collected.
