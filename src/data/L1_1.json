@@ -1,71 +1,71 @@
 {
   "leerlingen": {},
   "evaluaties": {
-    "spelen": {
-      "id": "spelen",
+    "lj1": {
+      "id": "lj1",
       "type": "color",
       "amount": 1,
       "text": "Ik kan fijn samen spelen met mijn klasgenoten"
     },
-    "help": {
-      "id": "help",
+    "lj2": {
+      "id": "lj2",
       "type": "color",
       "amount": 1,
       "text": "Ik help graag andere kinderen"
     },
-    "regels": {
-      "id": "regels",
+    "lj3": {
+      "id": "lj3",
       "type": "color",
       "amount": 1,
       "text": "Ik hou me aan de regels in de klas en op de speelplaats"
     },
-    "samenwerken": {
-      "id": "samenwerken",
+    "lp1": {
+      "id": "lp1",
       "type": "color",
       "amount": 1,
-      "text": "Ik kan vlot samenwerken met anderen tijdens een groepswerk"
+      "text": "Ik kan de opdrachten van de leerkracht uitvoeren zoals gevraagd"
     },
-    "ruzie": {
-      "id": "ruzie",
+    "lp2": {
+      "id": "lp2",
       "type": "color",
       "amount": 1,
-      "text": "Ik kan een ruzie uitpraten"
+      "text": "Ik laat de anderen uitspreken"
     },
-    "volhouden": {
-      "id": "volhouden",
+    "wj1": {
+      "id": "wj1",
       "type": "color",
       "amount": 1,
       "text": "Ik kan een gegeven opdracht volhouden tot het eind"
     },
-    "bank": {
-      "id": "bank",
+    "wj2": {
+      "id": "wj2",
       "type": "color",
       "amount": 1,
       "text": "Op mijn bank ligt alleen wat ik nodig heb"
     },
-    "aandachtig": {
-      "id": "aandachtig",
+    "wj3": {
+      "id": "wj3",
       "type": "color",
       "amount": 1,
       "text": "Ik kan aandachtig luisteren naar wat de leerkracht of klasgenootjes vertellen"
     },
-    "bedenken": {
-      "id": "bedenken",
+    "wp1": {
+      "id": "wp1",
       "type": "color",
       "amount": 1,
-      "text": "Ik kan bedenken en vertellen wat ik een volgende keer anders ga aanpakken en hoe. Ik leer uit mijn fouten."
+      "text": "Bij uitproberen en experimenteren kan ik vertellen wat werkt en wat niet"
     },
-    "idee": {
-      "id": "idee",
+    "wp2": {
+      "id": "wp2",
       "type": "color",
       "amount": 1,
-      "text": "Ik kan een eigen idee vooraf opdelen in opeenvolgende stappen en die vertellen"
+      "text": "Ik blijf proberen, want door te proberen leer je altijd iets bij"
     },
-    "oplossing": {
-      "id": "oplossing",
+    "wp3": {
+      "id": "wp3",
       "type": "color",
       "amount": 1,
-      "text": "Ik probeer eerst zelf tot een goede oplossing te komen alvorens hulp te vragen"
+      "text": "Ik kan oprecht mijn verontschuldigingen aanbieden als ik iets fout deed"
     },
     "inzetmeesterjuf": {
       "id": "inzetmeesterjuf",
@@ -131,48 +131,6 @@
       "maximums": [10, 10, 10, 10, 10, 10],
       "text": "Meetkunde"
     },
-    "luisteren": {
-      "id": "luisteren",
-      "type": "points",
-      "amount": 6,
-      "maximums": [10, 10, 10, 10, 10, 10],
-      "text": "Luisteren"
-    },
-    "spreken": {
-      "id": "spreken",
-      "type": "color",
-      "amount": 6,
-      "maximums": [10, 10, 10, 10, 10, 10],
-      "text": "Spreken"
-    },
-    "spelling": {
-      "id": "spelling",
-      "type": "points",
-      "amount": 6,
-      "maximums": [10, 10, 10, 10, 10, 10],
-      "text": "Spelling"
-    },
-    "schrijven": {
-      "id": "schrijven",
-      "type": "color",
-      "amount": 6,
-      "maximums": [10, 10, 10, 10, 10, 10],
-      "text": "Toegepast schrijven"
-    },
-    "taalbeschouwing": {
-      "id": "taalbeschouwing",
-      "type": "points",
-      "amount": 6,
-      "maximums": [10, 10, 10, 10, 10, 10],
-      "text": "Taalbeschouwing"
-    },
-    "begrijpendlezen": {
-      "id": "begrijpendlezen",
-      "type": "points",
-      "amount": 6,
-      "maximums": [10, 10, 10, 10, 10, 10],
-      "text": "Begrijpend lezen"
-    },
     "lijnen": {
       "id": "lijnen",
       "type": "color",
@@ -219,8 +177,8 @@
         "zillHeader": "Leefhouding",
         "icons": [8, 4, 5],
         "commentKey": "leefhouding-commentaar",
-        "jaarpunten": ["spelen", "help", "regels"],
-        "periodepunten": ["samenwerken", "ruzie"]
+        "jaarpunten": ["lj1", "lj2", "lj3"],
+        "periodepunten": ["lp1", "lp2"]
       }
     },
     "werkhouding": {
@@ -234,8 +192,8 @@
         "zillHeader": "Werkhouding",
         "icons": [4, 5, 2],
         "commentKey": "werkhouding-commentaar",
-        "jaarpunten": ["volhouden", "bank", "aandachtig"],
-        "periodepunten": ["bedenken", "idee", "oplossing"]
+        "jaarpunten": ["wj1", "wj2", "wj3"],
+        "periodepunten": ["wp1", "wp2", "wp3"]
       }
     },
     "inzet": {
@@ -278,23 +236,10 @@
         "punten": ["getallenkennis", "rekenvaardigheid", "metendrekenen", "meetkunde"]
       }
     },
-    "taalontwikkeling": {
-      "id": "taalontwikkeling",
-      "type": "ScoreBlock",
-      "page": 2,
-      "order": 6,
-      "content": {
-        "layout": "rij",
-        "zillHeader": "Taalontwikkeling Nederlands",
-        "icons": [9, 2, 6],
-        "commentKey": "taalontwikkeling-commentaar",
-        "punten": ["luisteren", "spreken", "spelling", "schrijven", "taalbeschouwing", "begrijpendlezen"]
-      }
-    },
     "schrift": {
       "id": "schrift",
       "type": "ScoreBlock",
-      "page": 3,
+      "page": 2,
       "order": 7,
       "content": {
         "layout": "rij",
@@ -315,17 +260,6 @@
         "icons": [6, 2, 8, 4, 5, 10],
         "commentKey": "thema-commentaar",
         "punten": ["zill1", "zill2", "zill3"]
-      }
-    },
-    "schooljaar": {
-      "id": "schooljaar",
-      "rapportOnly": true,
-      "type": "Question",
-      "page": 3,
-      "order": 9,
-      "content": {
-        "question": "Wat vond jij van het voorbije schooljaar?\n\nKleur de smiley die het best past!\n(meer dan 1 mag ook 😃)",
-        "layout": "smileys"
       }
     },
     "eindcommentaar": {

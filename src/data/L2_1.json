@@ -1,71 +1,71 @@
 {
   "leerlingen": {},
   "evaluaties": {
-    "spelen": {
-      "id": "spelen",
+    "lj1": {
+      "id": "lj1",
       "type": "color",
       "amount": 1,
-      "text": "Ik kan fijn samen spelen met anderen"
+      "text": "Ik kan fijn samen spelen met mijn klasgenoten"
     },
-    "help": {
-      "id": "help",
+    "lj2": {
+      "id": "lj2",
       "type": "color",
       "amount": 1,
       "text": "Ik help anderen"
     },
-    "regels": {
-      "id": "regels",
+    "lj3": {
+      "id": "lj3",
       "type": "color",
       "amount": 1,
       "text": "Ik hou me aan gemaakte regels en afspraken"
     },
-    "samenwerken": {
-      "id": "samenwerken",
+    "lp1": {
+      "id": "lp1",
       "type": "color",
       "amount": 1,
-      "text": "Ik kan vlot in een groepje samenwerken"
+      "text": "Ik kan mijn beurt afwachten"
     },
-    "verlies": {
-      "id": "verlies",
+    "lp2": {
+      "id": "lp2",
       "type": "color",
       "amount": 1,
-      "text": "Ik kan verlies rustig aanvaarden"
+      "text": "Ik laat iedereen meedoen"
     },
-    "hulp": {
-      "id": "hulp",
+    "lp3": {
+      "id": "lp3",
       "type": "color",
       "amount": 1,
-      "text": "Ik vraag om hulp"
+      "text": "Ik kan sorry zeggen"
     },
-    "nakijken": {
-      "id": "nakijken",
+    "wj1": {
+      "id": "wj1",
       "type": "color",
       "amount": 1,
-      "text": "Ik kijk na of ik alles heb gemaakt"
+      "text": "Ik vraag om hulp (aan de leerkracht of een klasgenoot) als iets nog niet alleen lukt"
     },
-    "helpen": {
-      "id": "helpen",
+    "wj2": {
+      "id": "wj2",
       "type": "color",
       "amount": 1,
-      "text": "Ik kan anderen helpen"
+      "text": "k kan controleren of ik alle onderdelen van een opdracht (taak, toets, …) heb uitgevoerd"
     },
-    "contract": {
-      "id": "contract",
+    "wp1": {
+      "id": "wp1",
       "type": "color",
       "amount": 1,
-      "text": "Ik kan mijn contract goed plannen"
+      "text": "Ik ga een probleem/uitdaging niet uit de weg"
     },
-    "antwoord": {
-      "id": "antwoord",
+    "wp2": {
+      "id": "wp2",
       "type": "color",
       "amount": 1,
-      "text": "Ik zorg dat ik antwoord op de vraag"
+      "text": "Ik vraag hulp op een beleefde manier"
     },
-    "tips": {
-      "id": "tips",
+    "wp3": {
+      "id": "wp3",
       "type": "color",
       "amount": 1,
-      "text": "Ik gebruik de tips en raad die ik krijg"
+      "text": "Op mijn werkplaats (bank, bureau thuis) ligt alleen wat ik nodig heb"
     },
     "inzetmeesterjuf": {
       "id": "inzetmeesterjuf",
@@ -218,8 +218,8 @@
         "zillHeader": "Leefhouding",
         "icons": [8, 4, 5],
         "commentKey": "leefhouding-commentaar",
-        "jaarpunten": ["spelen", "help", "regels"],
-        "periodepunten": ["samenwerken", "verlies"]
+        "jaarpunten": ["lj1", "lj2", "lj3"],
+        "periodepunten": ["lp1", "lp2", "lp3"]
       }
     },
     "werkhouding": {
@@ -233,8 +233,8 @@
         "zillHeader": "Werkhouding",
         "icons": [4, 5, 2],
         "commentKey": "werkhouding-commentaar",
-        "jaarpunten": ["hulp", "nakijken", "helpen"],
-        "periodepunten": ["contract", "antwoord", "tips"]
+        "jaarpunten": ["wj1", "wj2"],
+        "periodepunten": ["wp1", "wp2", "wp3"]
       }
     },
     "inzet": {
@@ -314,17 +314,6 @@
         "icons": [6, 2, 8, 4, 5, 10],
         "commentKey": "thema-commentaar",
         "punten": ["zill2", "zill3", ""]
-      }
-    },
-    "schooljaar": {
-      "id": "schooljaar",
-      "rapportOnly": true,
-      "type": "Question",
-      "page": 3,
-      "order": 9,
-      "content": {
-        "question": "Wat vond jij van het voorbije schooljaar?\n\nGeef punten op 10 (11 mag ook 😃)",
-        "layout": "score"
       }
     },
     "eindcommentaar": {

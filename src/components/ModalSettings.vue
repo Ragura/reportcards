@@ -15,6 +15,27 @@
           Kiezen
         </button>
       </div>
+      <!-- <div class="text-center bg-gray-200">
+        Backups:
+      </div>
+      <div class="flex justify-between item-center py-6">
+        <button
+          :disabled="!online || !meta.id"
+          @click="restoreBackup"
+          :class="{ 'opacity-50 cursor-default': !online || !meta.id }"
+          class="w-1/2 rounded bg-blue-400 text-white font-semibold p-1 mr-2"
+        >
+          Backup terugzetten
+        </button>
+        <button
+          :disabled="!online"
+          @click="createBackup"
+          :class="{ 'opacity-50 cursor-default': !online }"
+          class="w-1/2 rounded bg-blue-400 text-white font-semibold p-1"
+        >
+          Backup maken
+        </button>
+      </div> -->
       <div class="text-center bg-gray-200">
         Marges A4 pagina:
       </div>
@@ -85,6 +106,7 @@
 <script>
 const { dialog } = require("electron").remote;
 import { mapState, mapMutations, mapActions } from "vuex";
+import axios from "axios";
 
 export default {
   name: `ModalSettings`,
@@ -100,11 +122,21 @@ export default {
     };
   },
   computed: {
-    ...mapState({ globalSettings: "settings" })
+    ...mapState([
+      { globalSettings: "settings" },
+      "online",
+      "meta",
+      "leerlingen",
+      "evaluaties",
+      "blocks"
+    ]),
+    isOnline() {
+      return navigator.onLine;
+    }
   },
   methods: {
     ...mapMutations([`hideModal`]),
-    ...mapActions(["writeSettings"]),
+    ...mapActions(["writeSettings", "generateRapportId"]),
     chooseDirectory() {
       const dir = dialog.showOpenDialog({
         title: "Kies map voor rapporten",
@@ -122,6 +154,32 @@ export default {
     saveSettings() {
       this.writeSettings(this.settings);
       this.hideModal();
+    },
+    async createBackup() {
+      if (!this.meta.id) {
+        this.generateRapportId();
+      }
+      try {
+        await axios.post("http://localhost:7000", {
+          meta: this.meta,
+          leerlingen: this.leerlingen,
+          evaluaties: this.evaluaties,
+          blocks: this.blocks
+        });
+        this.$toasted.show("Backup gelukt!", {
+          position: "bottom-center",
+          duration: 2000
+        });
+      } catch (err) {
+        this.$toasted.show("Backup mislukt!", {
+          position: "bottom-center",
+          duration: 2000
+        });
+      }
+    },
+    async restoreBackup() {
+      const { data } = await axios.get(`http://localhost:7000?id=123`);
+      console.log(data);
     }
   },
   created() {

@@ -4,7 +4,7 @@
   "productName": "Rapporten SJCA",
   "description": "A report card app for the SJCA Bekaf elementary school in Belgium",
   "repository": "https://github.com/Ragura/reportcards",
-  "version": "0.9.7",
+  "version": "1.0.0",
   "license": "UNLICENSED",
   "scripts": {
     "serve": "vue-cli-service serve",
@@ -20,6 +20,7 @@
   },
   "main": "background.js",
   "dependencies": {
+    "axios": "^0.19.0",
     "core-js": "^2.6.5",
     "electron-context-menu": "^0.12.1",
     "electron-log": "^3.0.5",
@@ -31,6 +32,7 @@
     "uniqid": "^5.0.3",
     "vue": "^2.6.10",
     "vue-router": "^3.0.3",
+    "vue-toasted": "^1.1.27",
     "vuex": "^3.0.1",
     "xlsx": "^0.14.3"
   },

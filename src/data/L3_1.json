@@ -1,65 +1,65 @@
 {
   "leerlingen": {},
   "evaluaties": {
-    "wachten": {
-      "id": "wachten",
+    "lj1": {
+      "id": "lj1",
       "type": "color",
       "amount": 1,
       "text": "Ik kan wachten als dat nodig is"
     },
-    "groep": {
-      "id": "groep",
+    "lj2": {
+      "id": "lj2",
       "type": "color",
       "amount": 1,
       "text": "Ik werk flink samen per twee of in groep"
     },
-    "regels": {
-      "id": "regels",
+    "lj3": {
+      "id": "lj3",
       "type": "color",
       "amount": 1,
       "text": "Ik hou me aan regels en afspraken"
     },
-    "klasgroep": {
-      "id": "klasgroep",
+    "lp1": {
+      "id": "lp1",
       "type": "color",
       "amount": 1,
-      "text": "Ik durf te spreken voor mijn klasgroep"
+      "text": "Ik speel op een toffe manier samen met anderen"
     },
-    "mening": {
-      "id": "mening",
+    "lp2": {
+      "id": "lp2",
       "type": "color",
       "amount": 1,
-      "text": "Ik geef mijn mening op een beleefde manier"
+      "text": "Ik help anderen als dat kan"
     },
-    "stappenplan": {
-      "id": "stappenplan",
+    "wj1": {
+      "id": "wj1",
       "type": "color",
       "amount": 1,
-      "text": "Ik kan een stappenplan volgen"
+      "text": "Ik kan een stappenplan juist volgen om een probleem aan te pakken"
     },
-    "opgeven": {
-      "id": "opgeven",
+    "wj2": {
+      "id": "wj2",
       "type": "color",
       "amount": 1,
-      "text": "Ik geef niet op en blijf proberen"
+      "text": "Ik blijf proberen, want door te proberen leer je altijd iets bij"
     },
-    "fouten": {
-      "id": "fouten",
+    "wj3": {
+      "id": "wj3",
       "type": "color",
       "amount": 1,
-      "text": "Ìk leer uit mijn fouten"
+      "text": "Ik kan bedenken en vertellen wat ik een volgende keer anders ga aanpakken en hoe"
     },
-    "onthouden": {
-      "id": "onthouden",
+    "wp1": {
+      "id": "wp1",
       "type": "color",
       "amount": 1,
-      "text": "Ik kan vlot leerstof onthouden (door herhaling - oefenen - instuderen)"
+      "text": "Ik kan zelf op een positieve manier tips en leerhulp aan medeleerlingen geven"
     },
-    "technieken": {
-      "id": "technieken",
+    "wp2": {
+      "id": "wp2",
       "type": "color",
       "amount": 1,
-      "text": "Ik kan zelf aan de slag met technieken, oefenvormen, ... die ik al ken"
+      "text": "De boeken en spullen in mijn bank zijn netjes gesorteerd"
     },
     "inzetmeesterjuf": {
       "id": "inzetmeesterjuf",
@@ -212,8 +212,8 @@
         "zillHeader": "Leefhouding",
         "icons": [8, 4, 5],
         "commentKey": "leefhouding-commentaar",
-        "jaarpunten": ["wachten", "groep", "regels"],
-        "periodepunten": ["klasgroep", "mening"]
+        "jaarpunten": ["lj1", "lj2", "lj3"],
+        "periodepunten": ["lp1", "lp2"]
       }
     },
     "werkhouding": {
@@ -227,8 +227,8 @@
         "zillHeader": "Werkhouding",
         "icons": [4, 5, 2],
         "commentKey": "werkhouding-commentaar",
-        "jaarpunten": ["stappenplan", "opgeven", "fouten"],
-        "periodepunten": ["onthouden", "technieken", ""]
+        "jaarpunten": ["wj1", "wj2", "wj3"],
+        "periodepunten": ["wp1", "wp2"]
       }
     },
     "inzet": {
@@ -308,17 +308,6 @@
         "icons": [6, 2, 8, 4, 5, 10],
         "commentKey": "thema-commentaar",
         "punten": ["zill1", "zill2", ""]
-      }
-    },
-    "schooljaar": {
-      "id": "schooljaar",
-      "rapportOnly": true,
-      "type": "Question",
-      "page": 3,
-      "order": 9,
-      "content": {
-        "question": "Wat vond je het leukste aan het voorbije schooljaar?",
-        "layout": "image"
       }
     },
     "eindcommentaar": {

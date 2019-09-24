@@ -46,7 +46,7 @@ export default {
   height: 1.5cm;
 
   img {
-    height: 1cm;
+    height: 0.8cm;
     margin-left: 0.2cm;
   }
 }

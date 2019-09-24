@@ -14,6 +14,7 @@ export const state = {
   modalData: {},
 
   meta: {
+    id: "",
     schooljaar: "",
     leerjaar: 1,
     klas: "",
@@ -34,7 +35,8 @@ export const state = {
     marginLeft: 2,
     marginRight: 2
   },
-  printing: false
+  printing: false,
+  online: false
 };
 
 export const getters = {};
@@ -52,6 +54,14 @@ export const mutations = {
   },
   printRapport(state, print) {
     state.printing = print;
+  },
+  setOnline(state, online) {
+    console.log(online);
+
+    state.online = online;
+  },
+  setRapportId(state, id) {
+    Vue.set(state.meta, "id", id);
   },
   updateSettings(state, settings) {
     state.settings = { ...settings };
@@ -107,6 +117,13 @@ export const actions = {
   },
   printRapport({ commit }, payload) {
     commit("printRapport", payload);
+  },
+  setOnline({ commit }, payload) {
+    commit("setOnline", payload);
+  },
+  generateRapportId({ commit, dispatch }) {
+    commit("setRapportId", uniqid());
+    dispatch("writeRapport");
   },
   fetchSettings({ commit, dispatch }) {
     const path = app.getPath("userData");

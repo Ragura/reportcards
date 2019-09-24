@@ -6,12 +6,14 @@
       <score-title>Jaarpunten</score-title>
       <color-line v-for="id of content.jaarpunten" :key="`jp-${id}`" :id="id" />
 
-      <score-title>Periodepunten</score-title>
-      <color-line
-        v-for="id of content.periodepunten"
-        :key="`pp-${id}`"
-        :id="id"
-      />
+      <template v-if="content.periodepunten">
+        <score-title>Periodepunten</score-title>
+        <color-line
+          v-for="id of content.periodepunten"
+          :key="`pp-${id}`"
+          :id="id"
+        />
+      </template>
 
       <score-comments
         class="row-commentaar border-b border-black"

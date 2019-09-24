@@ -28,13 +28,21 @@ export default {
     Loading
   },
   computed: {
-    ...mapState(["printing"])
+    ...mapState(["printing", "online"])
   },
   methods: {
-    ...mapActions(["fetchSettings"])
+    ...mapActions(["fetchSettings", "setOnline"]),
+    reportOnline() {
+      this.setOnline(navigator.onLine);
+    }
   },
   created() {
     this.fetchSettings();
+  },
+  mounted() {
+    window.addEventListener("online", this.reportOnline);
+    window.addEventListener("offline", this.reportOnline);
+    this.reportOnline();
   }
 };
 </script>

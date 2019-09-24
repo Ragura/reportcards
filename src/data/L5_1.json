@@ -1,59 +1,59 @@
 {
   "leerlingen": {},
   "evaluaties": {
-    "afspraken": {
-      "id": "afspraken",
+    "lj1": {
+      "id": "lj1",
       "type": "color",
       "amount": 1,
-      "text": "Ik hou me aan de gemaakte afspraken en regels"
+      "text": "Ik hou me aan de gemaakte regels en afspraken"
     },
-    "respect": {
-      "id": "respect",
+    "lj2": {
+      "id": "lj2",
       "type": "color",
       "amount": 1,
-      "text": "Ik heb respect voor de eigenheid van mijn klasgenoten en anderen"
+      "text": "Ik heb respect voor de eigenheid van een ander (mijn klasgenoten?)"
     },
-    "sorry": {
-      "id": "sorry",
+    "lp1": {
+      "id": "lp1",
       "type": "color",
       "amount": 1,
-      "text": "Ik weet wanneer ik fout ben en kan sorry zeggen"
+      "text": "Ik kan bij groepswerk helder en rustig iets uitleggen aan anderen"
     },
-    "verliefd": {
-      "id": "verliefd",
+    "lp2": {
+      "id": "lp2",
       "type": "color",
       "amount": 1,
-      "text": "Ik weet dat iemand verliefd kan worden op een man en / of vrouw en ik respecteer dat"
+      "text": "Ik weet wat te doen bij een ongeval en kan de hulpdiensten verwittigen"
     },
-    "groepswerk": {
-      "id": "groepswerk",
+    "wj1": {
+      "id": "wj1",
       "type": "color",
       "amount": 1,
       "text": "Ik voer in een groepswerk of in mijn niveaugroep mijn taak verantwoordelijk uit"
     },
-    "spullen": {
-      "id": "spullen",
+    "wj2": {
+      "id": "wj2",
       "type": "color",
       "amount": 1,
       "text": "Ik breng de spullen die ik moet meebrengen of klaar hebben op tijd mee naar de klas"
     },
-    "opzoeken": {
-      "id": "opzoeken",
+    "wp1": {
+      "id": "wp1",
       "type": "color",
       "amount": 1,
-      "text": "Wat ik niet weet, zoek ik zelf op"
+      "text": "Ik kan een stappenplan juist volgen om een probleem aan te pakken"
     },
-    "bedenken": {
-      "id": "bedenken",
+    "wp2": {
+      "id": "wp2",
       "type": "color",
       "amount": 1,
-      "text": "Ik kan bedenken en vertellen wat ik een volgende keer anders ga aanpakken en hoe (= Ik leer uit mijn fouten)"
+      "text": "Mijn agenda is elke dag volledig aangevuld"
     },
-    "inschatten": {
-      "id": "inschatten",
+    "wp3": {
+      "id": "wp3",
       "type": "color",
       "amount": 1,
-      "text": "Ik kan zelf juist inschatten in welke niveaugroep ik best aan de slag ga"
+      "text": "Mijn schrift is voor iedereen vlot leesbaar"
     },
     "inzetmeesterjuf": {
       "id": "inzetmeesterjuf",
@@ -196,8 +196,8 @@
         "zillHeader": "Leefhouding",
         "icons": [8, 4, 5],
         "commentKey": "leefhouding-commentaar",
-        "jaarpunten": ["afspraken", "respect", ""],
-        "periodepunten": ["sorry", "verliefd"]
+        "jaarpunten": ["lj1", "lj2"],
+        "periodepunten": ["lp1", "lp2"]
       }
     },
     "lerenleren": {
@@ -211,8 +211,8 @@
         "zillHeader": "Leren Leren",
         "icons": [4, 5, 2],
         "commentKey": "lerenleren-commentaar",
-        "jaarpunten": ["groepswerk", "spullen", ""],
-        "periodepunten": ["opzoeken", "bedenken", "inschatten"]
+        "jaarpunten": ["wj1", "wj2"],
+        "periodepunten": ["wp1", "wp2", "wp3"]
       }
     },
     "inzet": {
@@ -292,17 +292,6 @@
         "icons": [6, 2, 8, 4, 5, 10],
         "commentKey": "thema-commentaar",
         "punten": ["zill1", "zill2", ""]
-      }
-    },
-    "schooljaar": {
-      "id": "schooljaar",
-      "rapportOnly": true,
-      "type": "Question",
-      "page": 3,
-      "order": 9,
-      "content": {
-        "question": "Wat vond je het leukste aan het voorbije schooljaar?",
-        "layout": "image"
       }
     },
     "eindcommentaar": {

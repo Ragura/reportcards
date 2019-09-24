@@ -1,59 +1,65 @@
 {
   "leerlingen": {},
   "evaluaties": {
-    "groep": {
-      "id": "groep",
+    "lj1": {
+      "id": "lj1",
       "type": "color",
       "amount": 1,
       "text": "Ik kan ernstig in groep samenwerken aan een opdracht"
     },
-    "raad": {
-      "id": "raad",
+    "lj2": {
+      "id": "lj2",
       "type": "color",
       "amount": 1,
-      "text": "Ik hou rekening met de raad en tips die ik krijg om fijn om te gaan met anderen"
+      "text": "Ik hou  rekening met de raad en tips die ik krijg om fijn om te gaan met anderen"
     },
-    "kritiek": {
-      "id": "kritiek",
+    "lp1": {
+      "id": "lp1",
       "type": "color",
       "amount": 1,
-      "text": "Ik kan omgaan met kritiek en doe er iets mee"
+      "text": "Ik kan mijn beurt afwachten"
     },
-    "voorstellen": {
-      "id": "voorstellen",
+    "lp2": {
+      "id": "lp2",
       "type": "color",
       "amount": 1,
-      "text": "Ik kan een werk voorstellen aan de klasgroep volgens de gemaakte afspraken"
+      "text": "Ik kan een fout toegeven en sorry zeggen"
     },
-    "afspraken": {
-      "id": "afspraken",
+    "wj1": {
+      "id": "wj1",
       "type": "color",
       "amount": 1,
       "text": "Ik kan werken volgens de vooraf gemaakte afspraken"
     },
-    "storen": {
-      "id": "storen",
+    "wj2": {
+      "id": "wj2",
       "type": "color",
       "amount": 1,
       "text": "Ik stoor niet als de leerkracht of medeleerlingen iets aan het uitleggen zijn"
     },
-    "leesbaar": {
-      "id": "leesbaar",
+    "wj3": {
+      "id": "wj3",
       "type": "color",
       "amount": 1,
       "text": "Mijn schrift is voor iedereen vlot leesbaar"
     },
-    "leerwerk": {
-      "id": "leerwerk",
+    "wp1": {
+      "id": "wp1",
       "type": "color",
       "amount": 1,
-      "text": "Ik kan mijn leerwerk thuis zo plannen dat ik altijd met alles klaar geraak"
+      "text": "Ik kan zelf juist inschatten in welke niveaugroep ik best aan de slag ga"
     },
-    "project": {
-      "id": "project",
+    "wp2": {
+      "id": "wp2",
       "type": "color",
       "amount": 1,
-      "text": "Ik kan een (eigen) project met gepaste hulp en begeleiding volledig uitwerken en uitvoeren"
+      "text": "Mijn agenda is elke dag volledig aangevuld"
+    },
+    "wp3": {
+      "id": "wp3",
+      "type": "color",
+      "amount": 1,
+      "text": "Ik gebruik hoofdletters en leestekens waar en zoals het hoort"
     },
     "inzetmeesterjuf": {
       "id": "inzetmeesterjuf",
@@ -200,8 +206,8 @@
         "zillHeader": "Leefhouding",
         "icons": [8, 4, 5],
         "commentKey": "leefhouding-commentaar",
-        "jaarpunten": ["groep", "raad", ""],
-        "periodepunten": ["kritiek", "voorstellen"]
+        "jaarpunten": ["lj1", "lj2"],
+        "periodepunten": ["lp1", "lp2"]
       }
     },
     "lerenleren": {
@@ -215,8 +221,8 @@
         "zillHeader": "Leren Leren",
         "icons": [4, 5, 2],
         "commentKey": "lerenleren-commentaar",
-        "jaarpunten": ["afspraken", "storen", "leesbaar"],
-        "periodepunten": ["leerwerk", "project", ""]
+        "jaarpunten": ["wj1", "wj2", "wj3"],
+        "periodepunten": ["wp1", "wp2", "wp3"]
       }
     },
     "inzet": {
@@ -296,17 +302,6 @@
         "icons": [6, 2, 8, 4, 5, 10],
         "commentKey": "thema-commentaar",
         "punten": ["zill1", "zill2", ""]
-      }
-    },
-    "schooljaar": {
-      "id": "schooljaar",
-      "rapportOnly": true,
-      "type": "Question",
-      "page": 3,
-      "order": 9,
-      "content": {
-        "question": "Wat vond je het leukste aan het voorbije schooljaar?",
-        "layout": "image"
       }
     },
     "eindcommentaar": {
