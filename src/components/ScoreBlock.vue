@@ -30,37 +30,47 @@
     </template>
 
     <template v-else-if="content.layout === 'domein'">
-      <div v-for="n of 2" :key="n">
-        <div class="flex flex-wrap w-full">
-          <div
-            class="w-full border-b border-black flex items-center font-bold col-title text-sm"
-          >
-            {{ content[`subtitel${n}`] }}
-          </div>
-          <div class="w-full flex overflow-hidden">
-            <div class="w-1/2 flex flex-col">
-              <color-line
-                v-for="(id, index) of content[`domeinen${n}`]"
-                :key="`domein${n}-${id ? id : index}`"
-                :id="id"
-              />
+      <div v-for="n of 3" :key="n">
+        <template
+          v-if="content[`domeinen${n}`] && content[`domeinen${n}`].length"
+        >
+          <div class="flex flex-wrap w-full">
+            <div
+              class="w-full border-b border-black flex items-center font-bold col-title text-sm"
+            >
+              {{ content[`subtitel${n}`] }}
             </div>
-            <score-comments
-              class="w-1/2 border-b border-l border-black"
-              :key="`${activeLeerling}-${content.commentKey}`"
-              @blur.native="
-                updatePunten({
-                  leerlingId: activeLeerling,
-                  evaluatieId: content[`commentKey${n}`],
-                  value: $event.target.value
-                })
-              "
-              v-html="
-                leerlingen[activeLeerling].punten[content[`commentKey${n}`]]
-              "
-            ></score-comments>
+            <div class="w-full flex overflow-hidden">
+              <div class="w-1/2 flex flex-col">
+                <color-line
+                  v-for="(id, index) of content[`domeinen${n}`]"
+                  :toets="content[`domeinen${n}`]"
+                  :style="
+                    content[`domeinen${n}`].length === 1
+                      ? 'height: 1.54cm;'
+                      : ''
+                  "
+                  :key="`domein${n}-${id ? id : index}`"
+                  :id="id"
+                />
+              </div>
+              <score-comments
+                class="w-1/2 border-b border-l border-black"
+                :key="`${activeLeerling}-${content.commentKey}`"
+                @blur.native="
+                  updatePunten({
+                    leerlingId: activeLeerling,
+                    evaluatieId: content[`commentKey${n}`],
+                    value: $event.target.value
+                  })
+                "
+                v-html="
+                  leerlingen[activeLeerling].punten[content[`commentKey${n}`]]
+                "
+              ></score-comments>
+            </div>
           </div>
-        </div>
+        </template>
       </div>
     </template>
 
@@ -69,8 +79,7 @@
         <div class="w-1/2 flex flex-col">
           <div
             v-for="(punt, index) of content.punten"
-            :key="`punt-${punt}`"
-            class=""
+            :key="`punt-${punt}${index}`"
           >
             <template
               v-if="
@@ -80,12 +89,14 @@
               "
             >
               <score-line
+                :style="content.punten.length === 1 ? 'height: 1.54cm;' : ''"
                 :id="punt"
                 :note="content.notes ? content.notes[index] : ''"
               />
             </template>
             <template v-else-if="punt && evaluaties[punt].type === 'color'">
               <color-line
+                :style="content.punten.length === 1 ? 'height: 1.54cm;' : ''"
                 :id="punt"
                 :note="content.notes ? content.notes[index] : ''"
               />

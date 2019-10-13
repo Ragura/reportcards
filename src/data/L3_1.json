@@ -77,25 +77,19 @@
       "id": "d1a1",
       "type": "color",
       "amount": 6,
-      "text": "DANS - Mm, wat een lekkere boterham!"
+      "text": "BEELD - Landart"
     },
     "d1a2": {
       "id": "d1a2",
       "type": "color",
       "amount": 6,
-      "text": "DRAMA - Achterklap"
+      "text": "MUZIEK - De windcompositie"
     },
     "d2a1": {
       "id": "d2a1",
       "type": "color",
       "amount": 6,
-      "text": "BEELD - Van spotje tot affiche"
-    },
-    "d2a2": {
-      "id": "d2a2",
-      "type": "color",
-      "amount": 6,
-      "text": "MUZIEK - Lentekriebels"
+      "text": "BEELD, MUZIEK, DRAMA - 100 jaar geleden in Bokrijk"
     },
     "getallenkennis": {
       "id": "getallenkennis",
@@ -173,11 +167,23 @@
       "maximums": [10, 10, 10, 10, 10, 10],
       "text": "Begrijpend lezen"
     },
-    "hoofdletters": {
-      "id": "hoofdletters",
+    "schrift1": {
+      "id": "schrift1",
       "type": "color",
       "amount": 6,
-      "text": "Ik schrijf de (hoofd)letters correct"
+      "text": "Ik verbind de letters op de juiste manier aan elkaar"
+    },
+    "schrift2": {
+      "id": "schrift2",
+      "type": "color",
+      "amount": 6,
+      "text": "Ik neem mijn tijd om netjes te schrijven"
+    },
+    "schrift3": {
+      "id": "schrift3",
+      "type": "color",
+      "amount": 6,
+      "text": "Ik schrijf de hoofdletters juist en verzorgd"
     },
     "verzorgd": {
       "id": "verzorgd",
@@ -190,14 +196,14 @@
       "type": "points",
       "amount": 6,
       "maximums": [10, 10, 10, 10, 10, 10],
-      "text": "NATUUR - De bijen"
+      "text": "Mijn familie en ik"
     },
     "zill2": {
       "id": "zill2",
       "type": "points",
       "amount": 6,
       "maximums": [10, 10, 10, 10, 10, 10],
-      "text": "VEILIGE LEVENSSTIJL - E.H.B.O."
+      "text": "De tijd van toen"
     }
   },
   "blocks": {
@@ -250,11 +256,11 @@
         "layout": "domein",
         "zillHeader": "Muzische ontwikkeling",
         "icons": [4, 5, 2],
-        "subtitel1": "Je eigen creatieve mogelijkheden ontdekken en die tonen aan anderen",
+        "subtitel1": "Overal muzische mogelijkheden zien en benutten",
         "domeinen1": ["d1a1", "d1a2"],
         "commentKey1": "domein1-commentaar",
-        "subtitel2": "Écht kijken naar en nadenken over muzisch werk en er samen over kunnen praten",
-        "domeinen2": ["d2a1", "d2a2"],
+        "subtitel2": " Cultuurervaringen opdoen en verwerken en de waarde ervaren",
+        "domeinen2": ["d2a1"],
         "commentKey2": "domein2-commentaar"
       }
     },
@@ -294,7 +300,7 @@
         "zillHeader": "Schrift",
         "icons": [9, 10],
         "commentKey": "schrift-commentaar",
-        "punten": ["hoofdletters", "verzorgd"]
+        "punten": ["schrift1", "schrift2", "schrift3"]
       }
     },
     "thema": {
@@ -307,7 +313,7 @@
         "zillHeader": "ORIËNTATIE OP DE WERELD - Thema mens & ...",
         "icons": [6, 2, 8, 4, 5, 10],
         "commentKey": "thema-commentaar",
-        "punten": ["zill1", "zill2", ""]
+        "punten": ["zill1", "zill2"]
       }
     },
     "eindcommentaar": {

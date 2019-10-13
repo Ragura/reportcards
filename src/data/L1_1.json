@@ -83,25 +83,13 @@
       "id": "d1a1",
       "type": "color",
       "amount": 6,
-      "text": "BEELD - Monsters in foam clay"
-    },
-    "d1a2": {
-      "id": "d1a2",
-      "type": "color",
-      "amount": 6,
-      "text": "BEELD - bouwen met papier-maché"
+      "text": "BEWEGING - Dieren van de nacht worden wakker (yoga)"
     },
     "d2a1": {
       "id": "d2a1",
       "type": "color",
       "amount": 6,
-      "text": "MUZIEK - Raste pasta pizzaman"
-    },
-    "d2a2": {
-      "id": "d2a2",
-      "type": "color",
-      "amount": 6,
-      "text": "DRAMA - Goed nieuws journaal"
+      "text": "BEELD - Een herfstblad beschilderen"
     },
     "getallenkennis": {
       "id": "getallenkennis",
@@ -131,38 +119,31 @@
       "maximums": [10, 10, 10, 10, 10, 10],
       "text": "Meetkunde"
     },
-    "lijnen": {
-      "id": "lijnen",
+    "schrift1": {
+      "id": "schrift1",
       "type": "color",
       "amount": 6,
-      "text": "Ik schrijf tussen de lijnen"
+      "text": "Ik heb een goede pengreep"
     },
-    "verzorgd": {
-      "id": "verzorgd",
+    "schrift2": {
+      "id": "schrift2",
       "type": "color",
       "amount": 6,
-      "text": "Ik schrijf verzorgd"
+      "text": "Fout geschreven? 1 streep erdoor en opnieuw!"
     },
     "zill1": {
       "id": "zill1",
       "type": "points",
       "amount": 6,
       "maximums": [10, 10, 10, 10, 10, 10],
-      "text": "NATUUR - Planten en zaaien"
+      "text": "Welkom in de eerste klas"
     },
     "zill2": {
       "id": "zill2",
       "type": "points",
       "amount": 6,
       "maximums": [10, 10, 10, 10, 10, 10],
-      "text": "TIJD - De tijd vliegt snel"
-    },
-    "zill3": {
-      "id": "zill3",
-      "type": "points",
-      "amount": 6,
-      "maximums": [10, 10, 10, 10, 10, 10],
-      "text": "RUIMTE - Veilig op stap"
+      "text": "De natuur in de herfst"
     }
   },
   "blocks": {
@@ -215,11 +196,11 @@
         "layout": "domein",
         "zillHeader": "Muzische ontwikkeling",
         "icons": [4, 5, 2],
-        "subtitel1": "Durven en kunnen fantaseren en daar plezier aan beleven",
-        "domeinen1": ["d1a1", "d1a2"],
+        "subtitel1": "Durven fantaseren en verbeelden",
+        "domeinen1": ["d1a1"],
         "commentKey1": "domein1-commentaar",
-        "subtitel2": "Op een fijne manier tot sterk en mooi muzisch samenspel komen",
-        "domeinen2": ["d2a1", "d2a2"],
+        "subtitel2": "Zich bewust worden van de eigen muzische en creatieve mogelijkheden (talenten) en die tonen",
+        "domeinen2": ["d2a1"],
         "commentKey2": "domein2-commentaar"
       }
     },
@@ -246,7 +227,7 @@
         "zillHeader": "Schrift",
         "icons": [9, 10],
         "commentKey": "schrift-commentaar",
-        "punten": ["lijnen", "verzorgd"]
+        "punten": ["schrift1", "schrift2"]
       }
     },
     "thema": {
@@ -259,7 +240,7 @@
         "zillHeader": "ORIËNTATIE OP DE WERELD - Thema mens & ...",
         "icons": [6, 2, 8, 4, 5, 10],
         "commentKey": "thema-commentaar",
-        "punten": ["zill1", "zill2", "zill3"]
+        "punten": ["zill1", "zill2"]
       }
     },
     "eindcommentaar": {

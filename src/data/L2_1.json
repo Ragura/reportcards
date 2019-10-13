@@ -83,25 +83,25 @@
       "id": "d1a1",
       "type": "color",
       "amount": 6,
-      "text": "MUZIEK - Verdraaide namen"
+      "text": "MUZIEK - Onze klas, een concertruimte"
     },
     "d1a2": {
       "id": "d1a2",
       "type": "color",
       "amount": 6,
-      "text": "DANS - Alle tijd"
+      "text": "BEWEGING - Knipperlichtdans"
     },
     "d2a1": {
       "id": "d2a1",
       "type": "color",
       "amount": 6,
-      "text": "DRAMA - Oorlog en vrede"
+      "text": "BEELD - Angstschilderijen"
     },
-    "d2a2": {
-      "id": "d2a2",
+    "d3a1": {
+      "id": "d3a1",
       "type": "color",
       "amount": 6,
-      "text": "BEELD - Achter de horizon"
+      "text": "DRAMA - we maken zelf licht"
     },
     "getallenkennis": {
       "id": "getallenkennis",
@@ -179,31 +179,31 @@
       "maximums": [10, 10, 10, 10, 10, 10],
       "text": "Begrijpend lezen"
     },
-    "schrijfwerk": {
-      "id": "schrijfwerk",
+    "schrift1": {
+      "id": "schrift1",
       "type": "color",
       "amount": 6,
-      "text": "Ik vorm de hoofdletters juist"
+      "text": "Ik schrijf de letters en cijfers juist en verzorgd"
     },
-    "hoofdletters": {
-      "id": "hoofdletters",
+    "schrift2": {
+      "id": "schrift2",
       "type": "color",
       "amount": 6,
-      "text": "Ik schrijf verzorgd"
+      "text": "Ik verbind de letters op de juiste manier aan elkaar"
     },
     "zill2": {
       "id": "zill2",
       "type": "points",
       "amount": 6,
       "maximums": [10, 10, 10, 10, 10, 10],
-      "text": "RUIMTE + SAMENLEVING - Bouwen"
+      "text": "Weer naar school"
     },
     "zill3": {
       "id": "zill3",
       "type": "points",
       "amount": 6,
       "maximums": [10, 10, 10, 10, 10, 10],
-      "text": "NATUUR - Lente"
+      "text": "Afval"
     }
   },
   "blocks": {
@@ -259,9 +259,12 @@
         "subtitel1": "De muzische bouwstenen ontdekken en leren gebruiken",
         "domeinen1": ["d1a1", "d1a2"],
         "commentKey1": "domein1-commentaar",
-        "subtitel2": "Vaardigheden leren, oefenen en verbeteren om je beter uit te kunnen drukken",
-        "domeinen2": ["d2a1", "d2a2"],
-        "commentKey2": "domein2-commentaar"
+        "subtitel2": "Boodschappen en symbolen begrijpen en verwerken",
+        "domeinen2": ["d2a1"],
+        "commentKey2": "domein2-commentaar",
+        "subtitel3": "Het verband tussen beschouwen en maken bespreken",
+        "domeinen3": ["d3a1"],
+        "commentKey3": "domein2-commentaar"
       }
     },
     "wiskundigdenken": {
@@ -300,7 +303,7 @@
         "zillHeader": "Schrift",
         "icons": [9, 10],
         "commentKey": "schrift-commentaar",
-        "punten": ["schrijfwerk", "hoofdletters"]
+        "punten": ["schrift1", "schrift2"]
       }
     },
     "thema": {
@@ -313,7 +316,7 @@
         "zillHeader": "ORIËNTATIE OP DE WERELD - Thema mens & ...",
         "icons": [6, 2, 8, 4, 5, 10],
         "commentKey": "thema-commentaar",
-        "punten": ["zill2", "zill3", ""]
+        "punten": ["zill2", "zill3"]
       }
     },
     "eindcommentaar": {

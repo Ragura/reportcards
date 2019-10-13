@@ -241,10 +241,10 @@
         "zillHeader": "Muzische ontwikkeling",
         "icons": [4, 5, 2],
         "subtitel1": "Open staan voor de kunst, verbeelding, creativiteit en het mooie in de wereld.",
-        "domeinen1": ["d1a1", ""],
+        "domeinen1": ["d1a1"],
         "commentKey1": "domein1-commentaar",
         "subtitel2": "Vaardigheden leren, oefenen en verbeteren om je beter uit te kunnen drukken in je muzisch werk.",
-        "domeinen2": ["d2a1", ""],
+        "domeinen2": ["d2a1"],
         "commentKey2": "domein2-commentaar"
       }
     },
@@ -297,7 +297,7 @@
         "zillHeader": "ORIËNTATIE OP DE WERELD - Thema mens & ...",
         "icons": [6, 2, 8, 4, 5, 10],
         "commentKey": "thema-commentaar",
-        "punten": ["zill1", "zill2", ""]
+        "punten": ["zill1", "zill2"]
       }
     },
     "eindcommentaar": {

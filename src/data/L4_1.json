@@ -11,7 +11,7 @@
       "id": "lj2",
       "type": "color",
       "amount": 1,
-      "text": "Ik hou  rekening met de raad en tips die ik krijg om fijn om te gaan met anderen"
+      "text": "Ik hou rekening met de raad en tips die ik krijg om fijn om te gaan met anderen"
     },
     "lp1": {
       "id": "lp1",
@@ -77,19 +77,19 @@
       "id": "d1a1",
       "type": "color",
       "amount": 6,
-      "text": "BEELD - Vlekinsecten"
+      "text": "BEELD - Karikaturen"
     },
     "d1a2": {
       "id": "d1a2",
       "type": "color",
       "amount": 6,
-      "text": "DANS - Deel je dans"
+      "text": "MUZIEK - De vlucht van de hommel"
     },
-    "d2a1": {
-      "id": "d2a1",
+    "d1a3": {
+      "id": "d1a3",
       "type": "color",
       "amount": 6,
-      "text": "DRAMA - Rollenspel"
+      "text": "DANS - Wij zijn klaar!"
     },
     "getallenkennis": {
       "id": "getallenkennis",
@@ -167,31 +167,24 @@
       "maximums": [10, 10, 10, 10, 10, 10],
       "text": "Begrijpend lezen"
     },
-    "agenda": {
-      "id": "agenda",
+    "schrift1": {
+      "id": "schrift1",
       "type": "color",
       "amount": 6,
-      "text": "Agenda netjes en volledig invullen"
+      "text": "Mijn schrift is vlot leesbaar voor iedereen"
     },
-    "hoofdletters": {
-      "id": "hoofdletters",
+    "schrift2": {
+      "id": "schrift2",
       "type": "color",
       "amount": 6,
-      "text": "Hoofdletters schrijven waar het hoort"
+      "text": "Ik schrijf op de lijntjes"
     },
     "zill1": {
       "id": "zill1",
       "type": "points",
       "amount": 6,
       "maximums": [10, 10, 10, 10, 10, 10],
-      "text": "RUIMTE + SAMENLEVING - Welkom in onze provincie"
-    },
-    "zill2": {
-      "id": "zill2",
-      "type": "points",
-      "amount": 6,
-      "maximums": [10, 10, 10, 10, 10, 10],
-      "text": "NATUUR - Niet alle natuur leeft"
+      "text": "Welkom in mijn leven"
     }
   },
   "blocks": {
@@ -244,12 +237,9 @@
         "layout": "domein",
         "zillHeader": "Muzische ontwikkeling",
         "icons": [4, 5, 2],
-        "subtitel1": "Écht kijken naar en nadenken over muzisch werk en er samen over kunnen praten",
-        "domeinen1": ["d1a1", "d1a2"],
-        "commentKey1": "domein1-commentaar",
-        "subtitel2": "Je laten meevoeren als toeschouwer & als uitvoerder rekening houden met je publiek",
-        "domeinen2": ["d2a1", ""],
-        "commentKey2": "domein2-commentaar"
+        "subtitel1": "MUgr1",
+        "domeinen1": ["d1a1", "d1a2", "d1a3"],
+        "commentKey1": "domein1-commentaar"
       }
     },
     "wiskundigdenken": {
@@ -288,7 +278,7 @@
         "zillHeader": "Schrift",
         "icons": [9, 10],
         "commentKey": "schrift-commentaar",
-        "punten": ["agenda", "hoofdletters"]
+        "punten": ["schrift1", "schrift2"]
       }
     },
     "thema": {
@@ -301,7 +291,7 @@
         "zillHeader": "ORIËNTATIE OP DE WERELD - Thema mens & ...",
         "icons": [6, 2, 8, 4, 5, 10],
         "commentKey": "thema-commentaar",
-        "punten": ["zill1", "zill2", ""]
+        "punten": ["zill1"]
       }
     },
     "eindcommentaar": {
