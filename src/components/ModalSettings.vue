@@ -48,7 +48,7 @@
             type="text"
             class="block w-full border-b outline-none mb-2"
             id="marge-boven"
-            v-model="settings.marginTop"
+            v-model="huidigeSettings.marginTop"
           />
         </div>
         <div class="w-1/2 pl-2">
@@ -59,7 +59,7 @@
             type="text"
             class="block w-full border-b outline-none mb-2"
             id="marge-onder"
-            v-model="settings.marginBottom"
+            v-model="huidigeSettings.marginBottom"
           />
         </div>
         <div class="w-1/2 pr-2">
@@ -70,7 +70,7 @@
             type="text"
             class="block w-full border-b outline-none"
             id="marge-links"
-            v-model="settings.marginLeft"
+            v-model="huidigeSettings.marginLeft"
           />
         </div>
         <div class="w-1/2 pl-2">
@@ -81,7 +81,7 @@
             type="text"
             class="block w-full border-b outline-none"
             id="marge-rechts"
-            v-model="settings.marginRight"
+            v-model="huidigeSettings.marginRight"
           />
         </div>
       </div>
@@ -112,7 +112,7 @@ export default {
   name: `ModalSettings`,
   data() {
     return {
-      settings: {
+      huidigeSettings: {
         standardLocation: "",
         marginTop: 1.7,
         marginBottom: 1.7,
@@ -123,7 +123,7 @@ export default {
   },
   computed: {
     ...mapState([
-      { globalSettings: "settings" },
+      "settings",
       "online",
       "meta",
       "leerlingen",
@@ -138,21 +138,21 @@ export default {
     ...mapMutations([`hideModal`]),
     ...mapActions(["writeSettings", "generateRapportId"]),
     chooseDirectory() {
+      console.log(this.globalSettings);
+
       const dir = dialog.showOpenDialog({
         title: "Kies map voor rapporten",
-        defaultPath:
-          this.settings.standardLocation ||
-          this.globalSettings.standardLocation,
+        defaultPath: this.settings.standardLocation,
         properties: ["openDirectory"],
         message: "Kies een map waar rapporten worden opgeslagen"
       });
 
       if (dir) {
-        this.$set(this.settings, "standardLocation", dir[0]);
+        this.$set(this.huidigeSettings, "standardLocation", dir[0]);
       }
     },
     saveSettings() {
-      this.writeSettings(this.settings);
+      this.writeSettings(this.huidigeSettings);
       this.hideModal();
     },
     async createBackup() {
@@ -183,7 +183,9 @@ export default {
     }
   },
   created() {
-    this.settings = { ...this.globalSettings };
+    console.log(this.settings);
+
+    this.huidigeSettings = { ...this.settings };
   }
 };
 </script>
