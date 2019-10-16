@@ -186,14 +186,16 @@
 
 <style scoped>
 h2 {
-  @apply .text-2xl .my-2 font-bold;
+  @apply text-2xl;
+  @apply my-2;
+  @apply font-bold;
 }
 
 p {
-  @apply .my-2;
+  @apply my-2;
 }
 
 a {
-  @apply .text-indigo-400;
+  @apply text-indigo-400;
 }
 </style>
