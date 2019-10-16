@@ -10,7 +10,9 @@ import "@/assets/css/material-design-icons.css";
 Vue.config.productionTip = false;
 Vue.config.devtools = true;
 
-Vue.use(Toasted);
+Vue.use(Toasted, {
+  duration: 2000
+});
 
 new Vue({
   router,
