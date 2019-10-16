@@ -38,6 +38,12 @@
       >
         <i class="material-icons mr-2">settings</i>Instellingen
       </li>
+      <li
+        @click="$router.push('help')"
+        class="px-8 mb-5 flex items-center cursor-pointer hover:text-blue-800"
+      >
+        <i class="material-icons mr-2">help</i>Handleiding
+      </li>
     </ul>
   </nav>
 </template>

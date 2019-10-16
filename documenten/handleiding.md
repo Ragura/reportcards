@@ -76,10 +76,21 @@ De marges van de PDF staan standaard correct ingesteld, maar kunnen in geval van
 
 Omdat de applicatie niet officieel ondertekend is als vertrouwde applicatie, is ze niet altijd beste vriendjes met de anti-virus software op je computer. Dit kan in sommige gevallen leiden tot **gegevensverlies**!
 
-Je kan twee belangrijke voorzorgen nemen om dit risico te minimaliseren:
+Maak daarom telkens **voor** je de applicatie sluit een **backup** van je rapport (het .rap bestand). Dit kan eenvoudig langs het **instellingen** menu.
 
-- Maak telkens je de applicatie sluit een **backup** van je rapport (het .rap bestand)
-- Sluit en herstart het programma af en toe na het invullen of veranderen van een reeks punten of commentaren. Als er dan toch iets misloopt ben je veel minder kwijt!
+![backup maken](backup_maken.gif)
+
+## Backups terugzetten
+
+De applicatie heeft nog niet de mogelijkheid om automatisch een backup terug te plaatsen. Maar geen nood, dit is een eenvoudig handmatig proces!
+
+Ga naar de map in Verkenner waar je rapporten staan. Als het goed is staan er ook een aantal `.backup` bestanden tussen de reeks. Dit zijn de backups die je genomen hebt in het verleden. Om een backup terug te zetten doe het volgende:
+
+1. Sluit het programma als het nog openstaat (belangrijk!)
+2. Verwijder het huidige rapport langs verkenner (bv. 1920_1A_1.rap)
+3. Verander de naam van een backup bestand door de suffix te verwijderen. Met andere woorden, enkel de naam van het originele rapport mag overblijven (bv. 1920_1A_1.rap).
+
+![backup terugzetten](backup_terugzetten.gif)
 
 ## Rapporten doorsturen
 
