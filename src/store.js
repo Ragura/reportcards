@@ -1,5 +1,6 @@
 const jsonfile = require("jsonfile");
 const { app } = require("electron").remote;
+const fs = require("fs");
 
 import uniqid from "uniqid";
 
@@ -56,8 +57,6 @@ export const mutations = {
     state.printing = print;
   },
   setOnline(state, online) {
-    console.log(online);
-
     state.online = online;
   },
   setRapportId(state, id) {
@@ -175,6 +174,39 @@ export const actions = {
     const rapport = jsonfile.readFileSync(path, { spaces: 2 });
     if (rapport) {
       commit("readRapport", { path, rapport });
+    }
+  },
+
+  // Create backup of opened rapport
+  createBackup({ state }) {
+    if (state.activePath && state.meta.id) {
+      const today = new Date();
+      const date =
+        today.getFullYear() +
+        "-" +
+        (today.getMonth() + 1) +
+        "-" +
+        today.getDate();
+      const time = today.getHours() + "u" + today.getMinutes();
+      const dateTime = date + "_" + time;
+
+      const backupPath = state.activePath + "_" + dateTime + ".backup";
+      jsonfile.writeFileSync(
+        backupPath,
+        {
+          meta: { ...state.meta },
+          leerlingen: { ...state.leerlingen },
+          evaluaties: { ...state.evaluaties },
+          blocks: { ...state.blocks }
+        },
+        {
+          spaces: 2
+        }
+      );
+
+      if (!fs.statSync(backupPath).size > 1) {
+        throw new Error("Backup maken mislukt.");
+      }
     }
   },
 

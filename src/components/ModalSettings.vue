@@ -15,27 +15,26 @@
           Kiezen
         </button>
       </div>
-      <!-- <div class="text-center bg-gray-200">
+      <div class="text-center bg-gray-200">
         Backups:
       </div>
       <div class="flex justify-between item-center py-6">
         <button
-          :disabled="!online || !meta.id"
+          disabled
           @click="restoreBackup"
-          :class="{ 'opacity-50 cursor-default': !online || !meta.id }"
-          class="w-1/2 rounded bg-blue-400 text-white font-semibold p-1 mr-2"
+          class="opacity-50 cursor-default w-1/2 rounded bg-blue-400 text-white font-semibold p-1 mr-2"
         >
           Backup terugzetten
         </button>
         <button
-          :disabled="!online"
-          @click="createBackup"
-          :class="{ 'opacity-50 cursor-default': !online }"
+          :disabled="!meta.id"
+          @click="makeBackup"
+          :class="{ 'opacity-50 cursor-default': !meta.id }"
           class="w-1/2 rounded bg-blue-400 text-white font-semibold p-1"
         >
           Backup maken
         </button>
-      </div> -->
+      </div>
       <div class="text-center bg-gray-200">
         Marges A4 pagina:
       </div>
@@ -106,7 +105,6 @@
 <script>
 const { dialog } = require("electron").remote;
 import { mapState, mapMutations, mapActions } from "vuex";
-import axios from "axios";
 
 export default {
   name: `ModalSettings`,
@@ -136,10 +134,13 @@ export default {
   },
   methods: {
     ...mapMutations([`hideModal`]),
-    ...mapActions(["writeSettings", "generateRapportId"]),
+    ...mapActions([
+      "writeSettings",
+      "generateRapportId",
+      "createBackup",
+      "restoreBackup"
+    ]),
     chooseDirectory() {
-      console.log(this.globalSettings);
-
       const dir = dialog.showOpenDialog({
         title: "Kies map voor rapporten",
         defaultPath: this.settings.standardLocation,
@@ -155,36 +156,17 @@ export default {
       this.writeSettings(this.huidigeSettings);
       this.hideModal();
     },
-    async createBackup() {
-      if (!this.meta.id) {
-        this.generateRapportId();
-      }
+    makeBackup() {
       try {
-        await axios.post("http://localhost:7000", {
-          meta: this.meta,
-          leerlingen: this.leerlingen,
-          evaluaties: this.evaluaties,
-          blocks: this.blocks
-        });
-        this.$toasted.show("Backup gelukt!", {
-          position: "bottom-center",
-          duration: 2000
-        });
+        this.createBackup();
+        this.$toasted.show("Backup gemaakt.");
       } catch (err) {
-        this.$toasted.show("Backup mislukt!", {
-          position: "bottom-center",
-          duration: 2000
-        });
+        this.$toasted.show("Backup maken mislukt! Maak handmatig een backup.");
       }
     },
-    async restoreBackup() {
-      const { data } = await axios.get(`http://localhost:7000?id=123`);
-      console.log(data);
-    }
+    async restoreBackup() {}
   },
   created() {
-    console.log(this.settings);
-
     this.huidigeSettings = { ...this.settings };
   }
 };
