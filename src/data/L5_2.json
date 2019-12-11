@@ -1,59 +1,65 @@
 {
   "leerlingen": {},
   "evaluaties": {
-    "afspraken": {
-      "id": "afspraken",
+    "lj1": {
+      "id": "lj1",
       "type": "color",
       "amount": 1,
-      "text": "Ik hou me aan de gemaakte afspraken en regels"
+      "text": "Ik hou me aan de gemaakte regels en afspraken"
     },
-    "respect": {
-      "id": "respect",
+    "lj2": {
+      "id": "lj2",
       "type": "color",
       "amount": 1,
-      "text": "Ik heb respect voor de eigenheid van mijn klasgenoten en anderen"
+      "text": "Ik heb respect voor de eigenheid van een ander (mijn klasgenoten?)"
     },
-    "sorry": {
-      "id": "sorry",
+    "lp1": {
+      "id": "lp1",
       "type": "color",
       "amount": 1,
-      "text": "Ik weet wanneer ik fout ben en kan sorry zeggen"
+      "text": "Ik hecht belang aan eerlijkheid en fair play en ik handel ook zo"
     },
-    "verliefd": {
-      "id": "verliefd",
+    "lp2": {
+      "id": "lp2",
       "type": "color",
       "amount": 1,
-      "text": "Ik weet dat iemand verliefd kan worden op een man en / of vrouw en ik respecteer dat"
+      "text": "Ik blijf in mezelf geloven ook al gaat het wat minder"
     },
-    "groepswerk": {
-      "id": "groepswerk",
+    "wj1": {
+      "id": "wj1",
       "type": "color",
       "amount": 1,
       "text": "Ik voer in een groepswerk of in mijn niveaugroep mijn taak verantwoordelijk uit"
     },
-    "spullen": {
-      "id": "spullen",
+    "wj2": {
+      "id": "wj2",
       "type": "color",
       "amount": 1,
       "text": "Ik breng de spullen die ik moet meebrengen of klaar hebben op tijd mee naar de klas"
     },
-    "opzoeken": {
-      "id": "opzoeken",
+    "wp1": {
+      "id": "wp1",
       "type": "color",
       "amount": 1,
-      "text": "Wat ik niet weet, zoek ik zelf op"
+      "text": "Ik kan vertellen wat ik nodig heb om te leren"
     },
-    "bedenken": {
-      "id": "bedenken",
+    "wp2": {
+      "id": "wp2",
       "type": "color",
       "amount": 1,
-      "text": "Ik kan bedenken en vertellen wat ik een volgende keer anders ga aanpakken en hoe (= Ik leer uit mijn fouten)"
+      "text": "Ik blijf proberen, want door te proberen leer je altijd iets bij"
     },
-    "inschatten": {
-      "id": "inschatten",
+    "wp3": {
+      "id": "wp3",
       "type": "color",
       "amount": 1,
-      "text": "Ik kan zelf juist inschatten in welke niveaugroep ik best aan de slag ga"
+      "text": "Ik gebruik hoofdletters en leestekens waar en zoals het hoort"
+    },
+    "wp4": {
+      "id": "wp4",
+      "type": "color",
+      "amount": 1,
+      "text": "Ik kan mijn taken en lessen opnemen in een lesplanning"
     },
     "inzetmeesterjuf": {
       "id": "inzetmeesterjuf",
@@ -71,13 +77,13 @@
       "id": "d1a1",
       "type": "color",
       "amount": 6,
-      "text": "BEELD - Huisdieren"
+      "text": "BEWEGING - Zo ontwerpen wij onze hedendaagse dans"
     },
-    "d1a2": {
-      "id": "d1a2",
+    "d2a1": {
+      "id": "d2a1",
       "type": "color",
       "amount": 6,
-      "text": "DRAMA - Huisdierendomino"
+      "text": "MUZIEK - Doe er wat aan!"
     },
     "getallenkennis": {
       "id": "getallenkennis",
@@ -174,14 +180,21 @@
       "type": "points",
       "amount": 6,
       "maximums": [10, 10, 10, 10, 10, 10],
-      "text": "RUIMTE + TECHNIEK - Huis v/d toekomst"
+      "text": "Europa"
     },
     "zill2": {
       "id": "zill2",
       "type": "points",
       "amount": 6,
       "maximums": [10, 10, 10, 10, 10, 10],
-      "text": "NATUUR + RUIMTE - Bosklassen Voeren"
+      "text": "De wereld in kaart"
+    },
+    "zill3": {
+      "id": "zill3",
+      "type": "points",
+      "amount": 6,
+      "maximums": [10, 10, 10, 10, 10, 10],
+      "text": "Beestige beesten"
     }
   },
   "blocks": {
@@ -196,8 +209,8 @@
         "zillHeader": "Leefhouding",
         "icons": [8, 4, 5],
         "commentKey": "leefhouding-commentaar",
-        "jaarpunten": ["afspraken", "respect", ""],
-        "periodepunten": ["sorry", "verliefd"]
+        "jaarpunten": ["lj1", "lj2"],
+        "periodepunten": ["lp1", "lp2"]
       }
     },
     "lerenleren": {
@@ -211,8 +224,8 @@
         "zillHeader": "Leren Leren",
         "icons": [4, 5, 2],
         "commentKey": "lerenleren-commentaar",
-        "jaarpunten": ["groepswerk", "spullen", ""],
-        "periodepunten": ["opzoeken", "bedenken", "inschatten"]
+        "jaarpunten": ["wj1", "wj2"],
+        "periodepunten": ["wp1", "wp2", "wp3", "wp4"]
       }
     },
     "inzet": {
@@ -234,11 +247,11 @@
         "layout": "domein",
         "zillHeader": "Muzische ontwikkeling",
         "icons": [4, 5, 2],
-        "subtitel1": "Écht kijken naar en nadenken over muzisch werk en er samen over kunnen praten",
-        "domeinen1": ["d1a1", "d1a2"],
+        "subtitel1": "Je eigen muzische en creatieve mogelijkheden ontdekken en tonen aan anderen",
+        "domeinen1": ["d1a1"],
         "commentKey1": "domein1-commentaar",
-        "subtitel2": "- - -",
-        "domeinen2": ["", ""],
+        "subtitel2": "Op een fijne manier tot sterk en mooi muzisch samenspel komen",
+        "domeinen2": ["d2a1"],
         "commentKey2": "domein2-commentaar"
       }
     },
@@ -291,18 +304,7 @@
         "zillHeader": "ORIËNTATIE OP DE WERELD - Thema mens & ...",
         "icons": [6, 2, 8, 4, 5, 10],
         "commentKey": "thema-commentaar",
-        "punten": ["zill1", "zill2", ""]
-      }
-    },
-    "schooljaar": {
-      "id": "schooljaar",
-      "rapportOnly": true,
-      "type": "Question",
-      "page": 3,
-      "order": 9,
-      "content": {
-        "question": "Wat vond je het leukste aan het voorbije schooljaar?",
-        "layout": "image"
+        "punten": ["zill1", "zill2", "zill3"]
       }
     },
     "eindcommentaar": {

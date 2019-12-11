@@ -1,91 +1,65 @@
 {
-  "leerlingen": {
-    "fd3sdhc3": {
-      "id": "fd3sdhc3",
-      "voornaam": "Jantje",
-      "familienaam": "Kruimeldief",
-      "punten": {
-        "mening": 3,
-        "regels": 2,
-        "neen": 4,
-        "zelfbewust": 1,
-        "d1a1": [1, 3, 4, null, null, null],
-        "d1a1-final": 3,
-        "d1a2": [2, 1, null, null, null, null],
-        "d1a2-final": 2,
-        "d2a1": [4, 4, 3, 4, null, null],
-        "d2a1-final": 4,
-        "d2a2": [2, 1, 2, 3, null, null],
-        "d2a2-final": 2,
-        "getallenkennis": [6, 7, 6, 8, null, null],
-        "rekenvaardigheid": [3, 2, 4, null, null, null],
-        "rekenvaardigheid-final": 3,
-        "metendrekenen": [3, 6, 9, 8, 7, null],
-        "meetkunde": [5, 10, 10, 10, 10, 9],
-        "leefhouding-commentaar": "Jantje doet het al bij al goed!"
-      }
-    }
-  },
+  "leerlingen": {},
   "evaluaties": {
-    "mening": {
-      "id": "mening",
+    "lj1": {
+      "id": "lj1",
       "type": "color",
       "amount": 1,
       "text": "Ik aanvaard de mening van anderen en werk samen om tot een oplossing te komen"
     },
-    "regels": {
-      "id": "regels",
+    "lj2": {
+      "id": "lj2",
       "type": "color",
       "amount": 1,
       "text": "Ik houd mij aan regels en afspraken omdat die nodig zijn voor een goeie klas- en schoolwerking"
     },
-    "neen": {
-      "id": "neen",
+    "lp1": {
+      "id": "lp1",
       "type": "color",
       "amount": 1,
-      "text": "Ik kan en durf \"neen\" zeggen"
+      "text": "Ik blijf rustig en beleefd, ook onder minder fijne omstandigheden"
     },
-    "zelfbewust": {
-      "id": "zelfbewust",
+    "lp2": {
+      "id": "lp2",
       "type": "color",
       "amount": 1,
-      "text": "Ik kan zelfbewust en zelfzeker mijn werk presenteren voor de klas"
+      "text": "Ik kan een 'neen' aanvaarden en daar gepast mee omgaan"
     },
-    "onthouden": {
-      "id": "onthouden",
+    "wj1": {
+      "id": "wj1",
       "type": "color",
       "amount": 1,
       "text": "Ik kan vlot (leerstof) onthouden (door herhaling – oefenen – instuderen)"
     },
-    "opzoeken": {
-      "id": "opzoeken",
+    "wj2": {
+      "id": "wj2",
       "type": "color",
       "amount": 1,
       "text": "Wat ik niet weet, zoek ik zelf op"
     },
-    "weekplanning": {
-      "id": "weekplanning",
+    "wj3": {
+      "id": "wj3",
       "type": "color",
       "amount": 1,
       "text": "Ik kan mijn taken en lessen opnemen in een haalbare weekplanning"
     },
-    "onderzoeken": {
-      "id": "onderzoeken",
+    "wp1": {
+      "id": "wp1",
       "type": "color",
       "amount": 1,
-      "text": "Ik kan een probleem onderzoeken door mogelijkheden uit te proberen en mezelf vragen te stellen, waarbij ik gebruik wat ik al weet."
+      "text": "Ik kan dingen die ik al weet over een onderwerp vertellen of noteren"
     },
-    "inschatten": {
-      "id": "inschatten",
+    "wp2": {
+      "id": "wp2",
       "type": "color",
       "amount": 1,
-      "text": "Ik kan zelf juist inschatten in welke niveaugroep ik best aan de slag ga"
+      "text": "Mijn schrift is voor iedereen vlot leesbaar"
     },
-    "project": {
-      "id": "project",
+    "wp3": {
+      "id": "wp3",
       "type": "color",
       "amount": 1,
-      "text": "Ik kan een (eigen) project zelfstandig bedenken – plannen – voorbereiden – uitvoeren"
+      "text": "Ik maak mijn huiswerk zoals gevraag en tegen de afgesproken datum"
     },
     "inzetmeesterjuf": {
       "id": "inzetmeesterjuf",
@@ -103,13 +77,19 @@
       "id": "d1a1",
       "type": "color",
       "amount": 6,
-      "text": "DANS - Dansende elektriciteitspylonen"
+      "text": "DRAMA - Julius, Alexander en Karel"
+    },
+    "d1a2": {
+      "id": "d1a2",
+      "type": "color",
+      "amount": 6,
+      "text": "MUZIEK - Aan tafel"
     },
     "d2a1": {
       "id": "d2a1",
       "type": "color",
       "amount": 6,
-      "text": "MUZIEK - Afvalconcert"
+      "text": "BEWEEG - Rosas danst"
     },
     "getallenkennis": {
       "id": "getallenkennis",
@@ -206,14 +186,7 @@
       "type": "points",
       "amount": 6,
       "maximums": [10, 10, 10, 10, 10, 10],
-      "text": "RUIMTE + NATUUR - Weer & klimaat"
-    },
-    "zill2": {
-      "id": "zill2",
-      "type": "points",
-      "amount": 6,
-      "maximums": [10, 10, 10, 10, 10, 10],
-      "text": "ALLE ZILL-THEMA's - Meesterwerk"
+      "text": "Sporen uit het verleden"
     }
   },
   "blocks": {
@@ -228,8 +201,8 @@
         "zillHeader": "Leefhouding",
         "icons": [8, 4, 5],
         "commentKey": "leefhouding-commentaar",
-        "jaarpunten": ["mening", "regels", ""],
-        "periodepunten": ["neen", "zelfbewust"]
+        "jaarpunten": ["lj1", "lj2"],
+        "periodepunten": ["lp1", "lp2"]
       }
     },
     "lerenleren": {
@@ -243,8 +216,8 @@
         "zillHeader": "Leren leren",
         "icons": [4, 5, 2],
         "commentKey": "lerenleren-commentaar",
-        "jaarpunten": ["onthouden", "opzoeken", "weekplanning"],
-        "periodepunten": ["onderzoeken", "inschatten", "project"]
+        "jaarpunten": ["wj1", "wj2", "wj3"],
+        "periodepunten": ["wp1", "wp2", "wp3"]
       }
     },
     "inzet": {
@@ -266,11 +239,11 @@
         "layout": "domein",
         "zillHeader": "Muzische ontwikkeling",
         "icons": [4, 5, 2],
-        "subtitel1": "De muzische bouwstenen ontdekken en creatief leren gebruiken",
-        "domeinen1": ["d1a1", ""],
+        "subtitel1": "De muzische bouwstenen ontdekken en creatief gebruiken",
+        "domeinen1": ["d1a1", "d1a2"],
         "commentKey1": "domein1-commentaar",
-        "subtitel2": "Vaardigheden leren, oefenen en gebruiken om je beter uit te drukken in muzisch werk",
-        "domeinen2": ["d2a1", ""],
+        "subtitel2": "Echt kijken naar en nadenken over muzische werk en er samen over kunnen praten",
+        "domeinen2": ["d2a1"],
         "commentKey2": "domein2-commentaar"
       }
     },
@@ -323,18 +296,7 @@
         "zillHeader": "ORIËNTATIE OP DE WERELD - Thema mens & ...",
         "icons": [6, 2, 8, 4, 5, 10],
         "commentKey": "thema-commentaar",
-        "punten": ["zill1", "zill2", ""]
-      }
-    },
-    "tijdbekaf": {
-      "id": "tijdbekaf",
-      "rapportOnly": true,
-      "type": "Question",
-      "page": 3,
-      "order": 9,
-      "content": {
-        "question": "Wat vond je van je tijd op Bekaf?\n\nKleur de smiley die het best past!\n(Meer dan 1 mag ook! 😃)",
-        "layout": "smileys"
+        "punten": ["zill1"]
       }
     },
     "eindcommentaar": {

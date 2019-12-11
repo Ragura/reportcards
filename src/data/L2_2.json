@@ -1,71 +1,77 @@
 {
   "leerlingen": {},
   "evaluaties": {
-    "spelen": {
-      "id": "spelen",
+    "lj1": {
+      "id": "lj1",
       "type": "color",
       "amount": 1,
-      "text": "Ik kan fijn samen spelen met anderen"
+      "text": "Ik kan fijn samen spelen met mijn klasgenoten"
     },
-    "help": {
-      "id": "help",
+    "lj2": {
+      "id": "lj2",
       "type": "color",
       "amount": 1,
       "text": "Ik help anderen"
     },
-    "regels": {
-      "id": "regels",
+    "lj3": {
+      "id": "lj3",
       "type": "color",
       "amount": 1,
       "text": "Ik hou me aan gemaakte regels en afspraken"
     },
-    "samenwerken": {
-      "id": "samenwerken",
+    "lp1": {
+      "id": "lp1",
       "type": "color",
       "amount": 1,
-      "text": "Ik kan vlot in een groepje samenwerken"
+      "text": "Ik kan vlot samenwerken per twee / in duo"
     },
-    "verlies": {
-      "id": "verlies",
+    "lp2": {
+      "id": "lp2",
       "type": "color",
       "amount": 1,
-      "text": "Ik kan verlies rustig aanvaarden"
+      "text": "Ik probeer een ruzie eerst zelf uit te praten"
     },
-    "hulp": {
-      "id": "hulp",
+    "lp3": {
+      "id": "lp3",
       "type": "color",
       "amount": 1,
-      "text": "Ik vraag om hulp"
+      "text": "Ik durf iets over mezelf vertellen voor de klasgroep"
     },
-    "nakijken": {
-      "id": "nakijken",
+    "wj1": {
+      "id": "wj1",
       "type": "color",
       "amount": 1,
-      "text": "Ik kijk na of ik alles heb gemaakt"
+      "text": "Ik vraag om hulp (aan de leerkracht of een klasgenoot) als iets nog niet alleen lukt"
     },
-    "helpen": {
-      "id": "helpen",
+    "wj2": {
+      "id": "wj2",
+      "type": "color",
+      "amount": 1,
+      "text": "Ik kan controleren of ik alle onderdelen van een opdracht (taak, toets, …) heb uitgevoerd"
+    },
+    "wj3": {
+      "id": "wj3",
       "type": "color",
       "amount": 1,
       "text": "Ik kan anderen helpen"
     },
-    "contract": {
-      "id": "contract",
+    "wp1": {
+      "id": "wp1",
       "type": "color",
       "amount": 1,
-      "text": "Ik kan mijn contract goed plannen"
+      "text": "Ik kan een vraag, opdracht, uitdaging probleem in mijn eigen woorden (na)vertellen"
     },
-    "antwoord": {
-      "id": "antwoord",
+    "wp2": {
+      "id": "wp2",
       "type": "color",
       "amount": 1,
-      "text": "Ik zorg dat ik antwoord op de vraag"
+      "text": "Ik breng de spullen die ik moet meebrengen of klaar hebben op tijd mee naar de klas"
     },
-    "tips": {
-      "id": "tips",
+    "wp3": {
+      "id": "wp3",
       "type": "color",
       "amount": 1,
-      "text": "Ik gebruik de tips en raad die ik krijg"
+      "text": "De boeken en spullen in mijn bank zijn netjes gesorteerd"
     },
     "inzetmeesterjuf": {
       "id": "inzetmeesterjuf",
@@ -83,25 +89,25 @@
       "id": "d1a1",
       "type": "color",
       "amount": 6,
-      "text": "MUZIEK - Verdraaide namen"
+      "text": "MUZIEK - Onze klas, een concertruimte"
     },
     "d1a2": {
       "id": "d1a2",
       "type": "color",
       "amount": 6,
-      "text": "DANS - Alle tijd"
+      "text": "BEWEGING - Knipperlichtdans"
     },
     "d2a1": {
       "id": "d2a1",
       "type": "color",
       "amount": 6,
-      "text": "DRAMA - Oorlog en vrede"
+      "text": "BEELD - Angstschilderijen"
     },
-    "d2a2": {
-      "id": "d2a2",
+    "d3a1": {
+      "id": "d3a1",
       "type": "color",
       "amount": 6,
-      "text": "BEELD - Achter de horizon"
+      "text": "DRAMA - we maken zelf licht"
     },
     "getallenkennis": {
       "id": "getallenkennis",
@@ -179,31 +185,38 @@
       "maximums": [10, 10, 10, 10, 10, 10],
       "text": "Begrijpend lezen"
     },
-    "schrijfwerk": {
-      "id": "schrijfwerk",
+    "schrift1": {
+      "id": "schrift1",
       "type": "color",
       "amount": 6,
-      "text": "Ik vorm de hoofdletters juist"
+      "text": "Ik schrijf de letters en cijfers juist en verzorgd"
     },
-    "hoofdletters": {
-      "id": "hoofdletters",
+    "schrift2": {
+      "id": "schrift2",
       "type": "color",
       "amount": 6,
-      "text": "Ik schrijf verzorgd"
+      "text": "Ik verbind de letters op de juiste manier aan elkaar"
+    },
+    "zill1": {
+      "id": "zill1",
+      "type": "points",
+      "amount": 6,
+      "maximums": [10, 10, 10, 10, 10, 10],
+      "text": "De herfst"
     },
     "zill2": {
       "id": "zill2",
       "type": "points",
       "amount": 6,
       "maximums": [10, 10, 10, 10, 10, 10],
-      "text": "RUIMTE + SAMENLEVING - Bouwen"
+      "text": "Het weer"
     },
     "zill3": {
       "id": "zill3",
       "type": "points",
       "amount": 6,
       "maximums": [10, 10, 10, 10, 10, 10],
-      "text": "NATUUR - Lente"
+      "text": "Verkeer"
     }
   },
   "blocks": {
@@ -218,8 +231,8 @@
         "zillHeader": "Leefhouding",
         "icons": [8, 4, 5],
         "commentKey": "leefhouding-commentaar",
-        "jaarpunten": ["spelen", "help", "regels"],
-        "periodepunten": ["samenwerken", "verlies"]
+        "jaarpunten": ["lj1", "lj2", "lj3"],
+        "periodepunten": ["lp1", "lp2", "lp3"]
       }
     },
     "werkhouding": {
@@ -233,8 +246,8 @@
         "zillHeader": "Werkhouding",
         "icons": [4, 5, 2],
         "commentKey": "werkhouding-commentaar",
-        "jaarpunten": ["hulp", "nakijken", "helpen"],
-        "periodepunten": ["contract", "antwoord", "tips"]
+        "jaarpunten": ["wj1", "wj2", "wj3"],
+        "periodepunten": ["wp1", "wp2", "wp3"]
       }
     },
     "inzet": {
@@ -259,9 +272,12 @@
         "subtitel1": "De muzische bouwstenen ontdekken en leren gebruiken",
         "domeinen1": ["d1a1", "d1a2"],
         "commentKey1": "domein1-commentaar",
-        "subtitel2": "Vaardigheden leren, oefenen en verbeteren om je beter uit te kunnen drukken",
-        "domeinen2": ["d2a1", "d2a2"],
-        "commentKey2": "domein2-commentaar"
+        "subtitel2": "Boodschappen en symbolen begrijpen en verwerken",
+        "domeinen2": ["d2a1"],
+        "commentKey2": "domein2-commentaar",
+        "subtitel3": "Het verband tussen beschouwen en maken bespreken",
+        "domeinen3": ["d3a1"],
+        "commentKey3": "domein2-commentaar"
       }
     },
     "wiskundigdenken": {
@@ -300,7 +316,7 @@
         "zillHeader": "Schrift",
         "icons": [9, 10],
         "commentKey": "schrift-commentaar",
-        "punten": ["schrijfwerk", "hoofdletters"]
+        "punten": ["schrift1", "schrift2"]
       }
     },
     "thema": {
@@ -313,18 +329,7 @@
         "zillHeader": "ORIËNTATIE OP DE WERELD - Thema mens & ...",
         "icons": [6, 2, 8, 4, 5, 10],
         "commentKey": "thema-commentaar",
-        "punten": ["zill2", "zill3", ""]
-      }
-    },
-    "schooljaar": {
-      "id": "schooljaar",
-      "rapportOnly": true,
-      "type": "Question",
-      "page": 3,
-      "order": 9,
-      "content": {
-        "question": "Wat vond jij van het voorbije schooljaar?\n\nGeef punten op 10 (11 mag ook 😃)",
-        "layout": "score"
+        "punten": ["zill1", "zill2", "zill3"]
       }
     },
     "eindcommentaar": {

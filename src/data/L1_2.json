@@ -1,71 +1,71 @@
 {
   "leerlingen": {},
   "evaluaties": {
-    "spelen": {
-      "id": "spelen",
+    "lj1": {
+      "id": "lj1",
       "type": "color",
       "amount": 1,
       "text": "Ik kan fijn samen spelen met mijn klasgenoten"
     },
-    "help": {
-      "id": "help",
+    "lj2": {
+      "id": "lj2",
       "type": "color",
       "amount": 1,
       "text": "Ik help graag andere kinderen"
     },
-    "regels": {
-      "id": "regels",
+    "lj3": {
+      "id": "lj3",
       "type": "color",
       "amount": 1,
       "text": "Ik hou me aan de regels in de klas en op de speelplaats"
     },
-    "samenwerken": {
-      "id": "samenwerken",
+    "lp1": {
+      "id": "lp1",
       "type": "color",
       "amount": 1,
-      "text": "Ik kan vlot samenwerken met anderen tijdens een groepswerk"
+      "text": "Ik ben geduldig en kan mijn beurt afwachten"
     },
-    "ruzie": {
-      "id": "ruzie",
+    "lp2": {
+      "id": "lp2",
       "type": "color",
       "amount": 1,
-      "text": "Ik kan een ruzie uitpraten"
+      "text": "Ik durf mijn verhaal in de kring vertellen"
     },
-    "volhouden": {
-      "id": "volhouden",
+    "wj1": {
+      "id": "wj1",
       "type": "color",
       "amount": 1,
       "text": "Ik kan een gegeven opdracht volhouden tot het eind"
     },
-    "bank": {
-      "id": "bank",
+    "wj2": {
+      "id": "wj2",
       "type": "color",
       "amount": 1,
       "text": "Op mijn bank ligt alleen wat ik nodig heb"
     },
-    "aandachtig": {
-      "id": "aandachtig",
+    "wj3": {
+      "id": "wj3",
       "type": "color",
       "amount": 1,
       "text": "Ik kan aandachtig luisteren naar wat de leerkracht of klasgenootjes vertellen"
     },
-    "bedenken": {
-      "id": "bedenken",
+    "wp1": {
+      "id": "wp1",
       "type": "color",
       "amount": 1,
-      "text": "Ik kan bedenken en vertellen wat ik een volgende keer anders ga aanpakken en hoe. Ik leer uit mijn fouten."
+      "text": "Ik kan vertellen wat ik nodig heb om te leren (materiaal, omstandigheden, ...)"
     },
-    "idee": {
-      "id": "idee",
+    "wp2": {
+      "id": "wp2",
       "type": "color",
       "amount": 1,
-      "text": "Ik kan een eigen idee vooraf opdelen in opeenvolgende stappen en die vertellen"
+      "text": "Ik kan (creatieve) voorstellen bedenken om noden en problemen op te lossen"
     },
-    "oplossing": {
-      "id": "oplossing",
+    "wp3": {
+      "id": "wp3",
       "type": "color",
       "amount": 1,
-      "text": "Ik probeer eerst zelf tot een goede oplossing te komen alvorens hulp te vragen"
+      "text": "Ik kan terwijl ik werk bedenken en vertellen of mijn aanpak goed werkt"
     },
     "inzetmeesterjuf": {
       "id": "inzetmeesterjuf",
@@ -83,25 +83,13 @@
       "id": "d1a1",
       "type": "color",
       "amount": 6,
-      "text": "BEELD - Monsters in foam clay"
-    },
-    "d1a2": {
-      "id": "d1a2",
-      "type": "color",
-      "amount": 6,
-      "text": "BEELD - bouwen met papier-maché"
+      "text": "DRAMA - Plezier beleven en voldoening ervaren bij spelen"
     },
     "d2a1": {
       "id": "d2a1",
       "type": "color",
       "amount": 6,
-      "text": "MUZIEK - Raste pasta pizzaman"
-    },
-    "d2a2": {
-      "id": "d2a2",
-      "type": "color",
-      "amount": 6,
-      "text": "DRAMA - Goed nieuws journaal"
+      "text": "MUZIEK - De vaardigheden die nodig zijn om zich muzisch uit te drukken verfijnen"
     },
     "getallenkennis": {
       "id": "getallenkennis",
@@ -131,20 +119,6 @@
       "maximums": [10, 10, 10, 10, 10, 10],
       "text": "Meetkunde"
     },
-    "luisteren": {
-      "id": "luisteren",
-      "type": "points",
-      "amount": 6,
-      "maximums": [10, 10, 10, 10, 10, 10],
-      "text": "Luisteren"
-    },
-    "spreken": {
-      "id": "spreken",
-      "type": "color",
-      "amount": 6,
-      "maximums": [10, 10, 10, 10, 10, 10],
-      "text": "Spreken"
-    },
     "spelling": {
       "id": "spelling",
       "type": "points",
@@ -152,59 +126,31 @@
       "maximums": [10, 10, 10, 10, 10, 10],
       "text": "Spelling"
     },
-    "schrijven": {
-      "id": "schrijven",
+    "schrift1": {
+      "id": "schrift1",
       "type": "color",
       "amount": 6,
-      "maximums": [10, 10, 10, 10, 10, 10],
-      "text": "Toegepast schrijven"
+      "text": "Ik houd mijn potlood goed vast"
     },
-    "taalbeschouwing": {
-      "id": "taalbeschouwing",
-      "type": "points",
-      "amount": 6,
-      "maximums": [10, 10, 10, 10, 10, 10],
-      "text": "Taalbeschouwing"
-    },
-    "begrijpendlezen": {
-      "id": "begrijpendlezen",
-      "type": "points",
-      "amount": 6,
-      "maximums": [10, 10, 10, 10, 10, 10],
-      "text": "Begrijpend lezen"
-    },
-    "lijnen": {
-      "id": "lijnen",
+    "schrift2": {
+      "id": "schrift2",
       "type": "color",
       "amount": 6,
-      "text": "Ik schrijf tussen de lijnen"
-    },
-    "verzorgd": {
-      "id": "verzorgd",
-      "type": "color",
-      "amount": 6,
-      "text": "Ik schrijf verzorgd"
+      "text": "Ik schrijf de letters en cijfers juist en verzorgd"
     },
     "zill1": {
       "id": "zill1",
       "type": "points",
       "amount": 6,
       "maximums": [10, 10, 10, 10, 10, 10],
-      "text": "NATUUR - Planten en zaaien"
+      "text": "Thema Sinterklaas"
     },
     "zill2": {
       "id": "zill2",
       "type": "points",
       "amount": 6,
       "maximums": [10, 10, 10, 10, 10, 10],
-      "text": "TIJD - De tijd vliegt snel"
-    },
-    "zill3": {
-      "id": "zill3",
-      "type": "points",
-      "amount": 6,
-      "maximums": [10, 10, 10, 10, 10, 10],
-      "text": "RUIMTE - Veilig op stap"
+      "text": "De natuur in de winter"
     }
   },
   "blocks": {
@@ -219,8 +165,8 @@
         "zillHeader": "Leefhouding",
         "icons": [8, 4, 5],
         "commentKey": "leefhouding-commentaar",
-        "jaarpunten": ["spelen", "help", "regels"],
-        "periodepunten": ["samenwerken", "ruzie"]
+        "jaarpunten": ["lj1", "lj2", "lj3"],
+        "periodepunten": ["lp1", "lp2"]
       }
     },
     "werkhouding": {
@@ -234,8 +180,8 @@
         "zillHeader": "Werkhouding",
         "icons": [4, 5, 2],
         "commentKey": "werkhouding-commentaar",
-        "jaarpunten": ["volhouden", "bank", "aandachtig"],
-        "periodepunten": ["bedenken", "idee", "oplossing"]
+        "jaarpunten": ["wj1", "wj2", "wj3"],
+        "periodepunten": ["wp1", "wp2", "wp3"]
       }
     },
     "inzet": {
@@ -257,11 +203,11 @@
         "layout": "domein",
         "zillHeader": "Muzische ontwikkeling",
         "icons": [4, 5, 2],
-        "subtitel1": "Durven en kunnen fantaseren en daar plezier aan beleven",
-        "domeinen1": ["d1a1", "d1a2"],
+        "subtitel1": "Tot kwaliteitsvol muzisch samenspel komen",
+        "domeinen1": ["d1a1"],
         "commentKey1": "domein1-commentaar",
-        "subtitel2": "Op een fijne manier tot sterk en mooi muzisch samenspel komen",
-        "domeinen2": ["d2a1", "d2a2"],
+        "subtitel2": "Zich bewust worden van de eigen muzische en creatieve mogelijkheden (talenten) en die tonen",
+        "domeinen2": ["d2a1"],
         "commentKey2": "domein2-commentaar"
       }
     },
@@ -288,20 +234,20 @@
         "zillHeader": "Taalontwikkeling Nederlands",
         "icons": [9, 2, 6],
         "commentKey": "taalontwikkeling-commentaar",
-        "punten": ["luisteren", "spreken", "spelling", "schrijven", "taalbeschouwing", "begrijpendlezen"]
+        "punten": ["spelling"]
       }
     },
     "schrift": {
       "id": "schrift",
       "type": "ScoreBlock",
-      "page": 3,
+      "page": 2,
       "order": 7,
       "content": {
         "layout": "rij",
         "zillHeader": "Schrift",
         "icons": [9, 10],
         "commentKey": "schrift-commentaar",
-        "punten": ["lijnen", "verzorgd"]
+        "punten": ["schrift1", "schrift2"]
       }
     },
     "thema": {
@@ -314,18 +260,7 @@
         "zillHeader": "ORIËNTATIE OP DE WERELD - Thema mens & ...",
         "icons": [6, 2, 8, 4, 5, 10],
         "commentKey": "thema-commentaar",
-        "punten": ["zill1", "zill2", "zill3"]
-      }
-    },
-    "schooljaar": {
-      "id": "schooljaar",
-      "rapportOnly": true,
-      "type": "Question",
-      "page": 3,
-      "order": 9,
-      "content": {
-        "question": "Wat vond jij van het voorbije schooljaar?\n\nKleur de smiley die het best past!\n(meer dan 1 mag ook 😃)",
-        "layout": "smileys"
+        "punten": ["zill1", "zill2"]
       }
     },
     "eindcommentaar": {
