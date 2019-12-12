@@ -89,25 +89,25 @@
       "id": "d1a1",
       "type": "color",
       "amount": 6,
-      "text": "MUZIEK - Onze klas, een concertruimte"
+      "text": "BEWEGING, DANS - Poppen komen tot leven"
     },
     "d1a2": {
       "id": "d1a2",
       "type": "color",
       "amount": 6,
-      "text": "BEWEGING - Knipperlichtdans"
+      "text": "MUZIEK - Muzikale knikkerbaan"
+    },
+    "d1a3": {
+      "id": "d1a3",
+      "type": "color",
+      "amount": 6,
+      "text": "DRAMA - Een cadeautje voor Sinterklaas"
     },
     "d2a1": {
       "id": "d2a1",
       "type": "color",
       "amount": 6,
-      "text": "BEELD - Angstschilderijen"
-    },
-    "d3a1": {
-      "id": "d3a1",
-      "type": "color",
-      "amount": 6,
-      "text": "DRAMA - we maken zelf licht"
+      "text": "BEELD - Lievelingsplekjes in huis"
     },
     "getallenkennis": {
       "id": "getallenkennis",
@@ -269,15 +269,12 @@
         "layout": "domein",
         "zillHeader": "Muzische ontwikkeling",
         "icons": [4, 5, 2],
-        "subtitel1": "De muzische bouwstenen ontdekken en leren gebruiken",
-        "domeinen1": ["d1a1", "d1a2"],
+        "subtitel1": "Vaardigheden leren, oefenen en verbeteren om je beter uit te kunnen drukken in je muzisch werk",
+        "domeinen1": ["d1a1", "d1a2", "d1a3"],
         "commentKey1": "domein1-commentaar",
-        "subtitel2": "Boodschappen en symbolen begrijpen en verwerken",
+        "subtitel2": "De boodschap, betekenis en symboliek in muzische werken leren herkennen en dat ook in je eigen werk kunnen stoppen",
         "domeinen2": ["d2a1"],
-        "commentKey2": "domein2-commentaar",
-        "subtitel3": "Het verband tussen beschouwen en maken bespreken",
-        "domeinen3": ["d3a1"],
-        "commentKey3": "domein2-commentaar"
+        "commentKey2": "domein2-commentaar"
       }
     },
     "wiskundigdenken": {
